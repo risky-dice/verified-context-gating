@@ -1,6 +1,6 @@
 # Verified Context Gating: Training-Free Structural Admission for Context Selection, with Pre-Registered Quality Guarantees
 
-Author: Yongsun Lee — Independent Researcher
+Author: Yongsun Lee — Independent Researcher (bmt216ays@gmail.com)
 Draft v0, 2026-07-17. Target: arXiv preprint (cs.CL).
 
 ---

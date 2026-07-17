@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "contextgates"
+version = "0.1.0a0"
+description = "Verified context gating: training-free structural admission for context selection, with a pre-specified evidence ladder you run on your own data."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Yongsun Lee", email = "bmt216ays@gmail.com" }]
+requires-python = ">=3.10"
+dependencies = []
+keywords = ["rag", "context", "compression", "llm", "evaluation", "gating"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://github.com/risky-dice/verified-context-gating"
+
+[tool.setuptools.packages.find]
+include = ["contextgates*"]

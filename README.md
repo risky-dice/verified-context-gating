@@ -1,81 +1,121 @@
 # Verified Context Gating
 
-Reproduction package for the preprint:
+**Cut RAG input cost only where you have proven it is safe — on your data, not on a benchmark average.**
 
-> **Verified Context Gating: Training-Free Structural Admission for Context
-> Selection, with Pre-Registered Quality Guarantees** — Yongsun Lee, 2026.
-> (arXiv link forthcoming; reproduction package: https://github.com/risky-dice/verified-context-gating — public upon submission)
+This repo is two things:
 
-## TL;DR
+1. **`contextgates`** — a small, dependency-free Python library: training-free
+   context gates + the evidence ladder that decides whether to enable them.
+2. **The reproduction package** for the preprint behind it:
+   *Verified Context Gating: Training-Free Structural Admission for Context
+   Selection, with Pre-Registered Quality Evidence* — Yongsun Lee, 2026
+   (arXiv link forthcoming).
 
-A *context gate* is a training-free admission predicate (question string +
-document titles only, microseconds, no model) that admits a query into a
-verified regime, applies a regime-specific selector, and falls back to the
-full context otherwise. Every gate must pass a pre-registered evidence
-ladder before it is enabled: frozen-split retention holdout → live
-generation → blinded LLM judging under two judge families → pre-registered
-replication for any post-hoc effect.
+## The idea
 
-Headline results (all reproducible from this package):
+Compression tools ship benchmark averages and ask for trust. A **context gate**
+asks the opposite question: *is this query inside a regime where cheap selection
+is verified safe?* A gate is an admission predicate over the question string and
+document titles only — no model, no training, microseconds — plus a selector.
+Rejected queries get the full context. Gates stay **disabled until you attach an
+evidence report** produced on your own data.
 
-- **Gate 1 (Hotpot-or)**: 45% input token reduction at blind-judged
-  semantic parity (123 frozen cases).
-- **Gate 2 (2Wiki-entity)**: 69% reduction — and semantic accuracy
-  **improves** by ~6 points over full context (0.968 vs 0.907, discordant
-  73:13 over the full 981-pair holdout; discovered post-hoc, confirmed
-  under a second judge family, replicated with the hypothesis
-  pre-registered, 29:7, p=3.1e-4). Mechanism: full context induces
-  distractor-driven comparison errors that selection removes.
-- At a matched compression rate, the training-free gate beats the trained
-  pruner **Provence** (ICLR 2025) by +10pt retention / +19pt coverage
-  in-regime.
-- **Cautions we measured**: exact match was blind to the entire effect
-  (identical 0.9866 across arms vs a 6.4pt semantic gap), and an
-  order-controlled paired latency canary found **no wall-clock speedup**
-  at kilotoken scale (median ~1-3%). This package cuts cost, not latency.
+```python
+from contextgates import entity_title_gate, GateRegistry, run_ladder
 
-Total API spend of the entire evidence program: **under $1** (gpt-4.1-mini).
+gate = entity_title_gate()
+report = run_ladder(gate, my_rows, generate=my_gen, judge=my_judge)  # your callables
+
+registry = GateRegistry()
+if report["passed"]:
+    registry.register(gate, evidence=report)
+
+r = registry.route(question, docs)      # falls back to full context if unsure
+answer = my_llm(prompt(r.context_text)) # r.token_reduction_pct tells you what you saved
+```
+
+`generate` and `judge` are functions you write (~20 lines, any provider — see
+[`examples/quickstart.py`](examples/quickstart.py)). The library never holds an
+API key and never phones home.
+
+## The evidence ladder
+
+| Layer | What it does | Cost |
+|---|---|---|
+| **L1 retention** | Does the selected context still contain the answer and the gold evidence, at what token reduction? | free, local |
+| **L2 generation** | Paired selected/full answers from your model | your API |
+| **L3 blinded judging** | A/B judging with a deterministic sha256 arm assignment absent from judge inputs; non-inferiority gate | your API |
+| **L4 replication** | For anything discovered post hoc: re-run with the hypothesis fixed first | your API |
+
+L1 alone never enables a gate — the paper's sharpest finding is that proxy
+metrics mislead in **both** directions (exact match was *identical* across arms
+while a replicated 6-point semantic gap existed).
+
+## Built-in gates (verified in the paper)
+
+| Gate | Admits | Selects | Verified result |
+|---|---|---|---|
+| `or_comparison_gate()` | question contains `" or "` | lexical top-10 pages | HotpotQA regime: **45% fewer input tokens** at blind-judged semantic parity (n=123 frozen holdout) |
+| `entity_title_gate()` | ≥2 document titles verbatim in the question, no role/kinship word, not yes/no form | the named documents, whole | 2WikiMultihopQA regime: **69% fewer tokens** and **~6 points *higher* semantic accuracy** (n=981 holdout; replicated, 73:13 discordant) |
+
+Those numbers are for those regimes on those benchmarks. **Your mileage is
+exactly what the ladder is for.** The library reproduces the paper's headline
+retention numbers on the original data (verified: Gate 2 → n=981,
+retention 0.9959, reduction 68.914%; coverage 0.9975 vs the harness's 0.998, a
+0.0005 difference from set-based vs count-based sentence bookkeeping).
 
 ## Honest scope
 
-- Two regimes, both multi-hop QA benchmarks. Regime prevalence in real RAG
-  traffic is unmeasured — see `reproduction/reports/Prometheus_Regime_Prevalence_Protocol_Draft.md`
-  for the pre-registered measurement protocol.
-- Single generation model (gpt-4.1-mini). Admission predicates are
-  English-specific.
-- Provence comparison is out-of-domain for Provence and regime-scoped;
-  outside admitted regimes the approaches are complementary.
+- **Cost, not latency.** An order-controlled paired canary found no evidence of
+  a ≥10% wall-clock gain at kilotoken scale on a commercial API (median ~1%).
+  Prompt tokens fall 44–69%; the clock does not move. Don't buy this for speed.
+- Both verified regimes are multi-hop QA benchmarks; 2Wiki's questions are
+  template-generated, which makes verbatim title matching unusually informative
+  there. Prevalence in real traffic is unmeasured — a measurement protocol is in
+  [`reproduction/reports/`](reproduction/reports/).
+- Gates are English-specific; verbatim-title matching under-admits paraphrases.
+- The paper's judging used an LLM panel plus an external judge family; 86
+  discordant labels carrying the headline effect were not human-adjudicated.
 
-## Layout
+## Install
+
+```bash
+pip install -e .        # no dependencies; Python >= 3.10
+python tests/test_contextgates.py
+python examples/quickstart.py
+```
+
+## Reproduction package
 
 ```
 paper/          preprint (markdown + LaTeX sources)
 reproduction/
-  harnesses/    one self-contained Python script per experiment (#1258-#1278)
-  results/      result JSONs, blinded judge request packs (label-free),
-                raw panel verdicts, external-judge verdicts
-  reports/      per-experiment reports + consolidated evidence report +
-                related-work audit + prevalence protocol draft
+  harnesses/    one self-contained script per experiment (#1258–#1278)
+  results/      result JSONs, label-free judge request packs, raw panel and
+                external-judge verdicts
+  reports/      per-experiment reports, consolidated evidence report,
+                related-work audit, prevalence-measurement protocol
 ```
 
-## Reproducing
-
-Datasets (download separately): HotpotQA distractor dev
-(`hotpot_dev_distractor_v1.json`), 2WikiMultihopQA dev (`dev.json`).
-Place under `data/external/` as referenced at the top of each harness.
-
-- Retention-layer experiments (`task1259-1263, 1268-1271, 1278`) are fully
-  local and free. `task1278` additionally requires
-  `pip install torch transformers nltk` and downloads
-  `naver/provence-reranker-debertav3-v1` (CC BY-NC-ND 4.0 — research use;
-  NOT bundled here).
-- Live experiments (`task1264, 1267, 1272-1277`) call the OpenAI API and
-  are guarded by explicit approval environment variables and budget
-  ceilings (see each script's header). Blinding salts are deterministic;
-  frozen splits are dataset-index parity; every gate threshold appears in
-  harness source predating the corresponding run.
+Datasets (download separately): HotpotQA distractor dev, 2WikiMultihopQA dev →
+`data/external/`. Retention-layer experiments are local and free; live ones are
+guarded by approval env vars and budget ceilings. `task1278` compares against
+[Provence](https://huggingface.co/naver/provence-reranker-debertav3-v1)
+(CC BY-NC-ND — research use, downloaded by you, not bundled here). The entire
+published evidence program cost **≈$1** of metered API spend.
 
 ## License
 
-Code and reports: MIT. Datasets and the Provence model belong to their
-respective owners and licenses.
+Code: MIT. Datasets and third-party models keep their own licenses.
+
+## Citation
+
+```bibtex
+@misc{lee2026verifiedcontextgating,
+  title  = {Verified Context Gating: Training-Free Structural Admission for
+            Context Selection, with Pre-Registered Quality Evidence},
+  author = {Lee, Yongsun},
+  year   = {2026},
+  note   = {arXiv preprint (forthcoming); https://github.com/risky-dice/verified-context-gating}
+}
+```

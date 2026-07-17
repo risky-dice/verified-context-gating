@@ -318,7 +318,8 @@ where prefill-bound gains may exist.
 ## 6 Reproducibility
 
 All harnesses, per-experiment reports, raw judge verdicts (panel passes and
-external), request packs (label-free), and result JSONs are released.
+external), request packs (label-free), and result JSONs are released at
+https://github.com/risky-dice/verified-context-gating.
 Blinding salts are deterministic and recorded; frozen splits are defined by
 dataset index parity; every gate threshold appears in the harness source
 predating the corresponding run. Total live spend: <$1 (gpt-4.1-mini).

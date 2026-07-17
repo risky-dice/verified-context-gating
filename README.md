@@ -4,7 +4,7 @@ Reproduction package for the preprint:
 
 > **Verified Context Gating: Training-Free Structural Admission for Context
 > Selection, with Pre-Registered Quality Guarantees** — Yongsun Lee, 2026.
-> (arXiv link forthcoming)
+> (arXiv link forthcoming; reproduction package: https://github.com/risky-dice/verified-context-gating — public upon submission)
 
 ## TL;DR
 

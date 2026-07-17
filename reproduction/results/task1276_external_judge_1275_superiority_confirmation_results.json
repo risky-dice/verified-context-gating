@@ -1,0 +1,29 @@
+{
+  "experiment": "Research Task #1276 External Judge Confirmation of #1275 Superiority",
+  "mode": "live",
+  "judge_model": "gpt-4.1-mini",
+  "gates": {
+    "E1_non_inferiority_floor": -0.05,
+    "E2_sign_test_p_max": 0.05
+  },
+  "estimated_cost_usd": 0.100145,
+  "budget_usd": 0.11,
+  "success": true,
+  "claim_decision": "external_judge_confirms_1275_superiority",
+  "actual_cost_usd": 0.099546,
+  "failures": [],
+  "judged_case_count": 595,
+  "selected_semantic_correct_rate": 0.9681,
+  "full_semantic_correct_rate": 0.9092,
+  "selected_minus_full_semantic_rate": 0.0588,
+  "discordant": {
+    "selected_only_correct": 43,
+    "full_only_correct": 8,
+    "sign_test_p_two_sided": 6.867e-07
+  },
+  "agreement_with_claude_majority": 0.9924,
+  "gate_results": {
+    "E1_non_inferiority": true,
+    "E2_superiority": true
+  }
+}

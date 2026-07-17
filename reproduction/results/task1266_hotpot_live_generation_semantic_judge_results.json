@@ -1,0 +1,1179 @@
+{
+  "experiment": "Research Task #1266 Hotpot Live Generation Blinded Semantic Judge",
+  "hypothesis": "The #1264 live exact-match result survives blinded semantic judging: selected-context answers are semantically correct at least as often as full-context answers minus 0.05.",
+  "mode": "imported-verdicts",
+  "source": "/Users/gosu/Desktop/Catleaf/Prometheus/task1264_hotpot_local_semantic_generation_pack_results.json",
+  "request_file": "/Users/gosu/Desktop/Catleaf/Prometheus/task1266_hotpot_live_generation_semantic_judge_requests.jsonl",
+  "blinding": {
+    "scheme": "sha256('task1266-blind:{index}') % 2; 0 -> A=selected, 1 -> A=full",
+    "note": "Assignment is absent from the request file; judges reading only the request file are blind to selected/full."
+  },
+  "case_count": 32,
+  "estimated_tokens": {
+    "input": 6835,
+    "output": 3072,
+    "total": 9907
+  },
+  "estimated_cost_usd": 0.007649,
+  "gates": {
+    "min_paired_cases": 32,
+    "semantic_delta_floor": -0.05,
+    "cost_reduction_floor_pct": 30.0
+  },
+  "approval_required_for_live": true,
+  "success": true,
+  "claim_decision": "blinded_semantic_judge_supports_hotpot_selected_context",
+  "summary": {
+    "judge_model": "claude-fable-5-blinded-3pass-majority",
+    "paired_case_count": 32,
+    "selected_semantic_correct_rate": 0.8125,
+    "full_semantic_correct_rate": 0.8125,
+    "selected_minus_full_semantic_rate": 0.0,
+    "better_source_counts": {
+      "selected": 3,
+      "full": 3,
+      "tie": 21,
+      "neither": 5
+    },
+    "exact_vs_semantic_disagreement": {
+      "selected_exact_but_semantic_wrong": 4,
+      "selected_semantic_but_exact_miss": 8,
+      "full_exact_but_semantic_wrong": 4,
+      "full_semantic_but_exact_miss": 9
+    },
+    "generation_cost": {
+      "selected_estimated_cost_usd": 0.010854,
+      "full_estimated_cost_usd": 0.017483,
+      "selected_cost_reduction_vs_full_pct": 37.915
+    },
+    "gates": {
+      "paired_case_count_gate": true,
+      "semantic_delta_gate": true,
+      "cost_reduction_gate": true
+    },
+    "success": true,
+    "claim_decision": "blinded_semantic_judge_supports_hotpot_selected_context",
+    "judged_cases": [
+      {
+        "index": 4204,
+        "question": "Which film was released first, Summer Magic or Around the World in 80 Days?",
+        "gold_answer": "Summer Magic",
+        "risk_bucket": "support_below_095",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4204,
+          "a_correct": false,
+          "b_correct": false,
+          "better": "neither",
+          "rationale": "Gold is Summer Magic. A picks Around the World in 80 Days; B contradicts itself and concludes Around the World in 80 Days. Both convey the wrong entity.",
+          "pass_votes": {
+            "a_correct": [
+              false,
+              false,
+              false
+            ],
+            "b_correct": [
+              false,
+              false,
+              false
+            ],
+            "better": [
+              "neither",
+              "neither",
+              "neither"
+            ]
+          }
+        },
+        "selected_correct": false,
+        "full_correct": false,
+        "better_source": "neither"
+      },
+      {
+        "index": 4225,
+        "question": "Was either Craig Melville or Grover Jones born in Indiana?",
+        "gold_answer": "Jones was born in Rosedale, Indiana",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4225,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "A",
+          "rationale": "Both correctly state Grover Jones was born in Rosedale, Indiana; A is marginally more concise.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "A",
+              "A",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "full"
+      },
+      {
+        "index": 4258,
+        "question": "Who starred in more films Margaret Landon or Elizabeth Taylor?",
+        "gold_answer": "Dame Elizabeth Rosemond Taylor",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": false,
+        "full_exact_match": false,
+        "verdict_raw": {
+          "case_index": 4258,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical answers, both correctly name Elizabeth Taylor.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 4270,
+        "question": "Which is located farther West, the Cascade Locks and Canal or Lake Worth Lagoon?",
+        "gold_answer": "Cascade Locks and Canal",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4270,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical answers, both correctly name Cascade Locks and Canal.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 4336,
+        "question": "which has more acts Pagliacci or Suor Angelica?",
+        "gold_answer": "Pagliacci",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4336,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical answers, both correctly name Pagliacci.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 4380,
+        "question": "Is Rick Husband Amarillo International Airport or Grand Forks International Airport closer to the town it is near?",
+        "gold_answer": "Grand Forks International Airport",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4380,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical answers, both correctly name Grand Forks International Airport.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 4408,
+        "question": "Is Muskegon County Airport or John Wayne Airport further west?",
+        "gold_answer": "John Wayne Airport",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4408,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical answers, both correctly name John Wayne Airport.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 4452,
+        "question": "Which bank has more branches, China CITIC Bank or UniCredit?",
+        "gold_answer": "UniCredit",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4452,
+          "a_correct": false,
+          "b_correct": false,
+          "better": "neither",
+          "rationale": "Gold is UniCredit; both answers assert China CITIC Bank has more branches despite citing figures showing otherwise.",
+          "pass_votes": {
+            "a_correct": [
+              false,
+              false,
+              false
+            ],
+            "b_correct": [
+              false,
+              false,
+              false
+            ],
+            "better": [
+              "neither",
+              "neither",
+              "neither"
+            ]
+          }
+        },
+        "selected_correct": false,
+        "full_correct": false,
+        "better_source": "neither"
+      },
+      {
+        "index": 4485,
+        "question": "Which university offers more campuses in the Philippines, Fairleigh Dickinson University or the Western Institute of Technology?",
+        "gold_answer": "Western Institute of Technology",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4485,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "B",
+          "rationale": "Both convey Western Institute of Technology; B is more direct and concise.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "B",
+              "B",
+              "B"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "full"
+      },
+      {
+        "index": 4521,
+        "question": "Which band was formed at an earlier date, Unwritten Law or Jon Spencer Blues Explosion?",
+        "gold_answer": "Unwritten Law",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4521,
+          "a_correct": false,
+          "b_correct": false,
+          "better": "neither",
+          "rationale": "Gold is Unwritten Law; both answers conclude Jon Spencer Blues Explosion was formed earlier.",
+          "pass_votes": {
+            "a_correct": [
+              false,
+              false,
+              false
+            ],
+            "b_correct": [
+              false,
+              false,
+              false
+            ],
+            "better": [
+              "neither",
+              "neither",
+              "neither"
+            ]
+          }
+        },
+        "selected_correct": false,
+        "full_correct": false,
+        "better_source": "neither"
+      },
+      {
+        "index": 4582,
+        "question": "Which documentary was made first, The Shame of a City or Unchained Memories?",
+        "gold_answer": "Unchained Memories",
+        "risk_bucket": "high_token_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4582,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Both correctly convey Unchained Memories (2003) was made first; equally clear and concise.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 4608,
+        "question": "WHich college is located in the United States, Grand Valley State University or Carleton University?",
+        "gold_answer": "Carleton University",
+        "risk_bucket": "high_token_reduction",
+        "selected_exact_match": false,
+        "full_exact_match": false,
+        "verdict_raw": {
+          "case_index": 4608,
+          "a_correct": false,
+          "b_correct": false,
+          "better": "neither",
+          "rationale": "Gold is Carleton University; both answers name Grand Valley State University, mismatching the gold choice.",
+          "pass_votes": {
+            "a_correct": [
+              false,
+              false,
+              false
+            ],
+            "b_correct": [
+              false,
+              false,
+              false
+            ],
+            "better": [
+              "neither",
+              "neither",
+              "neither"
+            ]
+          }
+        },
+        "selected_correct": false,
+        "full_correct": false,
+        "better_source": "neither"
+      },
+      {
+        "index": 4631,
+        "question": "Which singer is in the duo Sugarland, Jennifer Nettles or Roger Taylor?",
+        "gold_answer": "Jennifer Nettles",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4631,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical answers, both correctly name Jennifer Nettles.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 4649,
+        "question": "Which beverage is ignited prior to consumption, Flaming beverage or Blue Hawaii",
+        "gold_answer": "Flaming beverages",
+        "risk_bucket": "high_token_reduction",
+        "selected_exact_match": false,
+        "full_exact_match": false,
+        "verdict_raw": {
+          "case_index": 4649,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical answers, both correctly name Flaming beverage.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 4733,
+        "question": "Which author found inspiration in their career prior to writing, Hart Crane or John le Carré?",
+        "gold_answer": "John le Carré",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4733,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "A",
+          "rationale": "Both correctly convey John le Carré; A is complete while B ends mid-sentence.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "A",
+              "A",
+              "A"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "selected"
+      },
+      {
+        "index": 4762,
+        "question": " A business such as Eatza Pizza or Pizza Fusion, which have more then 10 locations are considered to be what?",
+        "gold_answer": "restaurant chain",
+        "risk_bucket": "high_token_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4762,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical answers; 'pizza restaurant chains' conveys the gold answer 'restaurant chain'.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 4824,
+        "question": "Who won more academy awards,  Joseph L. Mankiewicz or Tony Kaye?",
+        "gold_answer": "Joseph Leo Mankiewicz",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": false,
+        "full_exact_match": false,
+        "verdict_raw": {
+          "case_index": 4824,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "B",
+          "rationale": "Both name Mankiewicz; B is more concise with the same correct answer.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "B",
+              "B",
+              "B"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "selected"
+      },
+      {
+        "index": 4868,
+        "question": "Is Xingcheng or Ulan Hot located in the Inner Mongolia region of China?",
+        "gold_answer": "Ulanhot",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": false,
+        "full_exact_match": false,
+        "verdict_raw": {
+          "case_index": 4868,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Both correctly identify Ulan Hot; near-identical answers.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 4907,
+        "question": "Who has been a member of more music bands, Ian MacKaye or Brody Dalle?",
+        "gold_answer": "Ian Thomas Garner MacKaye",
+        "risk_bucket": "high_token_reduction",
+        "selected_exact_match": false,
+        "full_exact_match": false,
+        "verdict_raw": {
+          "case_index": 4907,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Both correctly name Ian MacKaye; both truncate mid-list similarly.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 4962,
+        "question": "Which has more species in Asia, Disporum or Boltonia?",
+        "gold_answer": "Disporum",
+        "risk_bucket": "low_token_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4962,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical correct answers naming Disporum.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 4982,
+        "question": "Which film was released first, The Watercolor or Pokémon: Arceus and the Jewel of Life?",
+        "gold_answer": "Pokémon: Arceus and the Jewel of Life",
+        "risk_bucket": "support_below_095",
+        "selected_exact_match": true,
+        "full_exact_match": false,
+        "verdict_raw": {
+          "case_index": 4982,
+          "a_correct": true,
+          "b_correct": false,
+          "better": "A",
+          "rationale": "A commits to Pokemon: Arceus and the Jewel of Life despite a caveat; B refuses to answer.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              false,
+              false,
+              false
+            ],
+            "better": [
+              "A",
+              "A",
+              "A"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": false,
+        "better_source": "selected"
+      },
+      {
+        "index": 5047,
+        "question": "Is The Joy Formidable or Sixpence None the Richer a christian rock band?",
+        "gold_answer": "Sixpence None the Richer",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 5047,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Both correctly identify Sixpence None the Richer; equivalent phrasing.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 5054,
+        "question": "Which of the following magazines covers cultural events in Greater Boston: The Arts Fuse or Visionaire?",
+        "gold_answer": "The Arts Fuse",
+        "risk_bucket": "high_token_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 5054,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical correct answers naming The Arts Fuse.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 5109,
+        "question": " Who was born first Burton Cummings or Sharleen Spiteri?",
+        "gold_answer": "Burton Lorne Cummings",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": false,
+        "full_exact_match": false,
+        "verdict_raw": {
+          "case_index": 5109,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical correct answers naming Burton Cummings.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 5118,
+        "question": "Did Qionghai or Suining  have a population of 658,798 in 2002? ",
+        "gold_answer": "In 2002, Suining had a population of 658,798.",
+        "risk_bucket": "low_token_reduction",
+        "selected_exact_match": false,
+        "full_exact_match": false,
+        "verdict_raw": {
+          "case_index": 5118,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical correct answers naming Suining.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 5242,
+        "question": "Who was born first, Javier Frana or Sherwood Stewart?",
+        "gold_answer": "Sherwood Stewart",
+        "risk_bucket": "low_token_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 5242,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical correct answers naming Sherwood Stewart.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 5381,
+        "question": "Who is older Carrie Akre or Shifty Shellshock?",
+        "gold_answer": "Carrie Akre",
+        "risk_bucket": "low_token_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 5381,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical correct answers naming Carrie Akre.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 5383,
+        "question": "Who has more scope of profession, Brian G. Hutton or Xawery Żuławski?",
+        "gold_answer": "Xawery Żuławski",
+        "risk_bucket": "low_token_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 5383,
+          "a_correct": false,
+          "b_correct": false,
+          "better": "neither",
+          "rationale": "Both pick Brian G. Hutton; gold answer is Xawery Zulawski.",
+          "pass_votes": {
+            "a_correct": [
+              false,
+              false,
+              false
+            ],
+            "b_correct": [
+              false,
+              false,
+              false
+            ],
+            "better": [
+              "neither",
+              "neither",
+              "neither"
+            ]
+          }
+        },
+        "selected_correct": false,
+        "full_correct": false,
+        "better_source": "neither"
+      },
+      {
+        "index": 5452,
+        "question": "Which film stars more animals, The Jungle Book or The Lone Ranger?",
+        "gold_answer": "The Jungle Book",
+        "risk_bucket": "support_below_095",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 5452,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Both correctly identify The Jungle Book with comparable supporting detail.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 5470,
+        "question": "Which band included more previously-known figures when it was formed, !!! or Puddle of Mudd?",
+        "gold_answer": "!!!",
+        "risk_bucket": "support_below_095",
+        "selected_exact_match": false,
+        "full_exact_match": false,
+        "verdict_raw": {
+          "case_index": 5470,
+          "a_correct": true,
+          "b_correct": false,
+          "better": "A",
+          "rationale": "A commits to !!! matching gold; B refuses to answer.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              false,
+              false,
+              false
+            ],
+            "better": [
+              "A",
+              "A",
+              "A"
+            ]
+          }
+        },
+        "selected_correct": false,
+        "full_correct": true,
+        "better_source": "full"
+      },
+      {
+        "index": 5485,
+        "question": "Which company has more divisions within it, WPX Energy or Hewlett Packard Enterprise?",
+        "gold_answer": "Hewlett Packard Enterprise Company",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": false,
+        "full_exact_match": false,
+        "verdict_raw": {
+          "case_index": 5485,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Both correctly identify Hewlett Packard Enterprise; near-identical.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 5486,
+        "question": "which is larger, Hunchun or Shijiazhuang?",
+        "gold_answer": "Shijiazhuang",
+        "risk_bucket": "low_token_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 5486,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical correct answers naming Shijiazhuang.",
+          "pass_votes": {
+            "a_correct": [
+              true,
+              true,
+              true
+            ],
+            "b_correct": [
+              true,
+              true,
+              true
+            ],
+            "better": [
+              "tie",
+              "tie",
+              "tie"
+            ]
+          }
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      }
+    ]
+  }
+}

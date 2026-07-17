@@ -1,0 +1,206 @@
+{
+  "experiment": "Research Task #1270 2Wiki Entity-Aware Selector Search (v2)",
+  "hypothesis": "Entity-document sentence selection plus a question-structural admission predicate forms a passing 2Wiki regime, fixing #1269's coverage collapse.",
+  "mode": "exploratory_search_split_only",
+  "dataset": "/Users/gosu/Desktop/Catleaf/Prometheus/data/external/2wikimultihop/dev.json",
+  "split": "even dataset indices only; odd indices reserved for #1271 frozen holdout",
+  "v1_lessons": [
+    "Page-granularity failed spuriously: #1263 pages chunk across document boundaries, dropping mixed-title pages (coverage 0.55).",
+    "Kinship questions leaked through the role filter; kinship terms added.",
+    "Yes/no answers caused substring retention artifacts; yes/no-form questions excluded in the _noyn boundary."
+  ],
+  "admission_type_audit_full_search_split": {
+    "ent2_norel": {
+      "comparison": 1477,
+      "inference": 1,
+      "compositional": 2
+    },
+    "ent2_norel_noyn": {
+      "comparison": 1036,
+      "inference": 1,
+      "compositional": 2
+    }
+  },
+  "max_cases_per_boundary": 300,
+  "gates": {
+    "min_n": 100,
+    "answer_retention_rate_given_full": 0.99,
+    "mean_support_coverage": 0.98,
+    "perfect_support_rate": 0.94,
+    "mean_token_reduction_pct": 35.0
+  },
+  "cell_count": 8,
+  "passing_cell_count": 1,
+  "best_candidate": {
+    "boundary": "ent2_norel_noyn",
+    "selector": "sent_full",
+    "summary": {
+      "n": 300,
+      "answer_in_full_rate": 0.9967,
+      "answer_in_selected_rate": 0.9967,
+      "answer_retention_rate_given_full": 0.9967,
+      "mean_support_coverage": 0.9983,
+      "perfect_support_rate": 0.9967,
+      "strict_safe_rate": 0.9933,
+      "mean_token_reduction_pct": 66.751,
+      "mean_selected_page_count": 9.06
+    },
+    "passes_gates": true
+  },
+  "passing_cells": [
+    {
+      "boundary": "ent2_norel_noyn",
+      "selector": "sent_full",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9967,
+        "answer_retention_rate_given_full": 0.9967,
+        "mean_support_coverage": 0.9983,
+        "perfect_support_rate": 0.9967,
+        "strict_safe_rate": 0.9933,
+        "mean_token_reduction_pct": 66.751,
+        "mean_selected_page_count": 9.06
+      },
+      "passes_gates": true
+    }
+  ],
+  "all_cells": [
+    {
+      "boundary": "ent2_norel",
+      "selector": "sent_full",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.8067,
+        "answer_in_selected_rate": 0.7933,
+        "answer_retention_rate_given_full": 0.9793,
+        "mean_support_coverage": 1.0,
+        "perfect_support_rate": 1,
+        "strict_safe_rate": 0.79,
+        "mean_token_reduction_pct": 65.747,
+        "mean_selected_page_count": 9.24
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "ent2_norel",
+      "selector": "sent_top3_per_doc",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.8067,
+        "answer_in_selected_rate": 0.7833,
+        "answer_retention_rate_given_full": 0.9669,
+        "mean_support_coverage": 0.9606,
+        "perfect_support_rate": 0.9233,
+        "strict_safe_rate": 0.73,
+        "mean_token_reduction_pct": 78.78,
+        "mean_selected_page_count": 5.13
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "ent2_norel",
+      "selector": "sent_top2_per_doc",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.8067,
+        "answer_in_selected_rate": 0.7733,
+        "answer_retention_rate_given_full": 0.9545,
+        "mean_support_coverage": 0.9294,
+        "perfect_support_rate": 0.8733,
+        "strict_safe_rate": 0.6833,
+        "mean_token_reduction_pct": 83.089,
+        "mean_selected_page_count": 3.913
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "ent2_norel",
+      "selector": "sent_top1_per_doc",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.8067,
+        "answer_in_selected_rate": 0.76,
+        "answer_retention_rate_given_full": 0.938,
+        "mean_support_coverage": 0.7956,
+        "perfect_support_rate": 0.6467,
+        "strict_safe_rate": 0.51,
+        "mean_token_reduction_pct": 90.053,
+        "mean_selected_page_count": 2.197
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "ent2_norel_noyn",
+      "selector": "sent_full",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9967,
+        "answer_retention_rate_given_full": 0.9967,
+        "mean_support_coverage": 0.9983,
+        "perfect_support_rate": 0.9967,
+        "strict_safe_rate": 0.9933,
+        "mean_token_reduction_pct": 66.751,
+        "mean_selected_page_count": 9.06
+      },
+      "passes_gates": true
+    },
+    {
+      "boundary": "ent2_norel_noyn",
+      "selector": "sent_top3_per_doc",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9967,
+        "answer_retention_rate_given_full": 0.9967,
+        "mean_support_coverage": 0.9683,
+        "perfect_support_rate": 0.9367,
+        "strict_safe_rate": 0.9333,
+        "mean_token_reduction_pct": 79.397,
+        "mean_selected_page_count": 5.007
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "ent2_norel_noyn",
+      "selector": "sent_top2_per_doc",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9967,
+        "answer_retention_rate_given_full": 0.9967,
+        "mean_support_coverage": 0.9422,
+        "perfect_support_rate": 0.8967,
+        "strict_safe_rate": 0.8933,
+        "mean_token_reduction_pct": 83.553,
+        "mean_selected_page_count": 3.823
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "ent2_norel_noyn",
+      "selector": "sent_top1_per_doc",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9967,
+        "answer_retention_rate_given_full": 0.9967,
+        "mean_support_coverage": 0.8194,
+        "perfect_support_rate": 0.6867,
+        "strict_safe_rate": 0.6833,
+        "mean_token_reduction_pct": 90.185,
+        "mean_selected_page_count": 2.17
+      },
+      "passes_gates": false
+    }
+  ],
+  "success": true,
+  "claim_decision": "exploratory_2wiki_entity_regime_candidate_found",
+  "limitations": [
+    "Exploratory search split; the single best cell must survive the #1271 frozen odd-split holdout.",
+    "Non-generative retention-layer metrics.",
+    "Title matching is verbatim-lowercase; paraphrased titles are not admitted.",
+    "Role/kinship word list was tuned on this search split (v1 -> v2); the holdout is the only clean test."
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "experiment": "Research Task #1268 Token-Budget-Matched Cheap Compressor Baseline Ladder",
+  "hypothesis": "At matched per-case token budgets on the 123 frozen #1262 cases, lexical_top10 beats naive baselines and is not dominated by other cheap selectors on answer retention.",
+  "mode": "local_non_generative",
+  "case_count": 123,
+  "answer_in_full_count": 119,
+  "budget_definition": "per-case token count of lexical_top10 selected context",
+  "gates": {
+    "G1_naive_margin": {
+      "required_margin": 0.05,
+      "passed": true
+    },
+    "G2_non_dominated": {
+      "allowed_margin": 0.02,
+      "best_alternative": "lexical_sentences",
+      "best_alternative_retention": 0.9916,
+      "passed": true
+    },
+    "G3_budget_fair": {
+      "tolerance": 1.05,
+      "passed": true
+    }
+  },
+  "summaries": {
+    "lexical_top10": {
+      "n": 123,
+      "mean_tokens": 755.496,
+      "answer_in_context_rate": 0.9756,
+      "answer_retention_rate_given_full": 1.0,
+      "mean_support_coverage": 0.9897,
+      "perfect_support_rate": 0.9675
+    },
+    "lead_truncation": {
+      "n": 123,
+      "mean_tokens": 740.927,
+      "answer_in_context_rate": 0.7561,
+      "answer_retention_rate_given_full": 0.7815,
+      "mean_support_coverage": 0.5889,
+      "perfect_support_rate": 0.3577
+    },
+    "random_pages": {
+      "n": 123,
+      "mean_tokens": 738.618,
+      "answer_in_context_rate": 0.813,
+      "answer_retention_rate_given_full": 0.8319,
+      "mean_support_coverage": 0.5227,
+      "perfect_support_rate": 0.2602
+    },
+    "bm25_pages": {
+      "n": 123,
+      "mean_tokens": 739.585,
+      "answer_in_context_rate": 0.9512,
+      "answer_retention_rate_given_full": 0.9748,
+      "mean_support_coverage": 0.9379,
+      "perfect_support_rate": 0.8618
+    },
+    "lexical_sentences": {
+      "n": 123,
+      "mean_tokens": 748.195,
+      "answer_in_context_rate": 0.9675,
+      "answer_retention_rate_given_full": 0.9916,
+      "mean_support_coverage": 0.9932,
+      "perfect_support_rate": 0.9837
+    },
+    "oracle_support": {
+      "n": 123,
+      "mean_tokens": 103.87,
+      "answer_in_context_rate": 0.9756,
+      "answer_retention_rate_given_full": 1.0,
+      "mean_support_coverage": 1.0,
+      "perfect_support_rate": 1.0
+    }
+  },
+  "success": true,
+  "claim_decision": "lexical_top10_competitive_at_matched_budget",
+  "limitations": [
+    "Retention-layer proxies only; no generation in this task.",
+    "oracle_support uses gold labels and is a reference bound, not a baseline.",
+    "No trained/perplexity compressor (LLMLingua) baseline; cheap selectors only.",
+    "BM25 uses binary tf at 2-sentence-page granularity."
+  ]
+}

@@ -1,0 +1,616 @@
+{
+  "experiment": "Research Task #1272 2Wiki Entity Regime Generative Canary + Blinded Judge",
+  "mode": "imported-verdicts",
+  "generation_results": "/Users/gosu/Desktop/Catleaf/Prometheus/task1272_2wiki_entity_generation_results.json",
+  "blinding": "sha256('task1272-blind:{index}') % 2; 0 -> A=selected, 1 -> A=full",
+  "gates": {
+    "min_paired": 30,
+    "semantic_delta_floor": -0.05,
+    "cost_reduction_floor_pct": 30.0
+  },
+  "summary": {
+    "judge_model": "claude-fable-5-blinded-3pass-majority",
+    "paired_case_count": 32,
+    "selected_semantic_correct_rate": 0.875,
+    "full_semantic_correct_rate": 0.875,
+    "selected_minus_full_semantic_rate": 0.0,
+    "better_source_counts": {
+      "selected": 7,
+      "full": 4,
+      "tie": 19,
+      "neither": 2
+    },
+    "generation_cost": {
+      "selected_estimated_cost_usd": 0.005432,
+      "full_estimated_cost_usd": 0.013997,
+      "selected_cost_reduction_vs_full_pct": 61.195
+    },
+    "gates": {
+      "paired_case_count_gate": true,
+      "semantic_delta_gate": true,
+      "cost_reduction_gate": true
+    },
+    "success": true,
+    "claim_decision": "2wiki_entity_regime_blinded_judge_supports_selected_context",
+    "judged_cases": [
+      {
+        "index": 1,
+        "question": "Which film came out first, Blind Shaft or The Mask Of Fu Manchu?",
+        "gold_answer": "The Mask Of Fu Manchu",
+        "risk_bucket": "high_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 1,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Both name The Mask of Fu Manchu (1932) as first; essentially identical."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 39,
+        "question": "Who was born later, D'Arcy Coulson or Thomas William Adams?",
+        "gold_answer": "D'Arcy Coulson",
+        "risk_bucket": "low_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 39,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "A",
+          "rationale": "Both name D'Arcy Coulson; A is more concise, B adds dates but is otherwise equal."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "selected"
+      },
+      {
+        "index": 89,
+        "question": "Which film came out first, Repeated Absences or She Wore A Yellow Ribbon?",
+        "gold_answer": "She Wore A Yellow Ribbon",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 89,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Both correctly name She Wore a Yellow Ribbon (1949); near-identical."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 95,
+        "question": "Which film came out earlier, Emmy Of Stork'S Nest or Indira Vizha?",
+        "gold_answer": "Emmy Of Stork'S Nest",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 95,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Both correctly name Emmy of Stork's Nest (1915); equivalent content."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 97,
+        "question": "Who was born earlier, Silas Hardy or Lee Mantle?",
+        "gold_answer": "Lee Mantle",
+        "risk_bucket": "low_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 97,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical answers naming Lee Mantle."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 103,
+        "question": "Who was born later, Joseph J. Magliocco or Viktoriya Zeynep Güneş?",
+        "gold_answer": "Viktoriya Zeynep Güneş",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 103,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "B",
+          "rationale": "Both conclude Viktoriya Zeynep Güneş; B states it directly and more concisely."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "selected"
+      },
+      {
+        "index": 107,
+        "question": "Which film came out earlier, Out Of The Rain or Les Résultats Du Féminisme?",
+        "gold_answer": "Les Résultats Du Féminisme",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 107,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical answers naming Les Résultats du féminisme (1906)."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 111,
+        "question": "Which film was released earlier, Sathyavan Savithri or Kids Of The Round Table?",
+        "gold_answer": "Kids Of The Round Table",
+        "risk_bucket": "high_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 111,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Both name Kids of the Round Table (1995); only punctuation differs."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 127,
+        "question": "Who was born later, Levon Julfalakyan or Charlotte Spurkeland?",
+        "gold_answer": "Charlotte Spurkeland",
+        "risk_bucket": "low_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 127,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "B",
+          "rationale": "Both name Charlotte Spurkeland; B is more concise, A adds dates but is otherwise equal."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "selected"
+      },
+      {
+        "index": 139,
+        "question": "Which one was established first, Noerr or Korn Ferry?",
+        "gold_answer": "Noerr",
+        "risk_bucket": "high_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 139,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical answers naming Noerr (1950)."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 157,
+        "question": "Who died later, Narcís Ventalló or H. Verlan Andersen?",
+        "gold_answer": "Narcís Ventalló",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 157,
+          "a_correct": false,
+          "b_correct": true,
+          "better": "B",
+          "rationale": "A names H. Verlan Andersen (wrong entity, with dates contradicting itself); B correctly names Narcís Ventalló."
+        },
+        "selected_correct": true,
+        "full_correct": false,
+        "better_source": "selected"
+      },
+      {
+        "index": 159,
+        "question": "Who is younger, Aneta Hladíková or René Poupardin?",
+        "gold_answer": "Aneta Hladíková",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 159,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical answers naming Aneta Hladíková."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 167,
+        "question": "Which film came out earlier, Dis-Moi Qui Tuer or Under The Hawthorn Tree (Film)?",
+        "gold_answer": "Dis-Moi Qui Tuer",
+        "risk_bucket": "low_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 167,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Both correctly name Dis-Moi Qui Tuer (1965); trivial wording difference."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 171,
+        "question": "Who is younger, Justin Paul or Helly Shah?",
+        "gold_answer": "Helly Shah",
+        "risk_bucket": "high_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 171,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "B",
+          "rationale": "Both name Helly Shah; B is more concise, A adds dates but is otherwise equal."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "selected"
+      },
+      {
+        "index": 183,
+        "question": "Who was born later, Marc De Clerck or Wiesław Perszke?",
+        "gold_answer": "Wiesław Perszke",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 183,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical answers naming Wiesław Perszke (1960)."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 187,
+        "question": "Which song was released earlier, 1990-Sick (Get 'Em All) or Who'S Laughing Now (Song)?",
+        "gold_answer": "1990-Sick (Get 'Em All)",
+        "risk_bucket": "low_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 187,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Both name 1990-Sick (Get 'Em All) (1995); only a parenthetical differs."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 225,
+        "question": "Which film was released more recently, Toolbox Murders or I Met You In Naples?",
+        "gold_answer": "Toolbox Murders",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 225,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "B",
+          "rationale": "Both name Toolbox Murders with correct years; B is slightly more concise."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "full"
+      },
+      {
+        "index": 241,
+        "question": "Which film was released more recently, Gaza Ghetto or Kull The Conqueror?",
+        "gold_answer": "Kull The Conqueror",
+        "risk_bucket": "low_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 241,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical correct answers naming Kull the Conqueror."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 251,
+        "question": "Where did the presenter of Tim Russert (Talk Show) die?",
+        "gold_answer": "Washington",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": false,
+        "full_exact_match": false,
+        "verdict_raw": {
+          "case_index": 251,
+          "a_correct": false,
+          "b_correct": false,
+          "better": "neither",
+          "rationale": "Both refuse with 'Insufficient context'; gold is Washington."
+        },
+        "selected_correct": false,
+        "full_correct": false,
+        "better_source": "neither"
+      },
+      {
+        "index": 263,
+        "question": "Which film was released more recently, Pirates Of The Prairie or Alien Origin?",
+        "gold_answer": "Alien Origin",
+        "risk_bucket": "high_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 263,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical correct answers naming Alien Origin."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 313,
+        "question": "Who is younger, Bernard Chambaz or Tibor Pézsa?",
+        "gold_answer": "Bernard Chambaz",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 313,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Both pick Bernard Chambaz; A adds supporting years, B is more concise."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 335,
+        "question": "Which film was released more recently, Occupation: Dreamland or Ganga Bhavani?",
+        "gold_answer": "Occupation: Dreamland",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 335,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "B",
+          "rationale": "Both correct (Occupation: Dreamland); B is more concise."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "selected"
+      },
+      {
+        "index": 345,
+        "question": "Which school was opened first, Chopasni Senior Secondary School, Jodhpur or Tunku Putra School?",
+        "gold_answer": "Chopasni Senior Secondary School, Jodhpur",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 345,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical correct answers naming Chopasni Senior Secondary School."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 389,
+        "question": "Which film was released more recently, Aami or Bitch Slap?",
+        "gold_answer": "Aami",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 389,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "A",
+          "rationale": "Both correct (Aami, 2018); A is more concise."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "full"
+      },
+      {
+        "index": 403,
+        "question": "Which film came out first, Natürlich Die Nelli or Cairo Declaration (Film)?",
+        "gold_answer": "Natürlich Die Nelli",
+        "risk_bucket": "high_reduction",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 403,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical correct answers naming Natürlich die Nelli."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 477,
+        "question": "Who was born earlier, Ela Gandhi or Sebastián Borensztein?",
+        "gold_answer": "Ela Gandhi",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 477,
+          "a_correct": true,
+          "b_correct": false,
+          "better": "A",
+          "rationale": "A correctly picks Ela Gandhi; B claims Borensztein (1963) was born earlier, which is wrong and self-contradictory."
+        },
+        "selected_correct": true,
+        "full_correct": false,
+        "better_source": "selected"
+      },
+      {
+        "index": 489,
+        "question": "Which film was released first, Heaven Help Us or Ghar Ki Rani?",
+        "gold_answer": "Ghar Ki Rani",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 489,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical correct answers naming Ghar Ki Rani."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 541,
+        "question": "Which film was released more recently, How To Make Love To A Negro Without Getting Tired or Frisco Kid?",
+        "gold_answer": "How To Make Love To A Negro Without Getting Tired",
+        "risk_bucket": "ordinary_pass",
+        "selected_exact_match": true,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 541,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Identical correct answers matching the gold film."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 811,
+        "question": "When was the company that published The Rip Off Review Of Western Culture founded?",
+        "gold_answer": "1969",
+        "risk_bucket": "retention_fail",
+        "selected_exact_match": false,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 811,
+          "a_correct": true,
+          "b_correct": false,
+          "better": "A",
+          "rationale": "A gives 1969 matching gold; B refuses with 'Insufficient context'."
+        },
+        "selected_correct": false,
+        "full_correct": true,
+        "better_source": "full"
+      },
+      {
+        "index": 3837,
+        "question": "Who did Margaret Holles, Duchess Of Newcastle-Upon-Tyne marry?",
+        "gold_answer": "John Holles, 1st Duke of Newcastle",
+        "risk_bucket": "retention_fail",
+        "selected_exact_match": false,
+        "full_exact_match": false,
+        "verdict_raw": {
+          "case_index": 3837,
+          "a_correct": true,
+          "b_correct": true,
+          "better": "tie",
+          "rationale": "Both name John Holles, the same person as the gold's 1st Duke of Newcastle (Earl of Clare was his earlier title); answers are otherwise identical."
+        },
+        "selected_correct": true,
+        "full_correct": true,
+        "better_source": "tie"
+      },
+      {
+        "index": 4819,
+        "question": "What nationality of the company that published Game Developer (Magazine)?",
+        "gold_answer": "British",
+        "risk_bucket": "retention_fail",
+        "selected_exact_match": false,
+        "full_exact_match": true,
+        "verdict_raw": {
+          "case_index": 4819,
+          "a_correct": true,
+          "b_correct": false,
+          "better": "A",
+          "rationale": "A says British matching gold; B says American (Miller Freeman), wrong nationality."
+        },
+        "selected_correct": false,
+        "full_correct": true,
+        "better_source": "full"
+      },
+      {
+        "index": 12075,
+        "question": "When was the company that published Eye To The Telescope (Magazine) founded?",
+        "gold_answer": "1978",
+        "risk_bucket": "retention_fail",
+        "selected_exact_match": false,
+        "full_exact_match": false,
+        "verdict_raw": {
+          "case_index": 12075,
+          "a_correct": false,
+          "b_correct": false,
+          "better": "neither",
+          "rationale": "Both refuse with 'Insufficient context'; gold is 1978."
+        },
+        "selected_correct": false,
+        "full_correct": false,
+        "better_source": "neither"
+      }
+    ]
+  },
+  "success": true,
+  "claim_decision": "2wiki_entity_regime_blinded_judge_supports_selected_context"
+}

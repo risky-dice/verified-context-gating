@@ -1,0 +1,46 @@
+{
+  "experiment": "Research Task #1277 Pre-Registered Superiority Replication (386 fresh pairs)",
+  "mode": "finalized",
+  "gates": {
+    "min_paired_cases": 350,
+    "non_inferiority_floor": -0.05,
+    "sign_test_p_max": 0.05,
+    "cost_reduction_floor_pct": 30.0
+  },
+  "external_judge_spend_usd": 0.064887,
+  "external_failures": [],
+  "generation_cost": {
+    "selected_estimated_cost_usd": 0.065526,
+    "full_estimated_cost_usd": 0.158114,
+    "selected_cost_reduction_vs_full_pct": 58.558
+  },
+  "claude_panel": {
+    "n": 386,
+    "selected_semantic_correct_rate": 0.9663,
+    "full_semantic_correct_rate": 0.9093,
+    "delta": 0.057,
+    "discordant_selected_only": 29,
+    "discordant_full_only": 7,
+    "sign_test_p_two_sided": 0.0003126,
+    "G1_non_inferiority": true,
+    "G2_superiority": true
+  },
+  "external_judge": {
+    "n": 386,
+    "selected_semantic_correct_rate": 0.9689,
+    "full_semantic_correct_rate": 0.9119,
+    "delta": 0.057,
+    "discordant_selected_only": 29,
+    "discordant_full_only": 7,
+    "sign_test_p_two_sided": 0.0003126,
+    "G1_non_inferiority": true,
+    "G2_superiority": true
+  },
+  "cross_family_label_agreement": 0.9922,
+  "gate_results": {
+    "G0_min_pairs": true,
+    "G3_cost_reduction": true
+  },
+  "success": true,
+  "claim_decision": "preregistered_superiority_replication_passes"
+}

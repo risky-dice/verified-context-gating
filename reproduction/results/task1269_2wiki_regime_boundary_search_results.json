@@ -1,0 +1,604 @@
+{
+  "experiment": "Research Task #1269 2Wiki Regime Boundary x Selector-Depth Search",
+  "hypothesis": "2Wiki has its own safe admission regime with its own selector depth, which #1263's verbatim Hotpot policy transfer missed.",
+  "mode": "exploratory_search_split_only",
+  "dataset": "/Users/gosu/Desktop/Catleaf/Prometheus/data/external/2wikimultihop/dev.json",
+  "split": "even dataset indices only; odd indices reserved for #1270 frozen holdout",
+  "max_cases_per_boundary": 300,
+  "gates": {
+    "min_n": 100,
+    "answer_retention_rate_given_full": 0.99,
+    "mean_support_coverage": 0.98,
+    "perfect_support_rate": 0.94,
+    "mean_token_reduction_pct": 35.0
+  },
+  "cell_count": 36,
+  "passing_cell_count": 0,
+  "best_candidate": null,
+  "passing_cells": [],
+  "all_cells": [
+    {
+      "boundary": "cmp_or",
+      "selector": "page_top4",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9333,
+        "answer_retention_rate_given_full": 0.9331,
+        "mean_support_coverage": 0.86,
+        "perfect_support_rate": 0.74,
+        "strict_safe_rate": 0.7367,
+        "mean_token_reduction_pct": 65.946,
+        "mean_selected_page_count": 4
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_or",
+      "selector": "page_top6",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9633,
+        "answer_retention_rate_given_full": 0.9632,
+        "mean_support_coverage": 0.9283,
+        "perfect_support_rate": 0.8567,
+        "strict_safe_rate": 0.8533,
+        "mean_token_reduction_pct": 49.552,
+        "mean_selected_page_count": 5.997
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_or",
+      "selector": "page_top8",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.98,
+        "answer_retention_rate_given_full": 0.9799,
+        "mean_support_coverage": 0.9633,
+        "perfect_support_rate": 0.9267,
+        "strict_safe_rate": 0.9233,
+        "mean_token_reduction_pct": 35.175,
+        "mean_selected_page_count": 7.92
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_or",
+      "selector": "page_top10",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.99,
+        "answer_retention_rate_given_full": 0.99,
+        "mean_support_coverage": 0.98,
+        "perfect_support_rate": 0.96,
+        "strict_safe_rate": 0.9567,
+        "mean_token_reduction_pct": 23.278,
+        "mean_selected_page_count": 9.663
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_or",
+      "selector": "sent_top8",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.92,
+        "answer_retention_rate_given_full": 0.9197,
+        "mean_support_coverage": 0.9,
+        "perfect_support_rate": 0.8,
+        "strict_safe_rate": 0.7967,
+        "mean_token_reduction_pct": 64.807,
+        "mean_selected_page_count": 8
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_or",
+      "selector": "sent_top12",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9533,
+        "answer_retention_rate_given_full": 0.9532,
+        "mean_support_coverage": 0.9417,
+        "perfect_support_rate": 0.8833,
+        "strict_safe_rate": 0.88,
+        "mean_token_reduction_pct": 48.416,
+        "mean_selected_page_count": 11.987
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_all",
+      "selector": "page_top4",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.8167,
+        "answer_in_selected_rate": 0.7567,
+        "answer_retention_rate_given_full": 0.9265,
+        "mean_support_coverage": 0.8467,
+        "perfect_support_rate": 0.71,
+        "strict_safe_rate": 0.5933,
+        "mean_token_reduction_pct": 65.921,
+        "mean_selected_page_count": 4
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_all",
+      "selector": "page_top6",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.8167,
+        "answer_in_selected_rate": 0.7833,
+        "answer_retention_rate_given_full": 0.9592,
+        "mean_support_coverage": 0.9183,
+        "perfect_support_rate": 0.8367,
+        "strict_safe_rate": 0.7,
+        "mean_token_reduction_pct": 49.312,
+        "mean_selected_page_count": 5.997
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_all",
+      "selector": "page_top8",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.8167,
+        "answer_in_selected_rate": 0.8033,
+        "answer_retention_rate_given_full": 0.9837,
+        "mean_support_coverage": 0.9567,
+        "perfect_support_rate": 0.9133,
+        "strict_safe_rate": 0.7533,
+        "mean_token_reduction_pct": 34.567,
+        "mean_selected_page_count": 7.92
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_all",
+      "selector": "page_top10",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.8167,
+        "answer_in_selected_rate": 0.81,
+        "answer_retention_rate_given_full": 0.9918,
+        "mean_support_coverage": 0.975,
+        "perfect_support_rate": 0.95,
+        "strict_safe_rate": 0.7867,
+        "mean_token_reduction_pct": 22.957,
+        "mean_selected_page_count": 9.63
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_all",
+      "selector": "sent_top8",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.8167,
+        "answer_in_selected_rate": 0.7433,
+        "answer_retention_rate_given_full": 0.9102,
+        "mean_support_coverage": 0.8933,
+        "perfect_support_rate": 0.7867,
+        "strict_safe_rate": 0.65,
+        "mean_token_reduction_pct": 64.511,
+        "mean_selected_page_count": 8
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_all",
+      "selector": "sent_top12",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.8167,
+        "answer_in_selected_rate": 0.78,
+        "answer_retention_rate_given_full": 0.9551,
+        "mean_support_coverage": 0.9367,
+        "perfect_support_rate": 0.8733,
+        "strict_safe_rate": 0.7233,
+        "mean_token_reduction_pct": 47.969,
+        "mean_selected_page_count": 11.993
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "bridge_or",
+      "selector": "page_top4",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9433,
+        "answer_retention_rate_given_full": 0.9431,
+        "mean_support_coverage": 0.5617,
+        "perfect_support_rate": 0.03,
+        "strict_safe_rate": 0.03,
+        "mean_token_reduction_pct": 68.019,
+        "mean_selected_page_count": 4
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "bridge_or",
+      "selector": "page_top6",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9867,
+        "answer_retention_rate_given_full": 0.9866,
+        "mean_support_coverage": 0.6708,
+        "perfect_support_rate": 0.14,
+        "strict_safe_rate": 0.14,
+        "mean_token_reduction_pct": 52.412,
+        "mean_selected_page_count": 6
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "bridge_or",
+      "selector": "page_top8",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9967,
+        "answer_retention_rate_given_full": 0.9967,
+        "mean_support_coverage": 0.8033,
+        "perfect_support_rate": 0.4233,
+        "strict_safe_rate": 0.4233,
+        "mean_token_reduction_pct": 37.236,
+        "mean_selected_page_count": 7.957
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "bridge_or",
+      "selector": "page_top10",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 1,
+        "answer_retention_rate_given_full": 1,
+        "mean_support_coverage": 0.8983,
+        "perfect_support_rate": 0.6867,
+        "strict_safe_rate": 0.6867,
+        "mean_token_reduction_pct": 24.688,
+        "mean_selected_page_count": 9.71
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "bridge_or",
+      "selector": "sent_top8",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.97,
+        "answer_retention_rate_given_full": 0.9699,
+        "mean_support_coverage": 0.5583,
+        "perfect_support_rate": 0.0633,
+        "strict_safe_rate": 0.0633,
+        "mean_token_reduction_pct": 67.442,
+        "mean_selected_page_count": 8
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "bridge_or",
+      "selector": "sent_top12",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.99,
+        "answer_retention_rate_given_full": 0.99,
+        "mean_support_coverage": 0.6933,
+        "perfect_support_rate": 0.2333,
+        "strict_safe_rate": 0.2333,
+        "mean_token_reduction_pct": 51.255,
+        "mean_selected_page_count": 11.997
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_which",
+      "selector": "page_top4",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9133,
+        "answer_retention_rate_given_full": 0.913,
+        "mean_support_coverage": 0.8183,
+        "perfect_support_rate": 0.6567,
+        "strict_safe_rate": 0.6533,
+        "mean_token_reduction_pct": 68.645,
+        "mean_selected_page_count": 4
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_which",
+      "selector": "page_top6",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9567,
+        "answer_retention_rate_given_full": 0.9565,
+        "mean_support_coverage": 0.9267,
+        "perfect_support_rate": 0.8533,
+        "strict_safe_rate": 0.85,
+        "mean_token_reduction_pct": 54.015,
+        "mean_selected_page_count": 6
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_which",
+      "selector": "page_top8",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9833,
+        "answer_retention_rate_given_full": 0.9833,
+        "mean_support_coverage": 0.965,
+        "perfect_support_rate": 0.93,
+        "strict_safe_rate": 0.9267,
+        "mean_token_reduction_pct": 40.533,
+        "mean_selected_page_count": 7.967
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_which",
+      "selector": "page_top10",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.99,
+        "answer_retention_rate_given_full": 0.99,
+        "mean_support_coverage": 0.9817,
+        "perfect_support_rate": 0.9633,
+        "strict_safe_rate": 0.96,
+        "mean_token_reduction_pct": 28.283,
+        "mean_selected_page_count": 9.847
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_which",
+      "selector": "sent_top8",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9233,
+        "answer_retention_rate_given_full": 0.9231,
+        "mean_support_coverage": 0.8967,
+        "perfect_support_rate": 0.7967,
+        "strict_safe_rate": 0.7933,
+        "mean_token_reduction_pct": 67.261,
+        "mean_selected_page_count": 8
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_which",
+      "selector": "sent_top12",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9533,
+        "answer_retention_rate_given_full": 0.9532,
+        "mean_support_coverage": 0.95,
+        "perfect_support_rate": 0.9033,
+        "strict_safe_rate": 0.9,
+        "mean_token_reduction_pct": 52.63,
+        "mean_selected_page_count": 11.993
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_or_which",
+      "selector": "page_top4",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9133,
+        "answer_retention_rate_given_full": 0.913,
+        "mean_support_coverage": 0.8183,
+        "perfect_support_rate": 0.6567,
+        "strict_safe_rate": 0.6533,
+        "mean_token_reduction_pct": 68.645,
+        "mean_selected_page_count": 4
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_or_which",
+      "selector": "page_top6",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9567,
+        "answer_retention_rate_given_full": 0.9565,
+        "mean_support_coverage": 0.9267,
+        "perfect_support_rate": 0.8533,
+        "strict_safe_rate": 0.85,
+        "mean_token_reduction_pct": 54.015,
+        "mean_selected_page_count": 6
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_or_which",
+      "selector": "page_top8",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9833,
+        "answer_retention_rate_given_full": 0.9833,
+        "mean_support_coverage": 0.965,
+        "perfect_support_rate": 0.93,
+        "strict_safe_rate": 0.9267,
+        "mean_token_reduction_pct": 40.533,
+        "mean_selected_page_count": 7.967
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_or_which",
+      "selector": "page_top10",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.99,
+        "answer_retention_rate_given_full": 0.99,
+        "mean_support_coverage": 0.9817,
+        "perfect_support_rate": 0.9633,
+        "strict_safe_rate": 0.96,
+        "mean_token_reduction_pct": 28.283,
+        "mean_selected_page_count": 9.847
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_or_which",
+      "selector": "sent_top8",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9233,
+        "answer_retention_rate_given_full": 0.9231,
+        "mean_support_coverage": 0.8967,
+        "perfect_support_rate": 0.7967,
+        "strict_safe_rate": 0.7933,
+        "mean_token_reduction_pct": 67.261,
+        "mean_selected_page_count": 8
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "cmp_or_which",
+      "selector": "sent_top12",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9533,
+        "answer_retention_rate_given_full": 0.9532,
+        "mean_support_coverage": 0.95,
+        "perfect_support_rate": 0.9033,
+        "strict_safe_rate": 0.9,
+        "mean_token_reduction_pct": 52.63,
+        "mean_selected_page_count": 11.993
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "anycmp_or",
+      "selector": "page_top4",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.93,
+        "answer_retention_rate_given_full": 0.9298,
+        "mean_support_coverage": 0.6958,
+        "perfect_support_rate": 0.3467,
+        "strict_safe_rate": 0.3467,
+        "mean_token_reduction_pct": 66.352,
+        "mean_selected_page_count": 4
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "anycmp_or",
+      "selector": "page_top6",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9733,
+        "answer_retention_rate_given_full": 0.9732,
+        "mean_support_coverage": 0.7967,
+        "perfect_support_rate": 0.4733,
+        "strict_safe_rate": 0.4733,
+        "mean_token_reduction_pct": 49.915,
+        "mean_selected_page_count": 5.997
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "anycmp_or",
+      "selector": "page_top8",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9933,
+        "answer_retention_rate_given_full": 0.9933,
+        "mean_support_coverage": 0.8842,
+        "perfect_support_rate": 0.6733,
+        "strict_safe_rate": 0.6733,
+        "mean_token_reduction_pct": 34.87,
+        "mean_selected_page_count": 7.917
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "anycmp_or",
+      "selector": "page_top10",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9933,
+        "answer_retention_rate_given_full": 0.9933,
+        "mean_support_coverage": 0.94,
+        "perfect_support_rate": 0.8333,
+        "strict_safe_rate": 0.8333,
+        "mean_token_reduction_pct": 22.748,
+        "mean_selected_page_count": 9.627
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "anycmp_or",
+      "selector": "sent_top8",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9367,
+        "answer_retention_rate_given_full": 0.9365,
+        "mean_support_coverage": 0.7283,
+        "perfect_support_rate": 0.4133,
+        "strict_safe_rate": 0.4133,
+        "mean_token_reduction_pct": 65.245,
+        "mean_selected_page_count": 8
+      },
+      "passes_gates": false
+    },
+    {
+      "boundary": "anycmp_or",
+      "selector": "sent_top12",
+      "summary": {
+        "n": 300,
+        "answer_in_full_rate": 0.9967,
+        "answer_in_selected_rate": 0.9667,
+        "answer_retention_rate_given_full": 0.9666,
+        "mean_support_coverage": 0.8167,
+        "perfect_support_rate": 0.5567,
+        "strict_safe_rate": 0.5567,
+        "mean_token_reduction_pct": 48.398,
+        "mean_selected_page_count": 11.99
+      },
+      "passes_gates": false
+    }
+  ],
+  "success": false,
+  "claim_decision": "no_2wiki_regime_candidate_in_search_grid",
+  "limitations": [
+    "Exploratory sweep with 36 cells; any hit must survive the #1270 frozen odd-split holdout.",
+    "Non-generative retention-layer metrics only.",
+    "Boundaries limited to type/lexical predicates; no learned admission."
+  ]
+}

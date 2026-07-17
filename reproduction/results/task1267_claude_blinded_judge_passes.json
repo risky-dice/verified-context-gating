@@ -1,0 +1,2602 @@
+{
+  "judge": "claude-fable-5 blinded subagent panel via Claude Code",
+  "passes": 3,
+  "pass_agent_note": "Each pass = 4 subagents covering line ranges 1-31/32-62/63-93/94-123 of the blinded request file; judges read only the request file.",
+  "pairwise_correctness_agreement": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "cases_with_any_correctness_disagreement": [],
+  "raw_passes": [
+    [
+      {
+        "case_index": 4204,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Summer Magic; A self-contradicts and concludes Around the World in 80 Days, B also picks Around the World."
+      },
+      {
+        "case_index": 4210,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Don Quichotte (5 acts vs 3); identical answers."
+      },
+      {
+        "case_index": 4225,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly identify Grover Jones born in Rosedale, Indiana."
+      },
+      {
+        "case_index": 4231,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly answer no; identical."
+      },
+      {
+        "case_index": 4257,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Dal Lake; both pick Waterton Lake."
+      },
+      {
+        "case_index": 4258,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Elizabeth Taylor; identical."
+      },
+      {
+        "case_index": 4268,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Christer Fuglesang; identical."
+      },
+      {
+        "case_index": 4270,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Cascade Locks and Canal; identical."
+      },
+      {
+        "case_index": 4271,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say The Game of Life; identical."
+      },
+      {
+        "case_index": 4277,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Gene Mayer with matching dates."
+      },
+      {
+        "case_index": 4294,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both correct (Fatima Mansions); A gives both bands' counts concisely, B lists member names but omits Nude's count."
+      },
+      {
+        "case_index": 4324,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Franklin Adreon; both answer Ryan Gosling."
+      },
+      {
+        "case_index": 4329,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Billie Jean King (39 vs 7); both truncated mid-detail."
+      },
+      {
+        "case_index": 4332,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly answer yes with same supporting details."
+      },
+      {
+        "case_index": 4334,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Christopher Guest; nearly identical."
+      },
+      {
+        "case_index": 4336,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Pagliacci; identical."
+      },
+      {
+        "case_index": 4350,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Allure (1991 vs 1992)."
+      },
+      {
+        "case_index": 4365,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Samuel R. Delany; near-identical."
+      },
+      {
+        "case_index": 4373,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Castle of Frankenstein ended first (1975)."
+      },
+      {
+        "case_index": 4380,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Grand Forks International Airport; identical."
+      },
+      {
+        "case_index": 4403,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both correctly say Michael Crafter; A is concise, B is truncated mid-sentence."
+      },
+      {
+        "case_index": 4406,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both convey alcoholic; A states Blue Lagoon is alcoholic directly, B only 'implies' it."
+      },
+      {
+        "case_index": 4407,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Wire (1976 vs 2004); identical."
+      },
+      {
+        "case_index": 4408,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say John Wayne Airport; identical."
+      },
+      {
+        "case_index": 4410,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is UC Berkeley (1868); both conclude Syracuse is older despite citing dates showing otherwise."
+      },
+      {
+        "case_index": 4417,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both correctly say Greek Fire; A is a single concise sentence, B is redundant."
+      },
+      {
+        "case_index": 4447,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both correctly say Pizza Fusion; B is maximally concise."
+      },
+      {
+        "case_index": 4452,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is UniCredit; both commit to China CITIC Bank having more branches (A truncated mid-contradiction, B hedges on UniCredit)."
+      },
+      {
+        "case_index": 4485,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both correctly say Western Institute of Technology; B's reasoning is cleaner, A's is a non-sequitur about non-Philippine campuses."
+      },
+      {
+        "case_index": 4489,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Christopher Robin (3 vs 2 writers); identical."
+      },
+      {
+        "case_index": 4490,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both correctly say Bedknobs and Broomsticks; A is more concise."
+      },
+      {
+        "case_index": 4500,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Lucky McKee; both pick Chris O'Dea."
+      },
+      {
+        "case_index": 4521,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Unwritten Law; both claim Jon Spencer Blues Explosion formed earlier."
+      },
+      {
+        "case_index": 4560,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly answer Podocarpus with the same supporting counts."
+      },
+      {
+        "case_index": 4571,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Marino Girolami."
+      },
+      {
+        "case_index": 4576,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick The Devil Came on Horseback with comparable detail."
+      },
+      {
+        "case_index": 4582,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Unchained Memories (2003) came first."
+      },
+      {
+        "case_index": 4599,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly answer Jacques Tourneur; B lists more studios but equal correctness."
+      },
+      {
+        "case_index": 4607,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly answer Goodbye Mr. Mackenzie; both truncate mid-list."
+      },
+      {
+        "case_index": 4608,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Carleton University; both answer Grand Valley State."
+      },
+      {
+        "case_index": 4616,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: English Mastiff."
+      },
+      {
+        "case_index": 4621,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly answer St. Elizabeths Hospital (1855)."
+      },
+      {
+        "case_index": 4631,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Jennifer Nettles."
+      },
+      {
+        "case_index": 4649,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Flaming beverage."
+      },
+      {
+        "case_index": 4661,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly answer Adventist World with the same evidence."
+      },
+      {
+        "case_index": 4667,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Louisville International Airport."
+      },
+      {
+        "case_index": 4696,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Garo Yepremian."
+      },
+      {
+        "case_index": 4727,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is American Hairless Terrier; both claim the Saint-Usuge Spaniel was recognized first."
+      },
+      {
+        "case_index": 4729,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Chaerophyllum."
+      },
+      {
+        "case_index": 4733,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both correctly answer John le Carré, but B ends with a truncated dangling sentence."
+      },
+      {
+        "case_index": 4759,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A opens with a self-contradictory claim before concluding 4 WTC; B states it cleanly."
+      },
+      {
+        "case_index": 4760,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is 'no'; both refuse with 'Insufficient context'."
+      },
+      {
+        "case_index": 4762,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both convey 'restaurant chain' (pizza restaurant chains)."
+      },
+      {
+        "case_index": 4770,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: American Bulldog."
+      },
+      {
+        "case_index": 4771,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A concludes Take It Easy was first (correct); B commits to Personal Preference being first."
+      },
+      {
+        "case_index": 4774,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Large Münsterländer."
+      },
+      {
+        "case_index": 4788,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly answer Emilio Sánchez with matching birth dates."
+      },
+      {
+        "case_index": 4797,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly answer The General."
+      },
+      {
+        "case_index": 4824,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly answer Joseph L. Mankiewicz; A adds accurate detail, B is more concise."
+      },
+      {
+        "case_index": 4826,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Cake."
+      },
+      {
+        "case_index": 4840,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Liuzhou."
+      },
+      {
+        "case_index": 4857,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly answer Dracula with the same species counts."
+      },
+      {
+        "case_index": 4868,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both identify Ulan Hot as the Inner Mongolia city, matching gold."
+      },
+      {
+        "case_index": 4872,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both convey Juan Carlos Onetti as the answer, matching gold; identical wording."
+      },
+      {
+        "case_index": 4877,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Gabriel Garcia Marquez as having more awards, matching gold."
+      },
+      {
+        "case_index": 4905,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming King of Tokyo, matching gold."
+      },
+      {
+        "case_index": 4907,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Ian MacKaye, matching gold; both are similarly truncated."
+      },
+      {
+        "case_index": 4910,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Avantages, matching gold."
+      },
+      {
+        "case_index": 4911,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Ian Hunter as born first, matching gold."
+      },
+      {
+        "case_index": 4920,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name One Manhattan Square as taller, matching gold."
+      },
+      {
+        "case_index": 4923,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Bull Terrier, matching gold; near-identical truncated text."
+      },
+      {
+        "case_index": 4927,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Pinocchio, matching gold."
+      },
+      {
+        "case_index": 4942,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Round Table Pizza, matching gold; extra detail in A does not change correctness."
+      },
+      {
+        "case_index": 4949,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Microcachrys, matching gold."
+      },
+      {
+        "case_index": 4953,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A refuses with insufficient context; B correctly names the Metropolitan Tower as taller."
+      },
+      {
+        "case_index": 4962,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Disporum, matching gold."
+      },
+      {
+        "case_index": 4968,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Downfall, matching gold."
+      },
+      {
+        "case_index": 4982,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A refuses; B commits to Pokemon: Arceus and the Jewel of Life being first, matching gold despite trailing hedge."
+      },
+      {
+        "case_index": 4994,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Honeysuckle with the same figures, matching gold."
+      },
+      {
+        "case_index": 5004,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Achimenes, matching gold."
+      },
+      {
+        "case_index": 5025,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Soap Opera Digest, matching gold."
+      },
+      {
+        "case_index": 5047,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Sixpence None the Richer, matching gold."
+      },
+      {
+        "case_index": 5052,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Andre Agassi as born first, matching gold."
+      },
+      {
+        "case_index": 5054,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming The Arts Fuse, matching gold."
+      },
+      {
+        "case_index": 5072,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both affirm that each man had multiple names/nicknames, conveying gold's yes."
+      },
+      {
+        "case_index": 5080,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Baby Guinness, matching gold."
+      },
+      {
+        "case_index": 5107,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name the English Water Spaniel as bred first, matching gold."
+      },
+      {
+        "case_index": 5109,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Burton Cummings, matching gold."
+      },
+      {
+        "case_index": 5118,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Suining, matching gold."
+      },
+      {
+        "case_index": 5119,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Elie Wiesel as having the wider scope, matching gold."
+      },
+      {
+        "case_index": 5122,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Bela Bartok, matching gold."
+      },
+      {
+        "case_index": 5130,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Sheridan County, matching gold."
+      },
+      {
+        "case_index": 5141,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Paola Suarez as higher ranked, matching gold."
+      },
+      {
+        "case_index": 5160,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both identically state GameFan, matching gold."
+      },
+      {
+        "case_index": 5167,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both convey McClellan–Palomar, but A is truncated mid-sentence; B is complete and clear."
+      },
+      {
+        "case_index": 5171,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both correctly pick Alt for Damerne; B is slightly more concise."
+      },
+      {
+        "case_index": 5178,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both correctly pick Syzygium; A is more concise."
+      },
+      {
+        "case_index": 5192,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (University of Pennsylvania)."
+      },
+      {
+        "case_index": 5207,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Sapsali)."
+      },
+      {
+        "case_index": 5211,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Duchamp)."
+      },
+      {
+        "case_index": 5221,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly state Morgan Llywelyn with the same dates."
+      },
+      {
+        "case_index": 5242,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Sherwood Stewart)."
+      },
+      {
+        "case_index": 5263,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both correctly pick University of Virginia; A is more concise."
+      },
+      {
+        "case_index": 5270,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both state The Frames; effectively identical."
+      },
+      {
+        "case_index": 5281,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Alfonso Cuarón)."
+      },
+      {
+        "case_index": 5297,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A asserts Sacramento channel was completed earlier, contradicting gold (Contra Costa Canal); B answers correctly."
+      },
+      {
+        "case_index": 5307,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (The Private Life of Plants)."
+      },
+      {
+        "case_index": 5311,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (SlamNation)."
+      },
+      {
+        "case_index": 5319,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Mary Pierce)."
+      },
+      {
+        "case_index": 5345,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both correctly pick Hayley Williams; B is more concise."
+      },
+      {
+        "case_index": 5353,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (The Ladder)."
+      },
+      {
+        "case_index": 5381,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Carrie Akre)."
+      },
+      {
+        "case_index": 5383,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both pick Brian G. Hutton; gold is Xawery Żuławski."
+      },
+      {
+        "case_index": 5389,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both correctly pick Jon Spencer Blues Explosion; B is slightly more concise."
+      },
+      {
+        "case_index": 5435,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Sam Taylor)."
+      },
+      {
+        "case_index": 5438,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A correctly picks Pro Football Weekly; B commits to Club, the wrong entity."
+      },
+      {
+        "case_index": 5452,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick The Jungle Book with reasonable support."
+      },
+      {
+        "case_index": 5458,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A picks Isatis, contradicting gold (Crepis); B answers correctly."
+      },
+      {
+        "case_index": 5470,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A refuses with insufficient context; B commits to !!!, matching gold."
+      },
+      {
+        "case_index": 5476,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both pick Ulli Lommel; gold is Stoloff."
+      },
+      {
+        "case_index": 5481,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (The Farming Game)."
+      },
+      {
+        "case_index": 5485,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Hewlett Packard Enterprise; near-identical wording."
+      },
+      {
+        "case_index": 5486,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Shijiazhuang)."
+      }
+    ],
+    [
+      {
+        "case_index": 4204,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "A is self-contradictory and concludes Around the World in 80 Days was first; B also picks Around the World in 80 Days. Gold is Summer Magic."
+      },
+      {
+        "case_index": 4210,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers, both correctly pick Don Quichotte."
+      },
+      {
+        "case_index": 4225,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both state Grover Jones was born in Rosedale, Indiana, matching gold; near-identical."
+      },
+      {
+        "case_index": 4231,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct 'no' answers."
+      },
+      {
+        "case_index": 4257,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both pick Waterton Lake; gold is Dal Lake."
+      },
+      {
+        "case_index": 4258,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Elizabeth Taylor, matching gold."
+      },
+      {
+        "case_index": 4268,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Christer Fuglesang."
+      },
+      {
+        "case_index": 4270,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Cascade Locks and Canal."
+      },
+      {
+        "case_index": 4271,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming The Game of Life."
+      },
+      {
+        "case_index": 4277,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Gene Mayer with the same dates; trivial wording difference."
+      },
+      {
+        "case_index": 4294,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both name The Fatima Mansions; A gives the actual comparison (5 vs 3 members) while B omits Nude's count."
+      },
+      {
+        "case_index": 4324,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Franklin Adreon; both answers name Ryan Gosling instead, so neither matches the gold choice."
+      },
+      {
+        "case_index": 4329,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both correctly name Billie Jean King; B's detail is cleaner while A cuts off mid-name ('with Lisa')."
+      },
+      {
+        "case_index": 4332,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly answer yes with the same supporting facts."
+      },
+      {
+        "case_index": 4334,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Christopher Guest (Christopher Haden-Guest); essentially identical."
+      },
+      {
+        "case_index": 4336,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Pagliacci."
+      },
+      {
+        "case_index": 4350,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both pick Allure, the gold entity; near-identical wording."
+      },
+      {
+        "case_index": 4365,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Samuel R. Delany, matching gold; equivalent detail."
+      },
+      {
+        "case_index": 4373,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Castle of Frankenstein ended first; negligible wording difference."
+      },
+      {
+        "case_index": 4380,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Grand Forks International Airport."
+      },
+      {
+        "case_index": 4403,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both name Michael Crafter; A is clean and complete while B truncates mid-sentence ('Sigue')."
+      },
+      {
+        "case_index": 4406,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both convey 'alcoholic'; A states it directly while B hedges with 'implying it is alcoholic'."
+      },
+      {
+        "case_index": 4407,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Wire."
+      },
+      {
+        "case_index": 4408,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming John Wayne Airport."
+      },
+      {
+        "case_index": 4410,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both pick Syracuse University; gold is University of California, Berkeley."
+      },
+      {
+        "case_index": 4417,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both correctly name Greek Fire; A is more concise with the same content."
+      },
+      {
+        "case_index": 4447,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both correctly name Pizza Fusion; B is more concise while equally correct."
+      },
+      {
+        "case_index": 4452,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both assert China CITIC Bank has more branches; gold is UniCredit (A even contradicts its own cited figures)."
+      },
+      {
+        "case_index": 4485,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both conclude Western Institute of Technology; B is direct while A's reasoning is muddled before reaching the same conclusion."
+      },
+      {
+        "case_index": 4489,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Christopher Robin."
+      },
+      {
+        "case_index": 4490,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both correctly name Bedknobs and Broomsticks; A is more concise."
+      },
+      {
+        "case_index": 4500,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Lucky McKee; both pick Chris O'Dea."
+      },
+      {
+        "case_index": 4521,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Unwritten Law; both conclude Jon Spencer Blues Explosion formed earlier (and are internally contradictory)."
+      },
+      {
+        "case_index": 4560,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Podocarpus with equivalent detail."
+      },
+      {
+        "case_index": 4571,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Marino Girolami."
+      },
+      {
+        "case_index": 4576,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick The Devil Came on Horseback."
+      },
+      {
+        "case_index": 4582,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Unchained Memories (2003) was first."
+      },
+      {
+        "case_index": 4599,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Jacques Tourneur; only supporting detail differs."
+      },
+      {
+        "case_index": 4607,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Goodbye Mr. Mackenzie; both truncate mid-list equally."
+      },
+      {
+        "case_index": 4608,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Carleton University; both pick Grand Valley State University."
+      },
+      {
+        "case_index": 4616,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: English Mastiff."
+      },
+      {
+        "case_index": 4621,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say St. Elizabeths Hospital opened first."
+      },
+      {
+        "case_index": 4631,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Jennifer Nettles."
+      },
+      {
+        "case_index": 4649,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Flaming beverage."
+      },
+      {
+        "case_index": 4661,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Adventist World."
+      },
+      {
+        "case_index": 4667,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Louisville International Airport."
+      },
+      {
+        "case_index": 4696,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Garo Yepremian."
+      },
+      {
+        "case_index": 4727,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is the American Hairless Terrier; both assert the Saint-Usuge Spaniel was first."
+      },
+      {
+        "case_index": 4729,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Chaerophyllum."
+      },
+      {
+        "case_index": 4733,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both correctly pick John le Carré, but B ends in a truncated sentence; A is complete."
+      },
+      {
+        "case_index": 4759,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both ultimately answer 4 World Trade Center, but A opens with a self-contradictory claim that Trump Palace is higher; B is clean."
+      },
+      {
+        "case_index": 4760,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is 'no'; both refuse with 'Insufficient context'."
+      },
+      {
+        "case_index": 4762,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both convey 'restaurant chain' (pizza restaurant chains)."
+      },
+      {
+        "case_index": 4770,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: American Bulldog."
+      },
+      {
+        "case_index": 4771,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A concludes Take It Easy was first (matching gold); B claims Personal Preference was published first."
+      },
+      {
+        "case_index": 4774,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Large Münsterländer."
+      },
+      {
+        "case_index": 4788,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Emilio Sánchez is older; only date formatting differs."
+      },
+      {
+        "case_index": 4797,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick The General."
+      },
+      {
+        "case_index": 4824,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Joseph L. Mankiewicz; A adds detail, B is more concise."
+      },
+      {
+        "case_index": 4826,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Cake."
+      },
+      {
+        "case_index": 4840,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Liuzhou."
+      },
+      {
+        "case_index": 4857,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Dracula with the same species counts."
+      },
+      {
+        "case_index": 4868,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly identify Ulan Hot; nearly identical wording."
+      },
+      {
+        "case_index": 4872,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers; both convey Juan Carlos Onetti, matching gold."
+      },
+      {
+        "case_index": 4877,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both pick Garcia Marquez; A adds accurate Dillard award info while B claims none mentioned, so A is more precise."
+      },
+      {
+        "case_index": 4905,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: King of Tokyo (2011)."
+      },
+      {
+        "case_index": 4907,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Ian MacKaye; both truncated band lists, equivalent quality."
+      },
+      {
+        "case_index": 4910,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Avantages."
+      },
+      {
+        "case_index": 4911,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Ian Hunter with matching dates."
+      },
+      {
+        "case_index": 4920,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say One Manhattan Square; trivial wording difference."
+      },
+      {
+        "case_index": 4923,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Bull Terrier; near-identical, both truncated."
+      },
+      {
+        "case_index": 4927,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Pinocchio."
+      },
+      {
+        "case_index": 4942,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both correctly say Round Table Pizza; B conveys the answer more concisely."
+      },
+      {
+        "case_index": 4949,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both correctly say Microcachrys; B is more concise with no loss of the answer."
+      },
+      {
+        "case_index": 4953,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A refuses with 'insufficient context'; B correctly identifies Metropolitan Tower as taller."
+      },
+      {
+        "case_index": 4962,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Disporum."
+      },
+      {
+        "case_index": 4968,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Downfall (1970)."
+      },
+      {
+        "case_index": 4982,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A refuses; B commits to Pokemon: Arceus and the Jewel of Life being first despite a hedged, truncated tail."
+      },
+      {
+        "case_index": 4994,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both correctly say Honeysuckle; A is tighter, B repeats the conclusion redundantly."
+      },
+      {
+        "case_index": 5004,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Achimenes."
+      },
+      {
+        "case_index": 5025,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Soap Opera Digest."
+      },
+      {
+        "case_index": 5047,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Sixpence None the Richer; equivalent phrasing."
+      },
+      {
+        "case_index": 5052,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Andre Agassi with same dates."
+      },
+      {
+        "case_index": 5054,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: The Arts Fuse."
+      },
+      {
+        "case_index": 5072,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Gold is 'yes'; both convey that both men had multiple names/nicknames, both truncated similarly."
+      },
+      {
+        "case_index": 5080,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Baby Guinness; trivial wording difference."
+      },
+      {
+        "case_index": 5107,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say English Water Spaniel with same reasoning."
+      },
+      {
+        "case_index": 5109,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Burton Cummings."
+      },
+      {
+        "case_index": 5118,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Suining."
+      },
+      {
+        "case_index": 5119,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Elie Wiesel; near-identical detail level."
+      },
+      {
+        "case_index": 5122,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Bela Bartok (1881)."
+      },
+      {
+        "case_index": 5130,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Sheridan County, Montana."
+      },
+      {
+        "case_index": 5141,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Paola Suarez with the same ranking facts; negligible difference."
+      },
+      {
+        "case_index": 5160,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both identically name GameFan, matching gold."
+      },
+      {
+        "case_index": 5167,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both convey McClellan–Palomar, but A is truncated mid-sentence; B is complete and cleaner."
+      },
+      {
+        "case_index": 5171,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Alt for Damerne is published more often."
+      },
+      {
+        "case_index": 5178,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Syzygium; B adds supporting counts, A is more concise — equivalent."
+      },
+      {
+        "case_index": 5192,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming University of Pennsylvania."
+      },
+      {
+        "case_index": 5207,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Sapsali."
+      },
+      {
+        "case_index": 5211,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Duchamp."
+      },
+      {
+        "case_index": 5221,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Morgan Llywelyn was born first with same dates."
+      },
+      {
+        "case_index": 5242,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Sherwood Stewart."
+      },
+      {
+        "case_index": 5263,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name University of Virginia; A slightly more concise, B slightly more complete."
+      },
+      {
+        "case_index": 5270,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name The Frames; only grammatical difference."
+      },
+      {
+        "case_index": 5281,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Alfonso Cuarón."
+      },
+      {
+        "case_index": 5297,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A contradicts itself and asserts Sacramento channel was completed earlier; B correctly concludes Contra Costa Canal."
+      },
+      {
+        "case_index": 5307,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming The Private Life of Plants."
+      },
+      {
+        "case_index": 5311,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming SlamNation."
+      },
+      {
+        "case_index": 5319,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Mary Pierce."
+      },
+      {
+        "case_index": 5345,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Hayley Williams; A adds dates, B is more concise — equal overall."
+      },
+      {
+        "case_index": 5353,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming The Ladder."
+      },
+      {
+        "case_index": 5381,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Carrie Akre."
+      },
+      {
+        "case_index": 5383,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both pick Brian G. Hutton; gold is Xawery Żuławski."
+      },
+      {
+        "case_index": 5389,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Jon Spencer Blues Explosion with same supporting facts."
+      },
+      {
+        "case_index": 5435,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Sam Taylor."
+      },
+      {
+        "case_index": 5438,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A correctly picks Pro Football Weekly; B concludes Club, contradicting gold."
+      },
+      {
+        "case_index": 5452,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name The Jungle Book with comparable reasoning."
+      },
+      {
+        "case_index": 5458,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A picks Isatis (and misorders the families); B correctly picks Crepis (Asteraceae before Brassicaceae)."
+      },
+      {
+        "case_index": 5470,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A refuses with 'insufficient context'; B commits to !!!, matching gold."
+      },
+      {
+        "case_index": 5476,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both pick Ulli Lommel; gold is Stoloff."
+      },
+      {
+        "case_index": 5481,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming The Farming Game."
+      },
+      {
+        "case_index": 5485,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Hewlett Packard Enterprise; near-identical wording."
+      },
+      {
+        "case_index": 5486,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Shijiazhuang."
+      }
+    ],
+    [
+      {
+        "case_index": 4204,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Summer Magic. A self-contradicts and concludes Around the World in 80 Days; B also picks Around the World in 80 Days. Both wrong."
+      },
+      {
+        "case_index": 4210,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both identically state Don Quichotte (5 acts) vs Tosca (3), matching gold."
+      },
+      {
+        "case_index": 4225,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both convey Grover Jones was born in Rosedale, Indiana, matching gold."
+      },
+      {
+        "case_index": 4231,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say no, matching gold."
+      },
+      {
+        "case_index": 4257,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Dal Lake; both pick Waterton Lake."
+      },
+      {
+        "case_index": 4258,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Elizabeth Taylor, matching gold."
+      },
+      {
+        "case_index": 4268,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Christer Fuglesang, matching gold."
+      },
+      {
+        "case_index": 4270,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Cascade Locks and Canal, matching gold."
+      },
+      {
+        "case_index": 4271,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say The Game of Life, matching gold."
+      },
+      {
+        "case_index": 4277,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Gene Mayer with correct dates, matching gold."
+      },
+      {
+        "case_index": 4294,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both say The Fatima Mansions; A concisely gives both member counts, B only details one band."
+      },
+      {
+        "case_index": 4324,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Franklin Adreon; both answer Ryan Gosling."
+      },
+      {
+        "case_index": 4329,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both convey Billie Jean King (39 vs 7 titles); both truncated but answer is clear."
+      },
+      {
+        "case_index": 4332,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say yes with matching supporting detail."
+      },
+      {
+        "case_index": 4334,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Christopher Guest, matching gold."
+      },
+      {
+        "case_index": 4336,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Pagliacci (prologue plus two acts) vs one-act Suor Angelica."
+      },
+      {
+        "case_index": 4350,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Allure (1991) before Genre (1992), matching gold."
+      },
+      {
+        "case_index": 4365,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Samuel R. Delany, matching gold."
+      },
+      {
+        "case_index": 4373,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Castle of Frankenstein ended first (1975); B marginally tighter but equivalent."
+      },
+      {
+        "case_index": 4380,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both identically say Grand Forks International Airport, matching gold."
+      },
+      {
+        "case_index": 4403,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both say Michael Crafter; A is complete and concise while B is cut off mid-sentence."
+      },
+      {
+        "case_index": 4406,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both convey that both drinks are primarily alcoholic; B's 'implying' is a negligible hedge with the same commitment."
+      },
+      {
+        "case_index": 4407,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Wire (1976) before Young the Giant (2004)."
+      },
+      {
+        "case_index": 4408,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say John Wayne Airport, matching gold."
+      },
+      {
+        "case_index": 4410,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is UC Berkeley; both pick Syracuse (and self-contradict, since 1868 predates 1870)."
+      },
+      {
+        "case_index": 4417,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Greek Fire (St. Louis) is more southern, matching gold."
+      },
+      {
+        "case_index": 4447,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Pizza Fusion; A adds locations, B is bare but committed — equivalent per criteria."
+      },
+      {
+        "case_index": 4452,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is UniCredit; both commit to China CITIC Bank (A self-contradicts its own 8,500 figure, B hedges after committing)."
+      },
+      {
+        "case_index": 4485,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both conclude Western Institute of Technology, matching gold."
+      },
+      {
+        "case_index": 4489,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both identically say Christopher Robin (3 writers vs 2)."
+      },
+      {
+        "case_index": 4490,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Bedknobs and Broomsticks; A is more concise, B adds reasoning — equivalent per criteria."
+      },
+      {
+        "case_index": 4500,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Lucky McKee; both pick Chris O'Dea."
+      },
+      {
+        "case_index": 4521,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Unwritten Law; both claim Jon Spencer Blues Explosion formed earlier."
+      },
+      {
+        "case_index": 4560,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Podocarpus with matching detail."
+      },
+      {
+        "case_index": 4571,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Marino Girolami."
+      },
+      {
+        "case_index": 4576,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick The Devil Came on Horseback."
+      },
+      {
+        "case_index": 4582,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Unchained Memories (2003) was first."
+      },
+      {
+        "case_index": 4599,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Jacques Tourneur."
+      },
+      {
+        "case_index": 4607,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Goodbye Mr. Mackenzie; both truncate mid-list."
+      },
+      {
+        "case_index": 4608,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Carleton University; both answer Grand Valley State University."
+      },
+      {
+        "case_index": 4616,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: English Mastiff."
+      },
+      {
+        "case_index": 4621,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say St. Elizabeths Hospital opened first."
+      },
+      {
+        "case_index": 4631,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Jennifer Nettles."
+      },
+      {
+        "case_index": 4649,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Flaming beverage."
+      },
+      {
+        "case_index": 4661,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Adventist World."
+      },
+      {
+        "case_index": 4667,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Louisville International Airport."
+      },
+      {
+        "case_index": 4696,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Garo Yepremian."
+      },
+      {
+        "case_index": 4727,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is American Hairless Terrier; both assert the Saint-Usuge Spaniel was first."
+      },
+      {
+        "case_index": 4729,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Chaerophyllum."
+      },
+      {
+        "case_index": 4733,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both name John le Carré, but B ends with a truncated dangling sentence."
+      },
+      {
+        "case_index": 4759,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A opens with the contradictory claim that Trump Palace is higher before concluding 4 WTC; B is clean and correct."
+      },
+      {
+        "case_index": 4760,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is 'no'; both refuse with 'Insufficient context'."
+      },
+      {
+        "case_index": 4762,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both convey 'restaurant chain' (pizza restaurant chains)."
+      },
+      {
+        "case_index": 4770,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: American Bulldog."
+      },
+      {
+        "case_index": 4771,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A concludes Take It Easy was first (matches gold); B commits to Personal Preference being first, contradicting gold."
+      },
+      {
+        "case_index": 4774,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Large Münsterländer."
+      },
+      {
+        "case_index": 4788,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Emilio Sánchez as older."
+      },
+      {
+        "case_index": 4797,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick The General."
+      },
+      {
+        "case_index": 4824,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both name Mankiewicz; B conveys the same correct answer more concisely."
+      },
+      {
+        "case_index": 4826,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Cake."
+      },
+      {
+        "case_index": 4840,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Liuzhou."
+      },
+      {
+        "case_index": 4857,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Dracula has more species."
+      },
+      {
+        "case_index": 4868,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Ulan Hot; wording differences trivial."
+      },
+      {
+        "case_index": 4872,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers; both convey Juan Carlos Onetti, matching gold."
+      },
+      {
+        "case_index": 4877,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Gabriel García Márquez; supporting detail differs trivially."
+      },
+      {
+        "case_index": 4905,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: King of Tokyo (2011)."
+      },
+      {
+        "case_index": 4907,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Ian MacKaye; both truncated mid-list."
+      },
+      {
+        "case_index": 4910,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Avantages."
+      },
+      {
+        "case_index": 4911,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Ian Hunter with matching dates."
+      },
+      {
+        "case_index": 4920,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name One Manhattan Square with correct heights."
+      },
+      {
+        "case_index": 4923,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Bull Terrier; both truncated similarly."
+      },
+      {
+        "case_index": 4927,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Pinocchio."
+      },
+      {
+        "case_index": 4942,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Round Table Pizza; A adds justification, B is bare but sufficient."
+      },
+      {
+        "case_index": 4949,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Microcachrys; A's extra note on Bee tree is harmless."
+      },
+      {
+        "case_index": 4953,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A refuses with 'insufficient context'; B correctly picks the Metropolitan Tower."
+      },
+      {
+        "case_index": 4962,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Disporum."
+      },
+      {
+        "case_index": 4968,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Downfall (1970)."
+      },
+      {
+        "case_index": 4982,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A refuses; B commits up front that Pokémon: Arceus and the Jewel of Life was released first, matching gold despite trailing hedging."
+      },
+      {
+        "case_index": 4994,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly conclude Honeysuckle has more species."
+      },
+      {
+        "case_index": 5004,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Achimenes."
+      },
+      {
+        "case_index": 5025,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Soap Opera Digest (weekly)."
+      },
+      {
+        "case_index": 5047,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Sixpence None the Richer; phrasing differs trivially."
+      },
+      {
+        "case_index": 5052,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Andre Agassi with matching dates."
+      },
+      {
+        "case_index": 5054,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: The Arts Fuse."
+      },
+      {
+        "case_index": 5072,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Gold is 'yes'; both affirm each man had multiple names/nicknames, conveying yes; both truncated."
+      },
+      {
+        "case_index": 5080,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Baby Guinness with the same reason."
+      },
+      {
+        "case_index": 5107,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name the English Water Spaniel."
+      },
+      {
+        "case_index": 5109,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Burton Cummings."
+      },
+      {
+        "case_index": 5118,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Suining."
+      },
+      {
+        "case_index": 5119,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Elie Wiesel; role lists differ trivially."
+      },
+      {
+        "case_index": 5122,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Béla Bartók (1881)."
+      },
+      {
+        "case_index": 5130,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Sheridan County, Montana."
+      },
+      {
+        "case_index": 5141,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Paola Suárez with the same ranking evidence."
+      },
+      {
+        "case_index": 5160,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name GameFan, matching gold; identical."
+      },
+      {
+        "case_index": 5167,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both convey McClellan–Palomar is closer, but A is truncated mid-sentence; B is complete and cleaner."
+      },
+      {
+        "case_index": 5171,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Alt for Damerne (weekly) is published more."
+      },
+      {
+        "case_index": 5178,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Syzygium; B adds accurate detail, A is concise — equivalent."
+      },
+      {
+        "case_index": 5192,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: University of Pennsylvania."
+      },
+      {
+        "case_index": 5207,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Sapsali."
+      },
+      {
+        "case_index": 5211,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Marcel Duchamp."
+      },
+      {
+        "case_index": 5221,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Morgan Llywelyn with matching dates."
+      },
+      {
+        "case_index": 5242,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Sherwood Stewart."
+      },
+      {
+        "case_index": 5263,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say University of Virginia (Jefferson)."
+      },
+      {
+        "case_index": 5270,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say The Frames, matching gold."
+      },
+      {
+        "case_index": 5281,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Alfonso Cuarón."
+      },
+      {
+        "case_index": 5297,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A claims Sacramento channel was completed earlier (contradicting its own dates); B correctly concludes Contra Costa Canal."
+      },
+      {
+        "case_index": 5307,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: The Private Life of Plants."
+      },
+      {
+        "case_index": 5311,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: SlamNation."
+      },
+      {
+        "case_index": 5319,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Mary Pierce."
+      },
+      {
+        "case_index": 5345,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both say Hayley Williams; A adds dates, B is concise — equivalent."
+      },
+      {
+        "case_index": 5353,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: The Ladder."
+      },
+      {
+        "case_index": 5381,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Carrie Akre."
+      },
+      {
+        "case_index": 5383,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both pick Brian G. Hutton; gold is Xawery Żuławski."
+      },
+      {
+        "case_index": 5389,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Jon Spencer Blues Explosion."
+      },
+      {
+        "case_index": 5435,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Sam Taylor."
+      },
+      {
+        "case_index": 5438,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A correctly says Pro Football Weekly (weekly); B concludes Club has more issues, wrong."
+      },
+      {
+        "case_index": 5452,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say The Jungle Book."
+      },
+      {
+        "case_index": 5458,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A picks Isatis (and misorders the family names); B correctly says Crepis (Asteraceae before Brassicaceae)."
+      },
+      {
+        "case_index": 5470,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A refuses with 'Insufficient context'; B correctly commits to !!!."
+      },
+      {
+        "case_index": 5476,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both pick Ulli Lommel; gold is Stoloff."
+      },
+      {
+        "case_index": 5481,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: The Farming Game."
+      },
+      {
+        "case_index": 5485,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Hewlett Packard Enterprise; near-identical."
+      },
+      {
+        "case_index": 5486,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Shijiazhuang."
+      }
+    ]
+  ]
+}

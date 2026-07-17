@@ -1,0 +1,42 @@
+{
+  "experiment": "Research Task #1274 External Judge Confirmation",
+  "hypothesis": "The #1266/#1267/#1272 blinded-judge conclusions survive when the judge is external (gpt-4.1-mini) instead of the Claude panel.",
+  "mode": "live",
+  "judge_model": "gpt-4.1-mini",
+  "semantic_delta_floor": -0.05,
+  "estimated_cost_usd": 0.05159,
+  "budget_usd": 0.06,
+  "success": true,
+  "claim_decision": "external_judge_confirms_all_blinded_results",
+  "actual_cost_usd": 0.031474,
+  "failures": [],
+  "pack_summaries": {
+    "task1266_hotpot_canary": {
+      "judged_case_count": 32,
+      "selected_semantic_correct_rate": 0.8438,
+      "full_semantic_correct_rate": 0.8438,
+      "selected_minus_full_semantic_rate": 0.0,
+      "semantic_delta_gate": true,
+      "agreement_with_claude_majority": 0.9688,
+      "agreement_label_count": 64
+    },
+    "task1267_hotpot_full_sample": {
+      "judged_case_count": 123,
+      "selected_semantic_correct_rate": 0.8943,
+      "full_semantic_correct_rate": 0.8618,
+      "selected_minus_full_semantic_rate": 0.0325,
+      "semantic_delta_gate": true,
+      "agreement_with_claude_majority": 0.9634,
+      "agreement_label_count": 246
+    },
+    "task1272_2wiki_entity_canary": {
+      "judged_case_count": 32,
+      "selected_semantic_correct_rate": 0.8438,
+      "full_semantic_correct_rate": 0.8438,
+      "selected_minus_full_semantic_rate": 0.0,
+      "semantic_delta_gate": true,
+      "agreement_with_claude_majority": 0.9688,
+      "agreement_label_count": 64
+    }
+  }
+}

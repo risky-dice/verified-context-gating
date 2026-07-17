@@ -1,0 +1,690 @@
+{
+  "judge": "claude-fable-5 blinded subagent panel via Claude Code",
+  "passes": 3,
+  "pairwise_correctness_agreement": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "cases_with_any_correctness_disagreement": [],
+  "raw_passes": [
+    [
+      {
+        "case_index": 1,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name The Mask of Fu Manchu (1932) as first; essentially identical."
+      },
+      {
+        "case_index": 39,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both name D'Arcy Coulson; A is more concise, B adds dates but is otherwise equal."
+      },
+      {
+        "case_index": 89,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name She Wore a Yellow Ribbon (1949); near-identical."
+      },
+      {
+        "case_index": 95,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Emmy of Stork's Nest (1915); equivalent content."
+      },
+      {
+        "case_index": 97,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Lee Mantle."
+      },
+      {
+        "case_index": 103,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both conclude Viktoriya Zeynep Güneş; B states it directly and more concisely."
+      },
+      {
+        "case_index": 107,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Les Résultats du féminisme (1906)."
+      },
+      {
+        "case_index": 111,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Kids of the Round Table (1995); only punctuation differs."
+      },
+      {
+        "case_index": 127,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both name Charlotte Spurkeland; B is more concise, A adds dates but is otherwise equal."
+      },
+      {
+        "case_index": 139,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Noerr (1950)."
+      },
+      {
+        "case_index": 157,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A names H. Verlan Andersen (wrong entity, with dates contradicting itself); B correctly names Narcís Ventalló."
+      },
+      {
+        "case_index": 159,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Aneta Hladíková."
+      },
+      {
+        "case_index": 167,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Dis-Moi Qui Tuer (1965); trivial wording difference."
+      },
+      {
+        "case_index": 171,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both name Helly Shah; B is more concise, A adds dates but is otherwise equal."
+      },
+      {
+        "case_index": 183,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Wiesław Perszke (1960)."
+      },
+      {
+        "case_index": 187,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name 1990-Sick (Get 'Em All) (1995); only a parenthetical differs."
+      },
+      {
+        "case_index": 225,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both name Toolbox Murders with correct years; B is slightly more concise."
+      },
+      {
+        "case_index": 241,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Kull the Conqueror."
+      },
+      {
+        "case_index": 251,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both refuse with 'Insufficient context'; gold is Washington."
+      },
+      {
+        "case_index": 263,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Alien Origin."
+      },
+      {
+        "case_index": 313,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both pick Bernard Chambaz; A adds supporting years, B is more concise."
+      },
+      {
+        "case_index": 335,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both correct (Occupation: Dreamland); B is more concise."
+      },
+      {
+        "case_index": 345,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Chopasni Senior Secondary School."
+      },
+      {
+        "case_index": 389,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both correct (Aami, 2018); A is more concise."
+      },
+      {
+        "case_index": 403,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Natürlich die Nelli."
+      },
+      {
+        "case_index": 477,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A correctly picks Ela Gandhi; B claims Borensztein (1963) was born earlier, which is wrong and self-contradictory."
+      },
+      {
+        "case_index": 489,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Ghar Ki Rani."
+      },
+      {
+        "case_index": 541,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers matching the gold film."
+      },
+      {
+        "case_index": 811,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A gives 1969 matching gold; B refuses with 'Insufficient context'."
+      },
+      {
+        "case_index": 3837,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name John Holles, the same person as the gold's 1st Duke of Newcastle (Earl of Clare was his earlier title); answers are otherwise identical."
+      },
+      {
+        "case_index": 4819,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A says British matching gold; B says American (Miller Freeman), wrong nationality."
+      },
+      {
+        "case_index": 12075,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both refuse with 'Insufficient context'; gold is 1978."
+      }
+    ],
+    [
+      {
+        "case_index": 1,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name The Mask of Fu Manchu (1932) as first; essentially identical."
+      },
+      {
+        "case_index": 39,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both name D'Arcy Coulson; A conveys it more concisely, B adds unneeded date detail."
+      },
+      {
+        "case_index": 89,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say She Wore a Yellow Ribbon came first; equivalent phrasing."
+      },
+      {
+        "case_index": 95,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Emmy of Stork's Nest (1915); equivalent."
+      },
+      {
+        "case_index": 97,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Lee Mantle, matching gold."
+      },
+      {
+        "case_index": 103,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both conclude Viktoriya Zeynep Güneş; B is more direct and concise."
+      },
+      {
+        "case_index": 107,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Les Résultats du féminisme, matching gold."
+      },
+      {
+        "case_index": 111,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Kids of the Round Table (1995); near-identical."
+      },
+      {
+        "case_index": 127,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both name Charlotte Spurkeland; B is more concise, A's years add nothing required."
+      },
+      {
+        "case_index": 139,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Noerr (1950), matching gold."
+      },
+      {
+        "case_index": 157,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A names H. Verlan Andersen as dying later (wrong entity, self-contradictory dates); B correctly names Narcís Ventalló."
+      },
+      {
+        "case_index": 159,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Aneta Hladíková, matching gold."
+      },
+      {
+        "case_index": 167,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Dis-Moi Qui Tuer (1965); trivial wording difference."
+      },
+      {
+        "case_index": 171,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both name Helly Shah; B answers more concisely, A's birth dates are unneeded."
+      },
+      {
+        "case_index": 183,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Wiesław Perszke, matching gold."
+      },
+      {
+        "case_index": 187,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick 1990-Sick (Get 'Em All) (1995); equivalent."
+      },
+      {
+        "case_index": 225,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both name Toolbox Murders; B is slightly more concise."
+      },
+      {
+        "case_index": 241,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Kull the Conqueror."
+      },
+      {
+        "case_index": 251,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both refuse with 'Insufficient context'; gold is Washington."
+      },
+      {
+        "case_index": 263,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Alien Origin."
+      },
+      {
+        "case_index": 313,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Bernard Chambaz; A adds supporting years, B is terser — equal overall."
+      },
+      {
+        "case_index": 335,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both name Occupation: Dreamland; B is more concise."
+      },
+      {
+        "case_index": 345,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Chopasni Senior Secondary School."
+      },
+      {
+        "case_index": 389,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both name Aami; A is more concise."
+      },
+      {
+        "case_index": 403,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Natürlich die Nelli."
+      },
+      {
+        "case_index": 477,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A correctly says Ela Gandhi; B claims Borensztein was born earlier, contradicting the dates it cites."
+      },
+      {
+        "case_index": 489,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Ghar Ki Rani."
+      },
+      {
+        "case_index": 541,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming How To Make Love To A Negro Without Getting Tired."
+      },
+      {
+        "case_index": 811,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A gives 1969 matching gold; B refuses."
+      },
+      {
+        "case_index": 3837,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name John Holles (Earl of Clare, i.e., the later 1st Duke of Newcastle) — same entity as gold; answers essentially identical."
+      },
+      {
+        "case_index": 4819,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A says British (UBM plc) matching gold; B says American (Miller Freeman), wrong nationality."
+      },
+      {
+        "case_index": 12075,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both refuse with 'Insufficient context'; gold is 1978."
+      }
+    ],
+    [
+      {
+        "case_index": 1,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name The Mask of Fu Manchu as first; essentially identical."
+      },
+      {
+        "case_index": 39,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both commit to D'Arcy Coulson; A concise, B adds consistent dates."
+      },
+      {
+        "case_index": 89,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name She Wore a Yellow Ribbon as first; equivalent content."
+      },
+      {
+        "case_index": 95,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Emmy of Stork's Nest as earlier; equivalent."
+      },
+      {
+        "case_index": 97,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Lee Mantle."
+      },
+      {
+        "case_index": 103,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both commit to Viktoriya Zeynep Güneş; B states the answer directly and more concisely."
+      },
+      {
+        "case_index": 107,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Les Résultats du féminisme."
+      },
+      {
+        "case_index": 111,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Kids of the Round Table; only punctuation differs."
+      },
+      {
+        "case_index": 127,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both commit to Charlotte Spurkeland; A adds dates, B is more concise."
+      },
+      {
+        "case_index": 139,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Noerr."
+      },
+      {
+        "case_index": 157,
+        "a_correct": false,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "A picks H. Verlan Andersen (wrong entity, and its own dates contradict it); B correctly names Narcís Ventalló."
+      },
+      {
+        "case_index": 159,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Aneta Hladíková."
+      },
+      {
+        "case_index": 167,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name Dis-Moi Qui Tuer; only the '(film)' tag differs."
+      },
+      {
+        "case_index": 171,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both commit to Helly Shah; A adds dates, B is more concise."
+      },
+      {
+        "case_index": 183,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers naming Wiesław Perszke."
+      },
+      {
+        "case_index": 187,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name 1990-Sick (Get 'Em All) as earlier; near-identical."
+      },
+      {
+        "case_index": 225,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both name Toolbox Murders (2004); B conveys it more concisely."
+      },
+      {
+        "case_index": 241,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers, both correctly pick Kull the Conqueror."
+      },
+      {
+        "case_index": 251,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both refuse with 'Insufficient context'; gold is Washington."
+      },
+      {
+        "case_index": 263,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers, both correctly pick Alien Origin."
+      },
+      {
+        "case_index": 313,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both pick Bernard Chambaz; B states it more concisely."
+      },
+      {
+        "case_index": 335,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both pick Occupation: Dreamland; B is tighter."
+      },
+      {
+        "case_index": 345,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers, both correctly pick Chopasni Senior Secondary School."
+      },
+      {
+        "case_index": 389,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both pick Aami; A is more concise."
+      },
+      {
+        "case_index": 403,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers, both correctly pick Natürlich die Nelli."
+      },
+      {
+        "case_index": 477,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A correctly picks Ela Gandhi; B wrongly claims Borensztein was born earlier despite the dates it cites."
+      },
+      {
+        "case_index": 489,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers, both correctly pick Ghar Ki Rani."
+      },
+      {
+        "case_index": 541,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers, both correctly pick the 1989 film."
+      },
+      {
+        "case_index": 811,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A gives 1969 matching gold; B refuses with 'Insufficient context'."
+      },
+      {
+        "case_index": 3837,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both name John Holles; 'Earl of Clare' is the same individual as the 1st Duke of Newcastle (his earlier title), answers otherwise identical."
+      },
+      {
+        "case_index": 4819,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A says British (UBM plc), matching gold; B says American, wrong choice."
+      },
+      {
+        "case_index": 12075,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both refuse with 'Insufficient context'; gold is 1978."
+      }
+    ]
+  ]
+}

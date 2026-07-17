@@ -1,0 +1,483 @@
+{
+  "experiment": "Research Task #1259 Structural Admission Boundary Search",
+  "hypothesis": "After the literal Which gate failed, cheap observable structural features may identify a safer admission boundary.",
+  "source": "/Users/gosu/Desktop/Catleaf/Prometheus/task1258_nonwhich_admission_negative_control_results.json",
+  "case_count": 520,
+  "feature_counts": {
+    "dataset": {
+      "2wiki": 200,
+      "hotpot": 320
+    },
+    "admission_group": {
+      "which_accepted": 303,
+      "nonwhich_rejected": 217
+    },
+    "starts_which": {
+      "True": 303,
+      "False": 217
+    },
+    "has_or": {
+      "True": 345,
+      "False": 175
+    },
+    "has_comparison_word": {
+      "False": 520
+    }
+  },
+  "success_gate": {
+    "n": ">= 80",
+    "answer_retention_rate_given_full": ">= 0.99",
+    "mean_support_coverage": ">= 0.98",
+    "perfect_support_rate": ">= 0.94",
+    "mean_token_reduction_pct": ">= 30.0"
+  },
+  "best_boundary": {
+    "boundary": "hotpot_or_question",
+    "summary": {
+      "n": 168,
+      "answer_retention_rate_given_full": 1,
+      "mean_support_coverage": 1.0,
+      "perfect_support_rate": 1,
+      "strict_safe_rate": 1,
+      "mean_token_reduction_pct": 33.948,
+      "by_dataset": {
+        "hotpot": {
+          "n": 168,
+          "answer_retention_rate_given_full": 1,
+          "mean_support_coverage": 1.0,
+          "perfect_support_rate": 1,
+          "strict_safe_rate": 1,
+          "mean_token_reduction_pct": 33.948
+        }
+      },
+      "accepted_rate": 0.3231
+    },
+    "success": true
+  },
+  "successful_boundaries": [
+    {
+      "boundary": "hotpot_or_question",
+      "summary": {
+        "n": 168,
+        "answer_retention_rate_given_full": 1,
+        "mean_support_coverage": 1.0,
+        "perfect_support_rate": 1,
+        "strict_safe_rate": 1,
+        "mean_token_reduction_pct": 33.948,
+        "by_dataset": {
+          "hotpot": {
+            "n": 168,
+            "answer_retention_rate_given_full": 1,
+            "mean_support_coverage": 1.0,
+            "perfect_support_rate": 1,
+            "strict_safe_rate": 1,
+            "mean_token_reduction_pct": 33.948
+          }
+        },
+        "accepted_rate": 0.3231
+      },
+      "success": true
+    },
+    {
+      "boundary": "hotpot_or_or_comparison",
+      "summary": {
+        "n": 168,
+        "answer_retention_rate_given_full": 1,
+        "mean_support_coverage": 1.0,
+        "perfect_support_rate": 1,
+        "strict_safe_rate": 1,
+        "mean_token_reduction_pct": 33.948,
+        "by_dataset": {
+          "hotpot": {
+            "n": 168,
+            "answer_retention_rate_given_full": 1,
+            "mean_support_coverage": 1.0,
+            "perfect_support_rate": 1,
+            "strict_safe_rate": 1,
+            "mean_token_reduction_pct": 33.948
+          }
+        },
+        "accepted_rate": 0.3231
+      },
+      "success": true
+    }
+  ],
+  "ranked_boundaries": [
+    {
+      "boundary": "hotpot_or_question",
+      "summary": {
+        "n": 168,
+        "answer_retention_rate_given_full": 1,
+        "mean_support_coverage": 1.0,
+        "perfect_support_rate": 1,
+        "strict_safe_rate": 1,
+        "mean_token_reduction_pct": 33.948,
+        "by_dataset": {
+          "hotpot": {
+            "n": 168,
+            "answer_retention_rate_given_full": 1,
+            "mean_support_coverage": 1.0,
+            "perfect_support_rate": 1,
+            "strict_safe_rate": 1,
+            "mean_token_reduction_pct": 33.948
+          }
+        },
+        "accepted_rate": 0.3231
+      },
+      "success": true
+    },
+    {
+      "boundary": "hotpot_or_or_comparison",
+      "summary": {
+        "n": 168,
+        "answer_retention_rate_given_full": 1,
+        "mean_support_coverage": 1.0,
+        "perfect_support_rate": 1,
+        "strict_safe_rate": 1,
+        "mean_token_reduction_pct": 33.948,
+        "by_dataset": {
+          "hotpot": {
+            "n": 168,
+            "answer_retention_rate_given_full": 1,
+            "mean_support_coverage": 1.0,
+            "perfect_support_rate": 1,
+            "strict_safe_rate": 1,
+            "mean_token_reduction_pct": 33.948
+          }
+        },
+        "accepted_rate": 0.3231
+      },
+      "success": true
+    },
+    {
+      "boundary": "or_question_all",
+      "summary": {
+        "n": 345,
+        "answer_retention_rate_given_full": 0.9971,
+        "mean_support_coverage": 0.942,
+        "perfect_support_rate": 0.8203,
+        "strict_safe_rate": 0.8203,
+        "mean_token_reduction_pct": 28.915,
+        "by_dataset": {
+          "2wiki": {
+            "n": 177,
+            "answer_retention_rate_given_full": 0.9944,
+            "mean_support_coverage": 0.887,
+            "perfect_support_rate": 0.6497,
+            "strict_safe_rate": 0.6497,
+            "mean_token_reduction_pct": 24.137
+          },
+          "hotpot": {
+            "n": 168,
+            "answer_retention_rate_given_full": 1,
+            "mean_support_coverage": 1.0,
+            "perfect_support_rate": 1,
+            "strict_safe_rate": 1,
+            "mean_token_reduction_pct": 33.948
+          }
+        },
+        "accepted_rate": 0.6635
+      },
+      "success": false
+    },
+    {
+      "boundary": "literal_which",
+      "summary": {
+        "n": 303,
+        "answer_retention_rate_given_full": 0.9967,
+        "mean_support_coverage": 0.934,
+        "perfect_support_rate": 0.7954,
+        "strict_safe_rate": 0.7954,
+        "mean_token_reduction_pct": 28.369,
+        "by_dataset": {
+          "2wiki": {
+            "n": 177,
+            "answer_retention_rate_given_full": 0.9944,
+            "mean_support_coverage": 0.887,
+            "perfect_support_rate": 0.6497,
+            "strict_safe_rate": 0.6497,
+            "mean_token_reduction_pct": 24.137
+          },
+          "hotpot": {
+            "n": 126,
+            "answer_retention_rate_given_full": 1,
+            "mean_support_coverage": 1.0,
+            "perfect_support_rate": 1,
+            "strict_safe_rate": 1,
+            "mean_token_reduction_pct": 34.314
+          }
+        },
+        "accepted_rate": 0.5827
+      },
+      "success": false
+    },
+    {
+      "boundary": "2wiki_or_question",
+      "summary": {
+        "n": 177,
+        "answer_retention_rate_given_full": 0.9944,
+        "mean_support_coverage": 0.887,
+        "perfect_support_rate": 0.6497,
+        "strict_safe_rate": 0.6497,
+        "mean_token_reduction_pct": 24.137,
+        "by_dataset": {
+          "2wiki": {
+            "n": 177,
+            "answer_retention_rate_given_full": 0.9944,
+            "mean_support_coverage": 0.887,
+            "perfect_support_rate": 0.6497,
+            "strict_safe_rate": 0.6497,
+            "mean_token_reduction_pct": 24.137
+          }
+        },
+        "accepted_rate": 0.3404
+      },
+      "success": false
+    },
+    {
+      "boundary": "token_reduction_ge30",
+      "summary": {
+        "n": 276,
+        "answer_retention_rate_given_full": 0.8877,
+        "mean_support_coverage": 0.9339,
+        "perfect_support_rate": 0.8043,
+        "strict_safe_rate": 0.7138,
+        "mean_token_reduction_pct": 43.958,
+        "by_dataset": {
+          "2wiki": {
+            "n": 78,
+            "answer_retention_rate_given_full": 0.9103,
+            "mean_support_coverage": 0.7788,
+            "perfect_support_rate": 0.3333,
+            "strict_safe_rate": 0.3205,
+            "mean_token_reduction_pct": 45.748
+          },
+          "hotpot": {
+            "n": 198,
+            "answer_retention_rate_given_full": 0.8788,
+            "mean_support_coverage": 0.9949,
+            "perfect_support_rate": 0.9899,
+            "strict_safe_rate": 0.8687,
+            "mean_token_reduction_pct": 43.253
+          }
+        },
+        "accepted_rate": 0.5308
+      },
+      "success": false
+    },
+    {
+      "boundary": "token_reduction_ge20",
+      "summary": {
+        "n": 349,
+        "answer_retention_rate_given_full": 0.8825,
+        "mean_support_coverage": 0.9391,
+        "perfect_support_rate": 0.8195,
+        "strict_safe_rate": 0.7249,
+        "mean_token_reduction_pct": 40.054,
+        "by_dataset": {
+          "2wiki": {
+            "n": 99,
+            "answer_retention_rate_given_full": 0.9091,
+            "mean_support_coverage": 0.7955,
+            "perfect_support_rate": 0.3838,
+            "strict_safe_rate": 0.3737,
+            "mean_token_reduction_pct": 41.423
+          },
+          "hotpot": {
+            "n": 250,
+            "answer_retention_rate_given_full": 0.872,
+            "mean_support_coverage": 0.996,
+            "perfect_support_rate": 0.992,
+            "strict_safe_rate": 0.864,
+            "mean_token_reduction_pct": 39.512
+          }
+        },
+        "accepted_rate": 0.6712
+      },
+      "success": false
+    },
+    {
+      "boundary": "hotpot_token_reduction_ge30",
+      "summary": {
+        "n": 198,
+        "answer_retention_rate_given_full": 0.8788,
+        "mean_support_coverage": 0.9949,
+        "perfect_support_rate": 0.9899,
+        "strict_safe_rate": 0.8687,
+        "mean_token_reduction_pct": 43.253,
+        "by_dataset": {
+          "hotpot": {
+            "n": 198,
+            "answer_retention_rate_given_full": 0.8788,
+            "mean_support_coverage": 0.9949,
+            "perfect_support_rate": 0.9899,
+            "strict_safe_rate": 0.8687,
+            "mean_token_reduction_pct": 43.253
+          }
+        },
+        "accepted_rate": 0.3808
+      },
+      "success": false
+    },
+    {
+      "boundary": "all_rows",
+      "summary": {
+        "n": 520,
+        "answer_retention_rate_given_full": 0.875,
+        "mean_support_coverage": 0.9535,
+        "perfect_support_rate": 0.8577,
+        "strict_safe_rate": 0.75,
+        "mean_token_reduction_pct": 29.676,
+        "by_dataset": {
+          "2wiki": {
+            "n": 200,
+            "answer_retention_rate_given_full": 0.91,
+            "mean_support_coverage": 0.884,
+            "perfect_support_rate": 0.64,
+            "strict_safe_rate": 0.595,
+            "mean_token_reduction_pct": 24.339
+          },
+          "hotpot": {
+            "n": 320,
+            "answer_retention_rate_given_full": 0.8531,
+            "mean_support_coverage": 0.9969,
+            "perfect_support_rate": 0.9938,
+            "strict_safe_rate": 0.8469,
+            "mean_token_reduction_pct": 33.012
+          }
+        },
+        "accepted_rate": 1.0
+      },
+      "success": false
+    },
+    {
+      "boundary": "selected_pages_ge12",
+      "summary": {
+        "n": 304,
+        "answer_retention_rate_given_full": 0.8553,
+        "mean_support_coverage": 0.9967,
+        "perfect_support_rate": 0.9934,
+        "strict_safe_rate": 0.8487,
+        "mean_token_reduction_pct": 34.75,
+        "by_dataset": {
+          "hotpot": {
+            "n": 304,
+            "answer_retention_rate_given_full": 0.8553,
+            "mean_support_coverage": 0.9967,
+            "perfect_support_rate": 0.9934,
+            "strict_safe_rate": 0.8487,
+            "mean_token_reduction_pct": 34.75
+          }
+        },
+        "accepted_rate": 0.5846
+      },
+      "success": false
+    },
+    {
+      "boundary": "hotpot_selected_pages_ge12",
+      "summary": {
+        "n": 304,
+        "answer_retention_rate_given_full": 0.8553,
+        "mean_support_coverage": 0.9967,
+        "perfect_support_rate": 0.9934,
+        "strict_safe_rate": 0.8487,
+        "mean_token_reduction_pct": 34.75,
+        "by_dataset": {
+          "hotpot": {
+            "n": 304,
+            "answer_retention_rate_given_full": 0.8553,
+            "mean_support_coverage": 0.9967,
+            "perfect_support_rate": 0.9934,
+            "strict_safe_rate": 0.8487,
+            "mean_token_reduction_pct": 34.75
+          }
+        },
+        "accepted_rate": 0.5846
+      },
+      "success": false
+    },
+    {
+      "boundary": "hotpot_all",
+      "summary": {
+        "n": 320,
+        "answer_retention_rate_given_full": 0.8531,
+        "mean_support_coverage": 0.9969,
+        "perfect_support_rate": 0.9938,
+        "strict_safe_rate": 0.8469,
+        "mean_token_reduction_pct": 33.012,
+        "by_dataset": {
+          "hotpot": {
+            "n": 320,
+            "answer_retention_rate_given_full": 0.8531,
+            "mean_support_coverage": 0.9969,
+            "perfect_support_rate": 0.9938,
+            "strict_safe_rate": 0.8469,
+            "mean_token_reduction_pct": 33.012
+          }
+        },
+        "accepted_rate": 0.6154
+      },
+      "success": false
+    },
+    {
+      "boundary": "hotpot_comparison_word",
+      "summary": {
+        "n": 0,
+        "accepted_rate": 0.0,
+        "answer_retention_rate_given_full": 0.0,
+        "mean_support_coverage": 0.0,
+        "perfect_support_rate": 0.0,
+        "strict_safe_rate": 0.0,
+        "mean_token_reduction_pct": 0.0
+      },
+      "success": false
+    },
+    {
+      "boundary": "comparison_word_all",
+      "summary": {
+        "n": 0,
+        "accepted_rate": 0.0,
+        "answer_retention_rate_given_full": 0.0,
+        "mean_support_coverage": 0.0,
+        "perfect_support_rate": 0.0,
+        "strict_safe_rate": 0.0,
+        "mean_token_reduction_pct": 0.0
+      },
+      "success": false
+    },
+    {
+      "boundary": "or_and_capitals_ge2",
+      "summary": {
+        "n": 0,
+        "accepted_rate": 0.0,
+        "answer_retention_rate_given_full": 0.0,
+        "mean_support_coverage": 0.0,
+        "perfect_support_rate": 0.0,
+        "strict_safe_rate": 0.0,
+        "mean_token_reduction_pct": 0.0
+      },
+      "success": false
+    },
+    {
+      "boundary": "hotpot_or_capitals_ge2",
+      "summary": {
+        "n": 0,
+        "accepted_rate": 0.0,
+        "answer_retention_rate_given_full": 0.0,
+        "mean_support_coverage": 0.0,
+        "perfect_support_rate": 0.0,
+        "strict_safe_rate": 0.0,
+        "mean_token_reduction_pct": 0.0
+      },
+      "success": false
+    }
+  ],
+  "success": true,
+  "claim_decision": "structural_boundary_search_finds_candidate",
+  "limitations": [
+    "Exploratory search on the same diagnostic rows.",
+    "Non-generative safety labels only.",
+    "Candidate boundaries must be frozen and validated on held-out rows.",
+    "Some features include post-selection token metrics and may not be pure pre-admission signals."
+  ]
+}

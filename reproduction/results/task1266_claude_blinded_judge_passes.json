@@ -1,0 +1,691 @@
+{
+  "judge": "claude-fable-5 blinded subagent panel via Claude Code",
+  "passes": 3,
+  "pass_agent_note": "Each pass = 2 subagents covering cases 1-16 and 17-32 of the blinded request file; judges read only the request file.",
+  "pairwise_correctness_agreement": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "cases_with_any_correctness_disagreement": 0,
+  "raw_passes": [
+    [
+      {
+        "case_index": 4204,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Summer Magic. A picks Around the World in 80 Days; B contradicts itself and concludes Around the World in 80 Days. Both convey the wrong entity."
+      },
+      {
+        "case_index": 4225,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both correctly state Grover Jones was born in Rosedale, Indiana; A is marginally more concise."
+      },
+      {
+        "case_index": 4258,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers, both correctly name Elizabeth Taylor."
+      },
+      {
+        "case_index": 4270,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers, both correctly name Cascade Locks and Canal."
+      },
+      {
+        "case_index": 4336,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers, both correctly name Pagliacci."
+      },
+      {
+        "case_index": 4380,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers, both correctly name Grand Forks International Airport."
+      },
+      {
+        "case_index": 4408,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers, both correctly name John Wayne Airport."
+      },
+      {
+        "case_index": 4452,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is UniCredit; both answers assert China CITIC Bank has more branches despite citing figures showing otherwise."
+      },
+      {
+        "case_index": 4485,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both convey Western Institute of Technology; B is more direct and concise."
+      },
+      {
+        "case_index": 4521,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Unwritten Law; both answers conclude Jon Spencer Blues Explosion was formed earlier."
+      },
+      {
+        "case_index": 4582,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly convey Unchained Memories (2003) was made first; equally clear and concise."
+      },
+      {
+        "case_index": 4608,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Carleton University; both answers name Grand Valley State University, mismatching the gold choice."
+      },
+      {
+        "case_index": 4631,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers, both correctly name Jennifer Nettles."
+      },
+      {
+        "case_index": 4649,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers, both correctly name Flaming beverage."
+      },
+      {
+        "case_index": 4733,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both correctly convey John le Carré; A is complete while B ends mid-sentence."
+      },
+      {
+        "case_index": 4762,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers; 'pizza restaurant chains' conveys the gold answer 'restaurant chain'."
+      },
+      {
+        "case_index": 4824,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both name Mankiewicz; B is more concise with the same correct answer."
+      },
+      {
+        "case_index": 4868,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly identify Ulan Hot; near-identical answers."
+      },
+      {
+        "case_index": 4907,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Ian MacKaye; both truncate mid-list similarly."
+      },
+      {
+        "case_index": 4962,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Disporum."
+      },
+      {
+        "case_index": 4982,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A commits to Pokemon: Arceus and the Jewel of Life despite a caveat; B refuses to answer."
+      },
+      {
+        "case_index": 5047,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly identify Sixpence None the Richer; equivalent phrasing."
+      },
+      {
+        "case_index": 5054,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming The Arts Fuse."
+      },
+      {
+        "case_index": 5109,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Burton Cummings."
+      },
+      {
+        "case_index": 5118,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Suining."
+      },
+      {
+        "case_index": 5242,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Sherwood Stewart."
+      },
+      {
+        "case_index": 5381,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Carrie Akre."
+      },
+      {
+        "case_index": 5383,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Both pick Brian G. Hutton; gold answer is Xawery Zulawski."
+      },
+      {
+        "case_index": 5452,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly identify The Jungle Book with comparable supporting detail."
+      },
+      {
+        "case_index": 5470,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A commits to !!! matching gold; B refuses to answer."
+      },
+      {
+        "case_index": 5485,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly identify Hewlett Packard Enterprise; near-identical."
+      },
+      {
+        "case_index": 5486,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Shijiazhuang."
+      }
+    ],
+    [
+      {
+        "case_index": 4204,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Summer Magic; A picks Around the World in 80 Days, B self-contradicts and concludes Around the World was first."
+      },
+      {
+        "case_index": 4225,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both convey Jones born in Rosedale, Indiana; A is slightly more concise."
+      },
+      {
+        "case_index": 4258,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers naming Elizabeth Taylor."
+      },
+      {
+        "case_index": 4270,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Cascade Locks and Canal."
+      },
+      {
+        "case_index": 4336,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Pagliacci."
+      },
+      {
+        "case_index": 4380,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Grand Forks International Airport."
+      },
+      {
+        "case_index": 4408,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: John Wayne Airport."
+      },
+      {
+        "case_index": 4452,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is UniCredit; both assert China CITIC Bank has more branches (both truncated and self-contradictory)."
+      },
+      {
+        "case_index": 4485,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both convey Western Institute of Technology; B is more concise and direct."
+      },
+      {
+        "case_index": 4521,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Unwritten Law; both identically claim Jon Spencer Blues Explosion formed earlier."
+      },
+      {
+        "case_index": 4582,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly convey Unchained Memories (2003) was made first, with equivalent concision."
+      },
+      {
+        "case_index": 4608,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Carleton University; both identically answer Grand Valley State University."
+      },
+      {
+        "case_index": 4631,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Jennifer Nettles."
+      },
+      {
+        "case_index": 4649,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers: Flaming beverage."
+      },
+      {
+        "case_index": 4733,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both convey John le Carré; A is complete while B ends in a truncated sentence."
+      },
+      {
+        "case_index": 4762,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical answers conveying restaurant chain."
+      },
+      {
+        "case_index": 4824,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both name Mankiewicz; B states it most concisely, A adds unneeded detail."
+      },
+      {
+        "case_index": 4868,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Ulan Hot; near-identical, A only adds a redundant clause."
+      },
+      {
+        "case_index": 4907,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both pick Ian MacKaye; both are truncated mid-list, equally good."
+      },
+      {
+        "case_index": 4962,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Disporum)."
+      },
+      {
+        "case_index": 4982,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A commits to Pokemon: Arceus first despite a trailing caveat; B refuses."
+      },
+      {
+        "case_index": 5047,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly identify Sixpence None the Richer; equivalent phrasing."
+      },
+      {
+        "case_index": 5054,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (The Arts Fuse)."
+      },
+      {
+        "case_index": 5109,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Burton Cummings)."
+      },
+      {
+        "case_index": 5118,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Suining)."
+      },
+      {
+        "case_index": 5242,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Sherwood Stewart)."
+      },
+      {
+        "case_index": 5381,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Carrie Akre)."
+      },
+      {
+        "case_index": 5383,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Xawery Zulawski; both pick Brian G. Hutton, the wrong entity."
+      },
+      {
+        "case_index": 5452,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick The Jungle Book with comparable supporting detail."
+      },
+      {
+        "case_index": 5470,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A commits to !!! (truncated but clear); B refuses with insufficient context."
+      },
+      {
+        "case_index": 5485,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Hewlett Packard Enterprise; nearly identical wording."
+      },
+      {
+        "case_index": 5486,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Shijiazhuang)."
+      }
+    ],
+    [
+      {
+        "case_index": 4204,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Summer Magic; A picks Around the World in 80 Days, and B contradicts itself but its committed conclusion is also Around the World in 80 Days."
+      },
+      {
+        "case_index": 4225,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both state Grover Jones was born in Rosedale, Indiana, matching gold; essentially identical."
+      },
+      {
+        "case_index": 4258,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Elizabeth Taylor; identical answers."
+      },
+      {
+        "case_index": 4270,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Cascade Locks and Canal is farther west; identical."
+      },
+      {
+        "case_index": 4336,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Pagliacci has more acts; identical."
+      },
+      {
+        "case_index": 4380,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Grand Forks International Airport; identical."
+      },
+      {
+        "case_index": 4408,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick John Wayne Airport; identical."
+      },
+      {
+        "case_index": 4452,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is UniCredit; both open by asserting China CITIC Bank has more branches, and neither conveys a committed conclusion matching gold (B is cut off after 'Therefore,')."
+      },
+      {
+        "case_index": 4485,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both conclude Western Institute of Technology, matching gold; B is more concise and its reasoning is cleaner."
+      },
+      {
+        "case_index": 4521,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Unwritten Law; both assert Jon Spencer Blues Explosion was formed earlier (despite citing dates that contradict that), so both convey the wrong entity."
+      },
+      {
+        "case_index": 4582,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly say Unchained Memories (2003) came first; equally clear."
+      },
+      {
+        "case_index": 4608,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold answer is Carleton University; both answers name Grand Valley State University, which does not match gold."
+      },
+      {
+        "case_index": 4631,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly name Jennifer Nettles; identical."
+      },
+      {
+        "case_index": 4649,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly identify the flaming beverage; identical."
+      },
+      {
+        "case_index": 4733,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "A",
+        "rationale": "Both convey John le Carré, matching gold; A is complete while B ends in a truncated dangling fragment about Hart Crane."
+      },
+      {
+        "case_index": 4762,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both convey 'restaurant chain' (as pizza restaurant chains), matching gold; identical."
+      },
+      {
+        "case_index": 4824,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "B",
+        "rationale": "Both name Mankiewicz as winning more; B conveys it more concisely."
+      },
+      {
+        "case_index": 4868,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly identify Ulan Hot; near-identical wording."
+      },
+      {
+        "case_index": 4907,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both commit to Ian MacKaye; both truncate mid-list, comparable quality."
+      },
+      {
+        "case_index": 4962,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Disporum)."
+      },
+      {
+        "case_index": 4982,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A asserts Pokemon: Arceus was released first (matches gold) despite a trailing caveat; B refuses."
+      },
+      {
+        "case_index": 5047,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly identify Sixpence None the Richer; equivalent answers."
+      },
+      {
+        "case_index": 5054,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (The Arts Fuse)."
+      },
+      {
+        "case_index": 5109,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Burton Cummings)."
+      },
+      {
+        "case_index": 5118,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Suining)."
+      },
+      {
+        "case_index": 5242,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Sherwood Stewart)."
+      },
+      {
+        "case_index": 5381,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Carrie Akre)."
+      },
+      {
+        "case_index": 5383,
+        "a_correct": false,
+        "b_correct": false,
+        "better": "neither",
+        "rationale": "Gold is Xawery Zulawski; both pick Brian G. Hutton, the wrong entity."
+      },
+      {
+        "case_index": 5452,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick The Jungle Book with reasonable support."
+      },
+      {
+        "case_index": 5470,
+        "a_correct": true,
+        "b_correct": false,
+        "better": "A",
+        "rationale": "A commits to !!! matching gold (truncation doesn't obscure the choice); B refuses."
+      },
+      {
+        "case_index": 5485,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Both correctly pick Hewlett Packard Enterprise; nearly identical."
+      },
+      {
+        "case_index": 5486,
+        "a_correct": true,
+        "b_correct": true,
+        "better": "tie",
+        "rationale": "Identical correct answers (Shijiazhuang)."
+      }
+    ]
+  ]
+}

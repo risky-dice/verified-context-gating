@@ -1,0 +1,1274 @@
+{
+  "experiment": "Research Task #1273 Latency-Controlled Interleaved Canary",
+  "hypothesis": "Selected context reduces live API wall-clock latency in both regimes under order-controlled, paired measurement.",
+  "mode": "live",
+  "model": "gpt-4.1-mini",
+  "design": "per-case ABBA interleaving, first arm alternating across cases, 2 warm-up calls",
+  "sources": {
+    "regime1": "/Users/gosu/Desktop/Catleaf/Prometheus/task1264_hotpot_local_semantic_generation_pack_results.live_backup_20260715.json",
+    "regime2": "/Users/gosu/Desktop/Catleaf/Prometheus/task1272_2wiki_entity_generation_results.json"
+  },
+  "cases_per_regime": 24,
+  "gates": {
+    "min_paired_cases": 20,
+    "sign_test_p_max": 0.05,
+    "min_mean_latency_reduction_pct": 10.0,
+    "completion_token_ratio_range": [
+      0.8,
+      1.25
+    ]
+  },
+  "estimated_cost_usd": 0.085048,
+  "budget_usd": 0.09,
+  "success": false,
+  "claim_decision": "latency_acceleration_not_supported",
+  "actual_cost_usd": 0.074618,
+  "regime1_summary": {
+    "paired_case_count": 24,
+    "selected_faster_count": 14,
+    "full_faster_count": 10,
+    "sign_test_p_two_sided": 0.54126,
+    "mean_latency_reduction_pct": 2.776,
+    "median_latency_reduction_pct": 1.434,
+    "mean_selected_ms": 1092.633,
+    "mean_full_ms": 1158.922,
+    "mean_prompt_tokens": {
+      "selected": 780.5,
+      "full": 1383.9
+    },
+    "completion_token_ratio_selected_over_full": 0.9975,
+    "gates": {
+      "paired_case_count_gate": true,
+      "sign_test_gate": false,
+      "mean_reduction_gate": false,
+      "completion_token_gate": true
+    },
+    "success": false
+  },
+  "regime2_summary": {
+    "paired_case_count": 24,
+    "selected_faster_count": 12,
+    "full_faster_count": 12,
+    "sign_test_p_two_sided": 1.0,
+    "mean_latency_reduction_pct": 6.948,
+    "median_latency_reduction_pct": 1.138,
+    "mean_selected_ms": 1068.435,
+    "mean_full_ms": 1790.666,
+    "mean_prompt_tokens": {
+      "selected": 359.3,
+      "full": 978.7
+    },
+    "completion_token_ratio_selected_over_full": 0.8761,
+    "gates": {
+      "paired_case_count_gate": true,
+      "sign_test_gate": false,
+      "mean_reduction_gate": false,
+      "completion_token_gate": true
+    },
+    "success": false
+  },
+  "regime1_rows": [
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4204,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1234.917,
+        1072.237
+      ],
+      "full_latencies_ms": [
+        1902.041,
+        824.194
+      ],
+      "selected_mean_ms": 1153.577,
+      "full_mean_ms": 1363.117,
+      "selected_completion_tokens": [
+        22,
+        22
+      ],
+      "full_completion_tokens": [
+        44,
+        25
+      ],
+      "selected_prompt_tokens": 913,
+      "full_prompt_tokens": 1965
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4225,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        1982.684,
+        1076.172
+      ],
+      "full_latencies_ms": [
+        1548.677,
+        1122.429
+      ],
+      "selected_mean_ms": 1529.428,
+      "full_mean_ms": 1335.553,
+      "selected_completion_tokens": [
+        23,
+        23
+      ],
+      "full_completion_tokens": [
+        23,
+        23
+      ],
+      "selected_prompt_tokens": 754,
+      "full_prompt_tokens": 1237
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4258,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1587.496,
+        657.092
+      ],
+      "full_latencies_ms": [
+        802.386,
+        1017.889
+      ],
+      "selected_mean_ms": 1122.294,
+      "full_mean_ms": 910.138,
+      "selected_completion_tokens": [
+        7,
+        7
+      ],
+      "full_completion_tokens": [
+        7,
+        7
+      ],
+      "selected_prompt_tokens": 767,
+      "full_prompt_tokens": 1306
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4270,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        1010.723,
+        833.912
+      ],
+      "full_latencies_ms": [
+        863.583,
+        758.629
+      ],
+      "selected_mean_ms": 922.317,
+      "full_mean_ms": 811.106,
+      "selected_completion_tokens": [
+        15,
+        15
+      ],
+      "full_completion_tokens": [
+        15,
+        15
+      ],
+      "selected_prompt_tokens": 757,
+      "full_prompt_tokens": 1229
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4336,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1232.697,
+        1267.439
+      ],
+      "full_latencies_ms": [
+        1155.689,
+        1233.358
+      ],
+      "selected_mean_ms": 1250.068,
+      "full_mean_ms": 1194.524,
+      "selected_completion_tokens": [
+        35,
+        35
+      ],
+      "full_completion_tokens": [
+        35,
+        35
+      ],
+      "selected_prompt_tokens": 986,
+      "full_prompt_tokens": 1642
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4380,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        1474.146,
+        1294.961
+      ],
+      "full_latencies_ms": [
+        1580.394,
+        1475.696
+      ],
+      "selected_mean_ms": 1384.553,
+      "full_mean_ms": 1528.045,
+      "selected_completion_tokens": [
+        41,
+        41
+      ],
+      "full_completion_tokens": [
+        41,
+        41
+      ],
+      "selected_prompt_tokens": 781,
+      "full_prompt_tokens": 1266
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4408,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        777.948,
+        901.596
+      ],
+      "full_latencies_ms": [
+        797.29,
+        756.99
+      ],
+      "selected_mean_ms": 839.772,
+      "full_mean_ms": 777.14,
+      "selected_completion_tokens": [
+        13,
+        13
+      ],
+      "full_completion_tokens": [
+        13,
+        13
+      ],
+      "selected_prompt_tokens": 773,
+      "full_prompt_tokens": 1166
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4452,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        1226.551,
+        1200.627
+      ],
+      "full_latencies_ms": [
+        1344.561,
+        1321.68
+      ],
+      "selected_mean_ms": 1213.589,
+      "full_mean_ms": 1333.12,
+      "selected_completion_tokens": [
+        48,
+        38
+      ],
+      "full_completion_tokens": [
+        48,
+        48
+      ],
+      "selected_prompt_tokens": 646,
+      "full_prompt_tokens": 958
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4485,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1471.998,
+        1164.258
+      ],
+      "full_latencies_ms": [
+        1952.912,
+        1556.971
+      ],
+      "selected_mean_ms": 1318.128,
+      "full_mean_ms": 1754.941,
+      "selected_completion_tokens": [
+        46,
+        42
+      ],
+      "full_completion_tokens": [
+        39,
+        48
+      ],
+      "selected_prompt_tokens": 698,
+      "full_prompt_tokens": 1074
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4521,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        908.285,
+        1141.651
+      ],
+      "full_latencies_ms": [
+        1000.359,
+        1071.984
+      ],
+      "selected_mean_ms": 1024.968,
+      "full_mean_ms": 1036.171,
+      "selected_completion_tokens": [
+        32,
+        25
+      ],
+      "full_completion_tokens": [
+        25,
+        25
+      ],
+      "selected_prompt_tokens": 725,
+      "full_prompt_tokens": 1151
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4582,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1173.718,
+        1016.127
+      ],
+      "full_latencies_ms": [
+        1049.826,
+        1179.873
+      ],
+      "selected_mean_ms": 1094.923,
+      "full_mean_ms": 1114.85,
+      "selected_completion_tokens": [
+        20,
+        20
+      ],
+      "full_completion_tokens": [
+        25,
+        25
+      ],
+      "selected_prompt_tokens": 788,
+      "full_prompt_tokens": 1780
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4608,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        796.466,
+        745.355
+      ],
+      "full_latencies_ms": [
+        778.364,
+        1186.431
+      ],
+      "selected_mean_ms": 770.91,
+      "full_mean_ms": 982.398,
+      "selected_completion_tokens": [
+        11,
+        11
+      ],
+      "full_completion_tokens": [
+        11,
+        11
+      ],
+      "selected_prompt_tokens": 713,
+      "full_prompt_tokens": 1719
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4631,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        721.482,
+        879.549
+      ],
+      "full_latencies_ms": [
+        1107.3,
+        941.333
+      ],
+      "selected_mean_ms": 800.515,
+      "full_mean_ms": 1024.316,
+      "selected_completion_tokens": [
+        10,
+        10
+      ],
+      "full_completion_tokens": [
+        10,
+        10
+      ],
+      "selected_prompt_tokens": 775,
+      "full_prompt_tokens": 1347
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4649,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        877.572,
+        994.286
+      ],
+      "full_latencies_ms": [
+        1076.611,
+        2624.141
+      ],
+      "selected_mean_ms": 935.929,
+      "full_mean_ms": 1850.376,
+      "selected_completion_tokens": [
+        10,
+        10
+      ],
+      "full_completion_tokens": [
+        10,
+        10
+      ],
+      "selected_prompt_tokens": 725,
+      "full_prompt_tokens": 1606
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4733,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1169.659,
+        1161.731
+      ],
+      "full_latencies_ms": [
+        1541.858,
+        1258.561
+      ],
+      "selected_mean_ms": 1165.695,
+      "full_mean_ms": 1400.209,
+      "selected_completion_tokens": [
+        44,
+        44
+      ],
+      "full_completion_tokens": [
+        44,
+        44
+      ],
+      "selected_prompt_tokens": 833,
+      "full_prompt_tokens": 1317
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4762,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        706.445,
+        1049.144
+      ],
+      "full_latencies_ms": [
+        760.804,
+        878.852
+      ],
+      "selected_mean_ms": 877.794,
+      "full_mean_ms": 819.828,
+      "selected_completion_tokens": [
+        9,
+        7
+      ],
+      "full_completion_tokens": [
+        7,
+        7
+      ],
+      "selected_prompt_tokens": 672,
+      "full_prompt_tokens": 1444
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4824,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1261.384,
+        1721.313
+      ],
+      "full_latencies_ms": [
+        1330.505,
+        1470.668
+      ],
+      "selected_mean_ms": 1491.349,
+      "full_mean_ms": 1400.586,
+      "selected_completion_tokens": [
+        38,
+        12
+      ],
+      "full_completion_tokens": [
+        39,
+        39
+      ],
+      "selected_prompt_tokens": 815,
+      "full_prompt_tokens": 1259
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4868,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        1094.947,
+        950.964
+      ],
+      "full_latencies_ms": [
+        1033.621,
+        1002.89
+      ],
+      "selected_mean_ms": 1022.956,
+      "full_mean_ms": 1018.255,
+      "selected_completion_tokens": [
+        27,
+        22
+      ],
+      "full_completion_tokens": [
+        28,
+        27
+      ],
+      "selected_prompt_tokens": 786,
+      "full_prompt_tokens": 1217
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4907,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1635.637,
+        1220.694
+      ],
+      "full_latencies_ms": [
+        1259.702,
+        1285.334
+      ],
+      "selected_mean_ms": 1428.166,
+      "full_mean_ms": 1272.518,
+      "selected_completion_tokens": [
+        48,
+        48
+      ],
+      "full_completion_tokens": [
+        48,
+        48
+      ],
+      "selected_prompt_tokens": 894,
+      "full_prompt_tokens": 1894
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4962,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        743.41,
+        806.305
+      ],
+      "full_latencies_ms": [
+        784.591,
+        797.747
+      ],
+      "selected_mean_ms": 774.857,
+      "full_mean_ms": 791.169,
+      "selected_completion_tokens": [
+        12,
+        12
+      ],
+      "full_completion_tokens": [
+        12,
+        12
+      ],
+      "selected_prompt_tokens": 131,
+      "full_prompt_tokens": 131
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 4982,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1266.673,
+        1092.297
+      ],
+      "full_latencies_ms": [
+        782.8,
+        832.002
+      ],
+      "selected_mean_ms": 1179.485,
+      "full_mean_ms": 807.401,
+      "selected_completion_tokens": [
+        38,
+        38
+      ],
+      "full_completion_tokens": [
+        4,
+        4
+      ],
+      "selected_prompt_tokens": 1208,
+      "full_prompt_tokens": 2151
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 5047,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        1081.886,
+        1208.66
+      ],
+      "full_latencies_ms": [
+        1012.324,
+        1284.842
+      ],
+      "selected_mean_ms": 1145.273,
+      "full_mean_ms": 1148.583,
+      "selected_completion_tokens": [
+        24,
+        24
+      ],
+      "full_completion_tokens": [
+        20,
+        28
+      ],
+      "selected_prompt_tokens": 869,
+      "full_prompt_tokens": 1429
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 5054,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        840.446,
+        808.064
+      ],
+      "full_latencies_ms": [
+        778.559,
+        944.251
+      ],
+      "selected_mean_ms": 824.255,
+      "full_mean_ms": 861.405,
+      "selected_completion_tokens": [
+        10,
+        10
+      ],
+      "full_completion_tokens": [
+        10,
+        10
+      ],
+      "selected_prompt_tokens": 958,
+      "full_prompt_tokens": 1746
+    },
+    {
+      "regime": "hotpot_or_top10",
+      "index": 5109,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        884.347,
+        1020.444
+      ],
+      "full_latencies_ms": [
+        1583.254,
+        973.526
+      ],
+      "selected_mean_ms": 952.395,
+      "full_mean_ms": 1278.39,
+      "selected_completion_tokens": [
+        31,
+        31
+      ],
+      "full_completion_tokens": [
+        33,
+        31
+      ],
+      "selected_prompt_tokens": 764,
+      "full_prompt_tokens": 1180
+    }
+  ],
+  "regime2_rows": [
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 1,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1009.182,
+        1019.292
+      ],
+      "full_latencies_ms": [
+        1179.223,
+        931.891
+      ],
+      "selected_mean_ms": 1014.237,
+      "full_mean_ms": 1055.557,
+      "selected_completion_tokens": [
+        24,
+        24
+      ],
+      "full_completion_tokens": [
+        23,
+        23
+      ],
+      "selected_prompt_tokens": 272,
+      "full_prompt_tokens": 1383
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 39,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        1266.371,
+        789.893
+      ],
+      "full_latencies_ms": [
+        10790.213,
+        10046.274
+      ],
+      "selected_mean_ms": 1028.132,
+      "full_mean_ms": 10418.244,
+      "selected_completion_tokens": [
+        9,
+        9
+      ],
+      "full_completion_tokens": [
+        36,
+        36
+      ],
+      "selected_prompt_tokens": 791,
+      "full_prompt_tokens": 1114
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 89,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        891.205,
+        1028.714
+      ],
+      "full_latencies_ms": [
+        1038.698,
+        928.667
+      ],
+      "selected_mean_ms": 959.959,
+      "full_mean_ms": 983.683,
+      "selected_completion_tokens": [
+        26,
+        26
+      ],
+      "full_completion_tokens": [
+        25,
+        24
+      ],
+      "selected_prompt_tokens": 369,
+      "full_prompt_tokens": 1507
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 95,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        943.963,
+        1059.469
+      ],
+      "full_latencies_ms": [
+        1043.063,
+        930.175
+      ],
+      "selected_mean_ms": 1001.716,
+      "full_mean_ms": 986.619,
+      "selected_completion_tokens": [
+        28,
+        28
+      ],
+      "full_completion_tokens": [
+        23,
+        23
+      ],
+      "selected_prompt_tokens": 281,
+      "full_prompt_tokens": 993
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 97,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1336.81,
+        1036.601
+      ],
+      "full_latencies_ms": [
+        1225.876,
+        1672.447
+      ],
+      "selected_mean_ms": 1186.706,
+      "full_mean_ms": 1449.161,
+      "selected_completion_tokens": [
+        28,
+        28
+      ],
+      "full_completion_tokens": [
+        28,
+        28
+      ],
+      "selected_prompt_tokens": 748,
+      "full_prompt_tokens": 1178
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 103,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        946.964,
+        989.893
+      ],
+      "full_latencies_ms": [
+        1472.87,
+        1116.266
+      ],
+      "selected_mean_ms": 968.428,
+      "full_mean_ms": 1294.568,
+      "selected_completion_tokens": [
+        29,
+        29
+      ],
+      "full_completion_tokens": [
+        47,
+        47
+      ],
+      "selected_prompt_tokens": 244,
+      "full_prompt_tokens": 973
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 107,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1139.549,
+        1192.324
+      ],
+      "full_latencies_ms": [
+        847.127,
+        1081.897
+      ],
+      "selected_mean_ms": 1165.937,
+      "full_mean_ms": 964.512,
+      "selected_completion_tokens": [
+        28,
+        28
+      ],
+      "full_completion_tokens": [
+        28,
+        28
+      ],
+      "selected_prompt_tokens": 154,
+      "full_prompt_tokens": 433
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 111,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        923.777,
+        936.558
+      ],
+      "full_latencies_ms": [
+        1142.548,
+        1138.566
+      ],
+      "selected_mean_ms": 930.168,
+      "full_mean_ms": 1140.557,
+      "selected_completion_tokens": [
+        28,
+        28
+      ],
+      "full_completion_tokens": [
+        28,
+        28
+      ],
+      "selected_prompt_tokens": 285,
+      "full_prompt_tokens": 1584
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 127,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        811.045,
+        689.974
+      ],
+      "full_latencies_ms": [
+        897.098,
+        741.496
+      ],
+      "selected_mean_ms": 750.51,
+      "full_mean_ms": 819.297,
+      "selected_completion_tokens": [
+        8,
+        8
+      ],
+      "full_completion_tokens": [
+        22,
+        22
+      ],
+      "selected_prompt_tokens": 373,
+      "full_prompt_tokens": 895
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 139,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        1433.598,
+        1248.925
+      ],
+      "full_latencies_ms": [
+        1272.72,
+        1004.702
+      ],
+      "selected_mean_ms": 1341.262,
+      "full_mean_ms": 1138.711,
+      "selected_completion_tokens": [
+        20,
+        20
+      ],
+      "full_completion_tokens": [
+        20,
+        20
+      ],
+      "selected_prompt_tokens": 256,
+      "full_prompt_tokens": 1513
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 157,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1568.636,
+        710.291
+      ],
+      "full_latencies_ms": [
+        936.082,
+        986.069
+      ],
+      "selected_mean_ms": 1139.464,
+      "full_mean_ms": 961.075,
+      "selected_completion_tokens": [
+        9,
+        9
+      ],
+      "full_completion_tokens": [
+        21,
+        21
+      ],
+      "selected_prompt_tokens": 311,
+      "full_prompt_tokens": 798
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 159,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        1121.656,
+        907.365
+      ],
+      "full_latencies_ms": [
+        1078.695,
+        1128.354
+      ],
+      "selected_mean_ms": 1014.51,
+      "full_mean_ms": 1103.524,
+      "selected_completion_tokens": [
+        15,
+        15
+      ],
+      "full_completion_tokens": [
+        15,
+        15
+      ],
+      "selected_prompt_tokens": 352,
+      "full_prompt_tokens": 905
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 167,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1590.13,
+        901.814
+      ],
+      "full_latencies_ms": [
+        8059.556,
+        9817.257
+      ],
+      "selected_mean_ms": 1245.972,
+      "full_mean_ms": 8938.406,
+      "selected_completion_tokens": [
+        28,
+        28
+      ],
+      "full_completion_tokens": [
+        31,
+        31
+      ],
+      "selected_prompt_tokens": 311,
+      "full_prompt_tokens": 677
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 171,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        859.344,
+        581.224
+      ],
+      "full_latencies_ms": [
+        1091.626,
+        1468.36
+      ],
+      "selected_mean_ms": 720.284,
+      "full_mean_ms": 1279.993,
+      "selected_completion_tokens": [
+        6,
+        6
+      ],
+      "full_completion_tokens": [
+        28,
+        28
+      ],
+      "selected_prompt_tokens": 145,
+      "full_prompt_tokens": 557
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 183,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1142.206,
+        1844.662
+      ],
+      "full_latencies_ms": [
+        974.434,
+        894.474
+      ],
+      "selected_mean_ms": 1493.434,
+      "full_mean_ms": 934.454,
+      "selected_completion_tokens": [
+        22,
+        22
+      ],
+      "full_completion_tokens": [
+        22,
+        22
+      ],
+      "selected_prompt_tokens": 399,
+      "full_prompt_tokens": 945
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 187,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        1211.077,
+        1029.744
+      ],
+      "full_latencies_ms": [
+        1072.402,
+        952.322
+      ],
+      "selected_mean_ms": 1120.41,
+      "full_mean_ms": 1012.362,
+      "selected_completion_tokens": [
+        36,
+        36
+      ],
+      "full_completion_tokens": [
+        33,
+        33
+      ],
+      "selected_prompt_tokens": 845,
+      "full_prompt_tokens": 1293
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 225,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        2471.218,
+        911.734
+      ],
+      "full_latencies_ms": [
+        1124.51,
+        1907.627
+      ],
+      "selected_mean_ms": 1691.476,
+      "full_mean_ms": 1516.068,
+      "selected_completion_tokens": [
+        27,
+        27
+      ],
+      "full_completion_tokens": [
+        22,
+        22
+      ],
+      "selected_prompt_tokens": 321,
+      "full_prompt_tokens": 761
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 241,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        1040.441,
+        986.248
+      ],
+      "full_latencies_ms": [
+        926.758,
+        1085.464
+      ],
+      "selected_mean_ms": 1013.345,
+      "full_mean_ms": 1006.111,
+      "selected_completion_tokens": [
+        22,
+        22
+      ],
+      "full_completion_tokens": [
+        22,
+        22
+      ],
+      "selected_prompt_tokens": 605,
+      "full_prompt_tokens": 1127
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 251,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        618.368,
+        630.186
+      ],
+      "full_latencies_ms": [
+        654.599,
+        592.262
+      ],
+      "selected_mean_ms": 624.277,
+      "full_mean_ms": 623.43,
+      "selected_completion_tokens": [
+        4,
+        4
+      ],
+      "full_completion_tokens": [
+        4,
+        4
+      ],
+      "selected_prompt_tokens": 379,
+      "full_prompt_tokens": 942
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 263,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        910.548,
+        1117.044
+      ],
+      "full_latencies_ms": [
+        946.117,
+        956.551
+      ],
+      "selected_mean_ms": 1013.796,
+      "full_mean_ms": 951.334,
+      "selected_completion_tokens": [
+        24,
+        24
+      ],
+      "full_completion_tokens": [
+        24,
+        24
+      ],
+      "selected_prompt_tokens": 185,
+      "full_prompt_tokens": 898
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 313,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        965.278,
+        952.689
+      ],
+      "full_latencies_ms": [
+        800.922,
+        999.089
+      ],
+      "selected_mean_ms": 958.984,
+      "full_mean_ms": 900.005,
+      "selected_completion_tokens": [
+        28,
+        28
+      ],
+      "full_completion_tokens": [
+        13,
+        13
+      ],
+      "selected_prompt_tokens": 181,
+      "full_prompt_tokens": 617
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 335,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        925.434,
+        1016.509
+      ],
+      "full_latencies_ms": [
+        1282.052,
+        1143.839
+      ],
+      "selected_mean_ms": 970.971,
+      "full_mean_ms": 1212.945,
+      "selected_completion_tokens": [
+        22,
+        22
+      ],
+      "full_completion_tokens": [
+        36,
+        36
+      ],
+      "selected_prompt_tokens": 295,
+      "full_prompt_tokens": 777
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 345,
+      "first_arm": "selected",
+      "selected_latencies_ms": [
+        1282.574,
+        1195.643
+      ],
+      "full_latencies_ms": [
+        981.734,
+        1122.698
+      ],
+      "selected_mean_ms": 1239.109,
+      "full_mean_ms": 1052.216,
+      "selected_completion_tokens": [
+        32,
+        32
+      ],
+      "full_completion_tokens": [
+        32,
+        32
+      ],
+      "selected_prompt_tokens": 312,
+      "full_prompt_tokens": 928
+    },
+    {
+      "regime": "2wiki_entity_sent_full",
+      "index": 389,
+      "first_arm": "full",
+      "selected_latencies_ms": [
+        1021.321,
+        1077.387
+      ],
+      "full_latencies_ms": [
+        1255.771,
+        1210.534
+      ],
+      "selected_mean_ms": 1049.354,
+      "full_mean_ms": 1233.153,
+      "selected_completion_tokens": [
+        24,
+        24
+      ],
+      "full_completion_tokens": [
+        19,
+        19
+      ],
+      "selected_prompt_tokens": 209,
+      "full_prompt_tokens": 691
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "experiment": "Research Task #1278 Trained Pruner (Provence) vs Structural Gates",
+  "provence_model": "naver/provence-reranker-debertav3-v1 (CC BY-NC-ND 4.0; research comparison only)",
+  "thresholds": [
+    0.01,
+    0.05,
+    0.1,
+    0.25,
+    0.5
+  ],
+  "decision_rules": "D1 dominate (all three metrics); D2 floor (no threshold matches our operating point within standard gates); else mixed_pareto",
+  "ours": {
+    "hotpot": {
+      "n": 123,
+      "answer_retention_rate_given_full": 1,
+      "mean_support_coverage": 0.9897,
+      "perfect_support_rate": 0.9675,
+      "mean_token_reduction_pct": 45.26
+    },
+    "2wiki": {
+      "n": 300,
+      "answer_retention_rate_given_full": 0.9967,
+      "mean_support_coverage": 0.9983,
+      "perfect_support_rate": 0.9967,
+      "mean_token_reduction_pct": 66.751
+    }
+  },
+  "mode": "full",
+  "provence": {
+    "hotpot": {
+      "0.1": {
+        "n": 123,
+        "answer_retention_rate_given_full": 0.7417,
+        "mean_support_coverage": 0.4719,
+        "perfect_support_rate": 0.1951,
+        "mean_token_reduction_pct": 86.439
+      },
+      "0.25": {
+        "n": 123,
+        "answer_retention_rate_given_full": 0.5833,
+        "mean_support_coverage": 0.3223,
+        "perfect_support_rate": 0.0894,
+        "mean_token_reduction_pct": 91.583
+      },
+      "0.5": {
+        "n": 123,
+        "answer_retention_rate_given_full": 0.4333,
+        "mean_support_coverage": 0.1986,
+        "perfect_support_rate": 0.0407,
+        "mean_token_reduction_pct": 94.957
+      },
+      "0.01": {
+        "n": 123,
+        "answer_retention_rate_given_full": 0.925,
+        "mean_support_coverage": 0.7353,
+        "perfect_support_rate": 0.5366,
+        "mean_token_reduction_pct": 67.372
+      },
+      "0.05": {
+        "n": 123,
+        "answer_retention_rate_given_full": 0.7917,
+        "mean_support_coverage": 0.5884,
+        "perfect_support_rate": 0.3333,
+        "mean_token_reduction_pct": 81.41
+      }
+    },
+    "2wiki": {
+      "0.1": {
+        "n": 300,
+        "answer_retention_rate_given_full": 0.6733,
+        "mean_support_coverage": 0.4594,
+        "perfect_support_rate": 0.2833,
+        "mean_token_reduction_pct": 85.577
+      },
+      "0.25": {
+        "n": 300,
+        "answer_retention_rate_given_full": 0.4567,
+        "mean_support_coverage": 0.2628,
+        "perfect_support_rate": 0.1167,
+        "mean_token_reduction_pct": 92.34
+      },
+      "0.5": {
+        "n": 300,
+        "answer_retention_rate_given_full": 0.2467,
+        "mean_support_coverage": 0.1111,
+        "perfect_support_rate": 0.03,
+        "mean_token_reduction_pct": 96.87
+      },
+      "0.01": {
+        "n": 300,
+        "answer_retention_rate_given_full": 0.9,
+        "mean_support_coverage": 0.81,
+        "perfect_support_rate": 0.6967,
+        "mean_token_reduction_pct": 62.69
+      },
+      "0.05": {
+        "n": 300,
+        "answer_retention_rate_given_full": 0.7667,
+        "mean_support_coverage": 0.6011,
+        "perfect_support_rate": 0.4267,
+        "mean_token_reduction_pct": 79.269
+      }
+    }
+  },
+  "decisions": {
+    "hotpot": "structural_gate_holds_floor",
+    "2wiki": "structural_gate_holds_floor"
+  },
+  "claim_decision": "hotpot:structural_gate_holds_floor;2wiki:structural_gate_holds_floor"
+}

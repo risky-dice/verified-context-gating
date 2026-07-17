@@ -80,10 +80,38 @@ retention 0.9959, reduction 68.914%; coverage 0.9975 vs the harness's 0.998, a
 ## Install
 
 ```bash
-pip install -e .        # no dependencies; Python >= 3.10
-python tests/test_contextgates.py
-python examples/quickstart.py
+pip install contextgates                  # zero dependencies, Python >= 3.10
+pip install "contextgates[llamaindex]"    # + GateNodePostprocessor
+pip install "contextgates[langchain]"     # + GateDocumentCompressor
 ```
+
+From source:
+
+```bash
+pip install -e .                          # use a venv (PEP 668 blocks system python)
+python tests/test_contextgates.py         # 9 tests
+python tests/test_integrations.py         # 5 tests
+python examples/quickstart.py             # L1 only, free
+```
+
+### Framework integrations
+
+```python
+# LlamaIndex — drop verified gates into any query engine
+from contextgates.integrations.llamaindex import GateNodePostprocessor
+engine = index.as_query_engine(node_postprocessors=[GateNodePostprocessor(registry)])
+
+# LangChain — as a document compressor
+from contextgates.integrations.langchain import GateDocumentCompressor
+retriever = ContextualCompressionRetriever(
+    base_compressor=GateDocumentCompressor(registry=registry),
+    base_retriever=my_retriever,
+)
+```
+
+Adapters group retrieved chunks into titled documents, apply the registry, and
+drop or trim chunks accordingly; a rejected query passes every chunk through
+untouched. Neither framework is a dependency of the core package.
 
 ## Reproduction package
 

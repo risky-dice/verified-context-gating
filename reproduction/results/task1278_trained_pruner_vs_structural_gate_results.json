@@ -106,5 +106,53 @@
     "hotpot": "structural_gate_holds_floor",
     "2wiki": "structural_gate_holds_floor"
   },
-  "claim_decision": "hotpot:structural_gate_holds_floor;2wiki:structural_gate_holds_floor"
+  "claim_decision": "hotpot:structural_gate_holds_floor;2wiki:structural_gate_holds_floor",
+  "2wiki_holdout_rerun": {
+    "split": "odd-index holdout, first 300 admitted (never used for gate tuning)",
+    "ours": {
+      "n": 300,
+      "answer_retention_rate_given_full": 0.9967,
+      "mean_support_coverage": 0.9983,
+      "perfect_support_rate": 0.9967,
+      "mean_token_reduction_pct": 70.448
+    },
+    "provence": {
+      "0.01": {
+        "n": 300,
+        "answer_retention_rate_given_full": 0.92,
+        "mean_support_coverage": 0.8106,
+        "perfect_support_rate": 0.7067,
+        "mean_token_reduction_pct": 62.189
+      },
+      "0.05": {
+        "n": 300,
+        "answer_retention_rate_given_full": 0.7467,
+        "mean_support_coverage": 0.5839,
+        "perfect_support_rate": 0.3867,
+        "mean_token_reduction_pct": 78.916
+      },
+      "0.1": {
+        "n": 300,
+        "answer_retention_rate_given_full": 0.6733,
+        "mean_support_coverage": 0.4578,
+        "perfect_support_rate": 0.2633,
+        "mean_token_reduction_pct": 84.952
+      },
+      "0.25": {
+        "n": 300,
+        "answer_retention_rate_given_full": 0.47,
+        "mean_support_coverage": 0.2728,
+        "perfect_support_rate": 0.1367,
+        "mean_token_reduction_pct": 92.175
+      },
+      "0.5": {
+        "n": 300,
+        "answer_retention_rate_given_full": 0.2867,
+        "mean_support_coverage": 0.1428,
+        "perfect_support_rate": 0.0533,
+        "mean_token_reduction_pct": 96.147
+      }
+    },
+    "decision": "structural_gate_holds_floor"
+  }
 }

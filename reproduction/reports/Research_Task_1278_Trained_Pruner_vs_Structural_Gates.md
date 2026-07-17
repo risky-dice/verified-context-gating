@@ -85,3 +85,22 @@ lab/experiments/task1278_trained_pruner_vs_structural_gate.py
 task1278_trained_pruner_vs_structural_gate_results.json
 .venv-provence/ (torch, transformers, nltk; provence model in HF cache)
 ```
+
+## Addendum (2026-07-17, post-review): clean-holdout rerun
+
+An adversarial pre-submission review flagged that the 2Wiki arm ran on the
+even-index SEARCH split (where the gate's word lists were tuned). Rerun on
+the first 300 admitted ODD-index (holdout) cases, never used for design:
+
+```text
+ours (holdout):    ret 0.9967  cov 0.9983  red 70.45
+provence@0.01:     ret 0.9200  cov 0.8106  red 62.19
+provence@0.05:     ret 0.7467  cov 0.5839  red 78.92
+provence@0.1:      ret 0.6733  cov 0.4578  red 84.95
+decision: structural_gate_holds_floor (unchanged)
+```
+
+The contamination concern did not drive the result (numbers nearly
+identical to the search-split run); the paper now reports the clean
+holdout numbers and states n/split for both arms. Stored under
+`2wiki_holdout_rerun` in the results JSON.

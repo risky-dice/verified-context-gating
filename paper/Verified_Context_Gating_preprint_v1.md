@@ -158,15 +158,22 @@ contractualization.
 
 Adaptive-RAG routes queries among retrieval strategies by predicted
 complexity (Jeong et al. 2024); Self-RAG learns when to retrieve (Asai
-et al. 2024); model routing selects among LLMs (Ong et al. 2024; Chen et
-al. 2023). The contrast with gating is in *what is verified and when*:
-per-query learned decisions carry validation-set accuracy, whereas a
-gate is a per-regime structural predicate with a pre-specified evidence
-record and full-context fallback. Conformal methods provide formal
-coverage guarantees for RAG (Kang et al. 2024; Li et al. 2024; Mohri and
-Hashimoto 2024); we provide empirical pre-specified evidence, not
-distribution-free bounds—the two are complementary, and our use of
-“evidence” rather than “guarantees” is deliberate.
+et al. 2024); Self-Route lets the model self-reflect on whether a query
+needs long context or focused retrieval (Z. Li et al. 2024); the Context
+Awareness Gate decides retrieve-or-not from query–context embedding
+statistics (Heydari et al. 2024); and model routing selects among
+LLMs (Ong et al. 2024; Chen et al. 2023). These decide *whether to
+retrieve or which pipeline to run*; a context gate instead decides
+*whether cheap selection within the retrieved set is verified safe*, and
+keeps the full context otherwise. The contrast is in *what is verified
+and when*: per-query learned or statistical decisions carry
+validation-set accuracy, whereas a gate is a per-regime structural
+predicate with a pre-specified evidence record and full-context
+fallback. Conformal methods provide formal coverage guarantees for
+RAG (Kang et al. 2024; S. Li et al. 2024; Mohri and Hashimoto 2024); we
+provide empirical pre-specified evidence, not distribution-free
+bounds—the two are complementary, and our use of “evidence” rather than
+“guarantees” is deliberate.
 
 #### Evaluation.
 
@@ -506,6 +513,14 @@ of SIGIR*.
 
 </div>
 
+<div id="ref-heydari2024cag" class="csl-entry">
+
+Heydari, Mohammad Hassan, Arshia Hemmat, Erfan Naman, and Afsaneh
+Fatemi. 2024. “Context Awareness Gate for Retrieval Augmented
+Generation.” *arXiv Preprint arXiv:2411.16133*.
+
+</div>
+
 <div id="ref-ho2020constructing" class="csl-entry">
 
 Ho, Xanh, Anh-Khoa Duong Nguyen, Saku Sugawara, and Akiko Aizawa. 2020.
@@ -567,6 +582,15 @@ Models.” *Proceedings of ICML*.
 Li, Shuo, Sangdon Park, Insup Lee, and Osbert Bastani. 2024. “TRAQ:
 Trustworthy Retrieval Augmented Question Answering via Conformal
 Prediction.” *Proceedings of NAACL*.
+
+</div>
+
+<div id="ref-li2024selfroute" class="csl-entry">
+
+Li, Zhuowan, Cheng Li, Mingyang Zhang, Qiaozhu Mei, and Michael
+Bendersky. 2024. “Retrieval Augmented Generation or Long-Context LLMs? A
+Comprehensive Study and Hybrid Approach.” *Proceedings of EMNLP
+(Industry Track)*.
 
 </div>
 

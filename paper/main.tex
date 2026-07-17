@@ -184,9 +184,16 @@ this literature is not the phenomenon but its contractualization.
 \paragraph{When-to-act decisions and formal guarantees.} Adaptive-RAG
 routes queries among retrieval strategies by predicted
 complexity~\citep{jeong2024adaptive}; Self-RAG learns when to
-retrieve~\citep{asai2024selfrag}; model routing selects among
-LLMs~\citep{ong2024routellm,chen2023frugalgpt}. The contrast with gating
-is in \emph{what is verified and when}: per-query learned decisions carry
+retrieve~\citep{asai2024selfrag}; Self-Route lets the model self-reflect on
+whether a query needs long context or focused
+retrieval~\citep{li2024selfroute}; the Context Awareness Gate decides
+retrieve-or-not from query--context embedding
+statistics~\citep{heydari2024cag}; and model routing selects among
+LLMs~\citep{ong2024routellm,chen2023frugalgpt}. These decide \emph{whether
+to retrieve or which pipeline to run}; a context gate instead decides
+\emph{whether cheap selection within the retrieved set is verified safe},
+and keeps the full context otherwise. The contrast is in \emph{what is
+verified and when}: per-query learned or statistical decisions carry
 validation-set accuracy, whereas a gate is a per-regime structural
 predicate with a pre-specified evidence record and full-context fallback.
 Conformal methods provide formal coverage guarantees for

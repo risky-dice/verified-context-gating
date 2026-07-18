@@ -38,6 +38,42 @@ answer = my_llm(prompt(r.context_text)) # r.token_reduction_pct tells you what y
 [`examples/quickstart.py`](examples/quickstart.py)). The library never holds an
 API key and never phones home.
 
+## Try it in one command
+
+The free L1 retention check runs on your data with no API key and no cost:
+
+```bash
+pip install contextgates
+contextgates verify --data your_data.jsonl        # checks all built-in gates
+contextgates verify --data your_data.jsonl --gate entity_title --json report.json
+```
+
+`your_data.jsonl` is one JSON object per line:
+
+```json
+{"question": "Which film is older, A or B?",
+ "docs": [{"title": "A", "sentences": ["A is a 1990 film."]},
+          {"title": "B", "sentences": ["B is a 2001 film."]}],
+ "gold_answer": "A",
+ "support": [["A", 0], ["B", 0]]}
+```
+
+`verify` tells you, per gate, how much of *your* traffic it admits, whether
+answers and evidence survive selection, the token reduction — and if a gate
+is not verified, exactly which threshold blocked it. A ready sample is in
+[`examples/demo_data.jsonl`](examples/demo_data.jsonl):
+
+```text
+  gate: entity_title   [PASS ✓]
+    admitted            120/200  ( 60.0% of your traffic)
+    answer retention    100.0%   (need >= 99%)
+    evidence coverage   100.0%   (need >= 98%)
+    token reduction      44.8%   (need >= 35%)
+```
+
+L1 passing is necessary but not sufficient — run L2/L3 (generation + judging)
+from Python before enabling a gate; the CLI stops at the free layer on purpose.
+
 ## The evidence ladder
 
 | Layer | What it does | Cost |

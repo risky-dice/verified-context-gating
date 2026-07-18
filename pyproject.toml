@@ -27,6 +27,9 @@ classifiers = [
   "Typing :: Typed",
 ]
 
+[project.scripts]
+contextgates = "contextgates.cli:main"
+
 [project.optional-dependencies]
 llamaindex = ["llama-index-core>=0.10"]
 langchain = ["langchain-core>=0.2"]

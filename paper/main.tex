@@ -12,7 +12,7 @@
 \usepackage{xcolor}
 
 \title{Verified Context Gating: Training-Free Structural Admission for
-Context Selection, with Pre-Registered Quality Evidence}
+Context Selection, with Pre-Specified Quality Evidence}
 \author{Yongsun Lee\\ Independent Researcher\\ \texttt{bmt216ays@gmail.com}}
 \date{July 2026}
 
@@ -42,28 +42,31 @@ contribution is a verified, replicated instance under this contract. On a
 595-pair holdout prefix we observed post hoc that selected context was
 semantically \emph{more} accurate than full context; the effect survived a
 judge-family swap, and on the remaining 386 untouched pairs---with the
-hypothesis and thresholds fixed before generation---both judge families
-independently reproduced it ($\Delta=+0.057$, discordant $29{:}7$,
-$p=3.1\times10^{-4}$). Descriptively, over the full 981-pair holdout:
+hypothesis and thresholds fixed before generation---two LLM judge families
+(neither independent of the pipeline; see \S\ref{sec:limits}) reproduced it
+($\Delta=+0.057$, discordant $29{:}7$, $p=3.1\times10^{-4}$).
+Descriptively, over the full 981-pair holdout:
 $0.968$ vs.\ $0.907$, discordant $73{:}13$. At the retention layer on a
 clean holdout sample, the same training-free gate outperforms the trained
 pruner Provence at its most conservative shipped setting by 8 points of
 answer retention and 19 points of evidence coverage while compressing
 more. Two negative results sharpen the claims: paired exact-match scores
 were blind to the entire quality gap (identical $0.9866$ across arms while
-a 6-point semantic gap existed), and an order-controlled paired latency
+a 6.4-point semantic gap existed), and an order-controlled paired latency
 canary on a commercial serving stack found no evidence of the
 $\ge$10\% pre-specified wall-clock gain at kilotoken scale (median
 ${\sim}1\%$)---a caution for acceleration claims transplanted to API
-deployments. The metered API cost of the full evidence program was
-approximately one US dollar, suggesting that per-deployment
-verification---not only better compressors---is a practical missing layer
-in context engineering.
+deployments. The metered generation and external-judging spend was
+approximately one US dollar (the blinded judge panel ran on subscription
+compute; ${\approx}\$0.60$ more if metered, \S\ref{sec:repro}), suggesting
+that per-deployment verification---not only better compressors---is a
+practical missing layer in context engineering.
 \end{abstract}
 
 \section{Introduction}
 
-Retrieval-augmented generation pipelines routinely pay for context they do
+Retrieval-augmented generation~\citep{lewis2020rag,karpukhin2020dpr}
+pipelines routinely pay for context they do
 not need. A line of work addresses this with compression: trained context
 pruners and filters~\citep{wang2023filco,xu2024recomp,chirkova2025provence,zhang2024adacomp},
 perplexity-based prompt compressors~\citep{jiang2023llmlingua,jiang2024longllmlingua},
@@ -127,19 +130,22 @@ was reproduced on untouched pairs with hypothesis and thresholds fixed
 before generation (\S\ref{sec:superiority}). Mechanistically, full context
 induces distractor-driven comparison errors (dates cited correctly,
 direction flipped) that selection removes.
-\item \textbf{A training-free in-regime baseline that beats a trained
+\item \textbf{A training-free in-regime baseline competitive with a trained
 pruner at the retention layer.} On a clean holdout sample of its admitted
-regime, the entity gate outperforms Provence~\citep{chirkova2025provence}
-at Provence's most conservative shipped setting by 8 retention and 19
-coverage points while compressing more; across its threshold range
-Provence reaches neither gate's operating point on either regime. The
-comparison is a retention-layer proxy and Provence may be out-of-domain
-there; scope caveats in \S\ref{sec:provence}.
-\item \textbf{Two cautionary measurements.} Exact match disagreed with
-blinded semantic judgment in all five paired live evaluations; in the
-decisive large-sample case it was blind to the effect entirely (identical
-$0.9866$ across arms vs.\ a 6.4-point semantic gap), and in the
-replication it understated the effect ${\sim}7\times$. An order-controlled
+regime, and on the same coverage metrics our own gates are held to, the
+entity gate matches or exceeds Provence~\citep{chirkova2025provence} at
+Provence's most conservative shipped setting (by 8 retention and 19 coverage
+points) while compressing more; across its threshold range Provence reaches
+neither gate's operating point on either regime. The comparison is a
+retention-layer proxy, string-presence metrics structurally disfavor
+aggressive sentence pruners, and Provence may be out-of-domain here; full
+caveats in \S\ref{sec:provence}.
+\item \textbf{Two cautionary measurements.} Exact match never tracked the
+semantic signal across five paired live evaluations: in the two large-sample
+evaluations it was decision-blind (identical
+$0.9866$ across arms vs.\ a 6.4-point semantic gap; and a $7\times$
+understatement in the replication), while in the small canaries it was
+pure noise. An order-controlled
 paired latency canary found no evidence of the pre-specified
 $\ge$10\% wall-clock gain at kilotoken scale (\S\ref{sec:cautions}).
 \item \textbf{A micro-budget verification protocol.} The program spans 20
@@ -315,9 +321,10 @@ Blind-judged semantic accuracy (L3), selected vs.\ full: \gateone{}, all
 123 cases: $0.8862$ vs.\ $0.8618$ (sign test $p=0.45$ $\rightarrow$ parity;
 the $+0.024$ delta is not significant and the gate's claim is
 non-inferiority at cost $-43\%$). \gatetwo{}, all 981 cases: $0.9684$ vs.\
-$0.9072$ (\S\ref{sec:superiority}; generation cost $-59$ to $-61\%$,
-$-58.6\%$ on the replication set). External judge agreement with the
-panel: 96.3--99.2\% per pack.
+$0.9072$ (pooled discovery+replication, descriptive; see
+\S\ref{sec:superiority} for the pre-specified split; generation cost
+$-59$ to $-61\%$, $-58.6\%$ on the replication set). External judge
+agreement with the panel: 96.3--99.2\% per pack.
 
 \subsection{Selection beats full context on the 2Wiki regime}
 \label{sec:superiority}
@@ -335,8 +342,11 @@ $p=6.9\times10^{-7}$; 99.24\% per-label agreement with the panel.
 \item \textbf{Stage 3} (remaining 386 untouched pairs; hypothesis and
 thresholds fixed in the harness before generation): both judge families
 independently: $\Delta=+0.057$, discordant $29{:}7$,
-$p=3.1\times10^{-4}$. The confirmatory estimate agrees with the discovery
-estimate ($+0.057$ vs.\ $+0.059$--$0.064$).
+$p=3.1\times10^{-4}$. The two families land on the same net counts because
+they agree at the label level ($99.2\%$); their per-arm rates differ
+($0.9663/0.9093$ panel vs.\ $0.9689/0.9119$ external), so the match is
+convergence, not duplication. The confirmatory estimate agrees with the
+discovery estimate ($+0.057$ vs.\ $+0.059$--$0.064$).
 \item \textbf{Pooled (descriptive)}, all 981 pairs: $0.9684$ vs.\
 $0.9072$; discordant $73{:}13$.
 \end{itemize}
@@ -372,7 +382,7 @@ frozen Hotpot cases:
 \toprule
 Regime & Method & Retention & Coverage & Reduction \\
 \midrule
-2Wiki ($n{=}300$, holdout) & \gatetwo{} (ours) & \textbf{0.997} & \textbf{0.998} & 70.4\% \\
+2Wiki ($n{=}300$ holdout subsample) & \gatetwo{} (ours) & \textbf{0.997} & \textbf{0.998} & 70.4\% \\
        & Provence @0.01         & 0.920 & 0.811 & 62.2\% \\
        & Provence @0.1          & 0.673 & 0.458 & 85.0\% \\
 \midrule
@@ -424,14 +434,16 @@ entity-title selector.
 \subsection{Two measurement cautions}
 \label{sec:cautions}
 
-\paragraph{Exact match.} EM and blinded semantic judgment disagreed in all
-five paired live evaluations. In the two 32-case canaries the EM deltas
+\paragraph{Exact match.} Across five paired live evaluations EM never
+tracked the semantic signal. In the two 32-case canaries the EM deltas
 ($+0.031$ and $-0.0625$) rested on one and two discordant cases
-respectively---noise-consistent, though the latter would have wrongly
-rejected a sound gate under a $-0.05$ EM gate. At scale EM was
-magnitude-blind: identical $0.9866$ across arms while a 6.4-point semantic
-gap existed (Stage 1), and $+0.008$ vs.\ a $+0.057$ semantic delta in the
-replication---a ${\sim}7\times$ understatement. EM's errors were also
+respectively---pure noise, though the latter would have wrongly
+rejected a sound gate under a $-0.05$ EM gate. In the two large-sample
+evaluations EM was decision-blind: identical $0.9866$ across arms while a
+6.4-point semantic gap existed (Stage 1), and $+0.008$ vs.\ a $+0.057$
+semantic delta in the replication---a ${\sim}7\times$ understatement.
+(The Hotpot full sample is the fifth: there EM and semantics agree only in
+that both read parity.) EM's errors were also
 asymmetric with context length: self-contradictory full-context answers
 contain the gold string and are scored correct. Deployment decisions about
 context selection should not be made on EM.
@@ -440,8 +452,11 @@ context selection should not be made on EM.
 per-case ABBA interleaving, alternating first arm, warm-ups,
 completion-length gates) found no evidence of the pre-specified
 $\ge$10\% gain: sign tests $p=0.54$ and $p=1.0$, median per-case
-reductions 1.4\% and 1.1\%, despite 44--63\% prompt reduction. At this
-sample size only large, consistent effects could have been detected; the
+reductions 1.4\% and 1.1\%, despite 44--63\% prompt reduction. At $n{=}24$
+a sign test needs an $18{:}6$ split to reach $p<0.05$, so only a large,
+consistent per-case effect ($\gtrsim$75\% win rate) was detectable---this
+is absence of evidence for a $\ge$10\% gain, not evidence of exact
+equality; the
 point estimates (means $+2.8\%$/$+6.9\%$, corroborated by uncontrolled
 batch means of $+2.0\%$ at $n{=}595$ and $+6.4\%$ at $n{=}386$) suggest
 any true effect at this scale is small. Grand means are untrustworthy
@@ -492,21 +507,28 @@ Single generation model; the distractor-error mechanism may attenuate with
 stronger generators. The panel judge is the same agent lineage that
 designed the experiments (blinding is structural, not organizational), the
 external judge shares a family with the generator, and the 86 discordant
-labels carrying the headline effect were not human-adjudicated.
+labels carrying the headline effect were not human-adjudicated. Blinding
+removes arm labels, token counts, and contexts, but the answer text itself
+is a residual channel: full-context answers are longer and hit the token
+cap more often, so a judge could in principle infer the arm from
+verbosity; because scoring is gold-keyed binary correctness (not preference)
+and the effect survives excluding all cap-affected discordant pairs
+($41{:}5$, $p=4.4\times10^{-8}$), this channel does not drive the result.
 Pre-specification is attested by released harness sources, not by an
-independent timestamping service. Perplexity-based compressors (LLMLingua
-family) were not run; the trained-pruner comparison covers Provence only,
-at the retention layer. Admission predicates are English-specific;
-verbatim-title matching under-admits paraphrased questions.
+independent timestamping service. Perplexity-based compressors
+(LLMLingua family, including LLMLingua-2) were not run; the trained-pruner
+comparison covers Provence only, at the retention layer. Admission
+predicates are English-specific; verbatim-title matching under-admits
+paraphrased questions.
 
 \section{Conclusion}
 
 Context selection can be shipped the way safety-critical changes are
 shipped: behind a cheap gate, with pre-specified evidence, and with a
 fallback. On two multi-hop QA regimes this contract is not a tax---inside
-its admitted regime the cheapest possible selector beat the full context
-at the semantic layer and a trained pruner at the retention layer, and the
-entire metered proof cost about a dollar. We suspect the scarce resource
+its admitted regime a near-trivial selector beat the full context
+at the semantic layer and matched a trained pruner at the retention layer,
+and the metered spend was about a dollar. We suspect the scarce resource
 in context engineering is not compression power but verified knowledge of
 when compression is safe.
 

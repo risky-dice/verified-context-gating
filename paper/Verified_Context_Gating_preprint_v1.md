@@ -1,4 +1,4 @@
-# Verified Context Gating: Training-Free Structural Admission for Context Selection, with Pre-Registered Quality Evidence
+# Verified Context Gating: Training-Free Structural Admission for Context Selection, with Pre-Specified Quality Evidence
 
 Author: Yongsun Lee — Independent Researcher (bmt216ays@gmail.com)
 Version v1 (post-review revision), 2026-07-17. LaTeX source: latex/main.tex (authoritative).
@@ -11,16 +11,16 @@ Context compression for retrieval-augmented generation (RAG) is usually shipped 
 
 # Introduction
 
-Retrieval-augmented generation pipelines routinely pay for context they
-do not need. A line of work addresses this with compression: trained
-context pruners and filters (Wang et al. 2023; Xu et al. 2024; Chirkova
-et al. 2025; Zhang et al. 2024), perplexity-based prompt
-compressors (Jiang et al. 2023, 2024), and adaptive variants. These
-systems report strong aggregate results—LongLLMLingua reports accuracy
-*gains* at $`4\times`$ compression (Jiang et al. 2024)—and are shipped
-plug-and-play. What they do not ship is a per-deployment answer to the
-question a practitioner actually faces: *is this optimization safe on my
-traffic?*
+Retrieval-augmented generation (Lewis et al. 2020; Karpukhin et al.
+2020) pipelines routinely pay for context they do not need. A line of
+work addresses this with compression: trained context pruners and
+filters (Wang et al. 2023; Xu et al. 2024; Chirkova et al. 2025; Zhang
+et al. 2024), perplexity-based prompt compressors (Jiang et al. 2023,
+2024), and adaptive variants. These systems report strong aggregate
+results—LongLLMLingua reports accuracy *gains* at $`4\times`$
+compression (Jiang et al. 2024)—and are shipped plug-and-play. What they
+do not ship is a per-deployment answer to the question a practitioner
+actually faces: *is this optimization safe on my traffic?*
 
 This paper explores a complementary contract built from three decisions.
 
@@ -88,25 +88,27 @@ dataset, and a controlled null result on latency.
     context induces distractor-driven comparison errors (dates cited
     correctly, direction flipped) that selection removes.
 
-3.  **A training-free in-regime baseline that beats a trained pruner at
-    the retention layer.** On a clean holdout sample of its admitted
-    regime, the entity gate outperforms Provence (Chirkova et al. 2025)
-    at Provence’s most conservative shipped setting by 8 retention and
-    19 coverage points while compressing more; across its threshold
-    range Provence reaches neither gate’s operating point on either
-    regime. The comparison is a retention-layer proxy and Provence may
-    be out-of-domain there; scope caveats in
+3.  **A training-free in-regime baseline competitive with a trained
+    pruner at the retention layer.** On a clean holdout sample of its
+    admitted regime, and on the same coverage metrics our own gates are
+    held to, the entity gate matches or exceeds Provence (Chirkova et
+    al. 2025) at Provence’s most conservative shipped setting (by 8
+    retention and 19 coverage points) while compressing more; across its
+    threshold range Provence reaches neither gate’s operating point on
+    either regime. The comparison is a retention-layer proxy,
+    string-presence metrics structurally disfavor aggressive sentence
+    pruners, and Provence may be out-of-domain here; full caveats in
     §<a href="#sec:provence" data-reference-type="ref"
     data-reference="sec:provence">5.3</a>.
 
-4.  **Two cautionary measurements.** Exact match disagreed with blinded
-    semantic judgment in all five paired live evaluations; in the
-    decisive large-sample case it was blind to the effect entirely
-    (identical $`0.9866`$ across arms vs. a 6.4-point semantic gap), and
-    in the replication it understated the effect $`{\sim}7\times`$. An
-    order-controlled paired latency canary found no evidence of the
-    pre-specified $`\ge`$<!-- -->10% wall-clock gain at kilotoken scale
-    (§<a href="#sec:cautions" data-reference-type="ref"
+4.  **Two cautionary measurements.** Exact match never tracked the
+    semantic signal across five paired live evaluations: in the two
+    large-sample evaluations it was decision-blind (identical $`0.9866`$
+    across arms vs. a 6.4-point semantic gap; and a $`7\times`$
+    understatement in the replication), while in the small canaries it
+    was pure noise. An order-controlled paired latency canary found no
+    evidence of the pre-specified $`\ge`$<!-- -->10% wall-clock gain at
+    kilotoken scale (§<a href="#sec:cautions" data-reference-type="ref"
     data-reference="sec:cautions">5.5</a>).
 
 5.  **A micro-budget verification protocol.** The program spans 20
@@ -293,10 +295,11 @@ vs. $`0.8618`$ (sign test $`p=0.45`$ $`\rightarrow`$ parity; the
 $`+0.024`$ delta is not significant and the gate’s claim is
 non-inferiority at cost $`-43\%`$).
 <span class="smallcaps">2Wiki-entity</span>, all 981 cases: $`0.9684`$
-vs. $`0.9072`$ (§<a href="#sec:superiority" data-reference-type="ref"
-data-reference="sec:superiority">5.2</a>; generation cost $`-59`$ to
-$`-61\%`$, $`-58.6\%`$ on the replication set). External judge agreement
-with the panel: 96.3–99.2% per pack.
+vs. $`0.9072`$ (pooled discovery+replication, descriptive; see
+§<a href="#sec:superiority" data-reference-type="ref"
+data-reference="sec:superiority">5.2</a> for the pre-specified split;
+generation cost $`-59`$ to $`-61\%`$, $`-58.6\%`$ on the replication
+set). External judge agreement with the panel: 96.3–99.2% per pack.
 
 ## Selection beats full context on the 2Wiki regime
 
@@ -314,8 +317,12 @@ The discovery chain, in the order it actually happened:
 - **Stage 3** (remaining 386 untouched pairs; hypothesis and thresholds
   fixed in the harness before generation): both judge families
   independently: $`\Delta=+0.057`$, discordant $`29{:}7`$,
-  $`p=3.1\times10^{-4}`$. The confirmatory estimate agrees with the
-  discovery estimate ($`+0.057`$ vs. $`+0.059`$–$`0.064`$).
+  $`p=3.1\times10^{-4}`$. The two families land on the same net counts
+  because they agree at the label level ($`99.2\%`$); their per-arm
+  rates differ ($`0.9663/0.9093`$ panel vs. $`0.9689/0.9119`$ external),
+  so the match is convergence, not duplication. The confirmatory
+  estimate agrees with the discovery estimate ($`+0.057`$
+  vs. $`+0.059`$–$`0.064`$).
 
 - **Pooled (descriptive)**, all 981 pairs: $`0.9684`$ vs. $`0.9072`$;
   discordant $`73{:}13`$.
@@ -346,7 +353,7 @@ frozen Hotpot cases:
 
 | Regime | Method | Retention | Coverage | Reduction |
 |:---|:---|:--:|:--:|:--:|
-| 2Wiki ($`n{=}300`$, holdout) | <span class="smallcaps">2Wiki-entity</span> (ours) | **0.997** | **0.998** | 70.4% |
+| 2Wiki ($`n{=}300`$ holdout subsample) | <span class="smallcaps">2Wiki-entity</span> (ours) | **0.997** | **0.998** | 70.4% |
 |  | Provence @0.01 | 0.920 | 0.811 | 62.2% |
 |  | Provence @0.1 | 0.673 | 0.458 | 85.0% |
 | Hotpot ($`n{=}123`$, frozen) | <span class="smallcaps">Hotpot-or</span> (ours) | **1.000** | **0.990** | 45.2% |
@@ -396,17 +403,19 @@ the entity-title selector.
 
 #### Exact match.
 
-EM and blinded semantic judgment disagreed in all five paired live
-evaluations. In the two 32-case canaries the EM deltas ($`+0.031`$ and
-$`-0.0625`$) rested on one and two discordant cases
-respectively—noise-consistent, though the latter would have wrongly
-rejected a sound gate under a $`-0.05`$ EM gate. At scale EM was
-magnitude-blind: identical $`0.9866`$ across arms while a 6.4-point
+Across five paired live evaluations EM never tracked the semantic
+signal. In the two 32-case canaries the EM deltas ($`+0.031`$ and
+$`-0.0625`$) rested on one and two discordant cases respectively—pure
+noise, though the latter would have wrongly rejected a sound gate under
+a $`-0.05`$ EM gate. In the two large-sample evaluations EM was
+decision-blind: identical $`0.9866`$ across arms while a 6.4-point
 semantic gap existed (Stage 1), and $`+0.008`$ vs. a $`+0.057`$ semantic
-delta in the replication—a $`{\sim}7\times`$ understatement. EM’s errors
-were also asymmetric with context length: self-contradictory
-full-context answers contain the gold string and are scored correct.
-Deployment decisions about context selection should not be made on EM.
+delta in the replication—a $`{\sim}7\times`$ understatement. (The Hotpot
+full sample is the fifth: there EM and semantics agree only in that both
+read parity.) EM’s errors were also asymmetric with context length:
+self-contradictory full-context answers contain the gold string and are
+scored correct. Deployment decisions about context selection should not
+be made on EM.
 
 #### Latency.
 
@@ -414,18 +423,20 @@ An order-controlled paired canary ($`24{+}24`$ pairs, per-case ABBA
 interleaving, alternating first arm, warm-ups, completion-length gates)
 found no evidence of the pre-specified $`\ge`$<!-- -->10% gain: sign
 tests $`p=0.54`$ and $`p=1.0`$, median per-case reductions 1.4% and
-1.1%, despite 44–63% prompt reduction. At this sample size only large,
-consistent effects could have been detected; the point estimates (means
-$`+2.8\%`$/$`+6.9\%`$, corroborated by uncontrolled batch means of
-$`+2.0\%`$ at $`n{=}595`$ and $`+6.4\%`$ at $`n{=}386`$) suggest any
-true effect at this scale is small. Grand means are untrustworthy here:
-they differed by up to 40% purely through slow-tail calls, the artifact
-that had produced $`+26\%`$ and $`+11\%`$ “signals” in our own
-uncontrolled measurements, since retired. At kilotoken scale on a
-commercial serving stack, fixed overhead and queue variance dominate
-prefill; cost reduction, not wall-clock acceleration, is the honest
-value proposition there. We did not test tens-of-kilotoken contexts,
-where prefill-bound gains may exist.
+1.1%, despite 44–63% prompt reduction. At $`n{=}24`$ a sign test needs
+an $`18{:}6`$ split to reach $`p<0.05`$, so only a large, consistent
+per-case effect ($`\gtrsim`$<!-- -->75% win rate) was detectable—this is
+absence of evidence for a $`\ge`$<!-- -->10% gain, not evidence of exact
+equality; the point estimates (means $`+2.8\%`$/$`+6.9\%`$, corroborated
+by uncontrolled batch means of $`+2.0\%`$ at $`n{=}595`$ and $`+6.4\%`$
+at $`n{=}386`$) suggest any true effect at this scale is small. Grand
+means are untrustworthy here: they differed by up to 40% purely through
+slow-tail calls, the artifact that had produced $`+26\%`$ and $`+11\%`$
+“signals” in our own uncontrolled measurements, since retired. At
+kilotoken scale on a commercial serving stack, fixed overhead and queue
+variance dominate prefill; cost reduction, not wall-clock acceleration,
+is the honest value proposition there. We did not test tens-of-kilotoken
+contexts, where prefill-bound gains may exist.
 
 # Reproducibility and Cost
 
@@ -469,23 +480,29 @@ attenuate with stronger generators. The panel judge is the same agent
 lineage that designed the experiments (blinding is structural, not
 organizational), the external judge shares a family with the generator,
 and the 86 discordant labels carrying the headline effect were not
-human-adjudicated. Pre-specification is attested by released harness
-sources, not by an independent timestamping service. Perplexity-based
-compressors (LLMLingua family) were not run; the trained-pruner
-comparison covers Provence only, at the retention layer. Admission
-predicates are English-specific; verbatim-title matching under-admits
-paraphrased questions.
+human-adjudicated. Blinding removes arm labels, token counts, and
+contexts, but the answer text itself is a residual channel: full-context
+answers are longer and hit the token cap more often, so a judge could in
+principle infer the arm from verbosity; because scoring is gold-keyed
+binary correctness (not preference) and the effect survives excluding
+all cap-affected discordant pairs ($`41{:}5`$, $`p=4.4\times10^{-8}`$),
+this channel does not drive the result. Pre-specification is attested by
+released harness sources, not by an independent timestamping service.
+Perplexity-based compressors (LLMLingua family, including LLMLingua-2)
+were not run; the trained-pruner comparison covers Provence only, at the
+retention layer. Admission predicates are English-specific;
+verbatim-title matching under-admits paraphrased questions.
 
 # Conclusion
 
 Context selection can be shipped the way safety-critical changes are
 shipped: behind a cheap gate, with pre-specified evidence, and with a
 fallback. On two multi-hop QA regimes this contract is not a tax—inside
-its admitted regime the cheapest possible selector beat the full context
-at the semantic layer and a trained pruner at the retention layer, and
-the entire metered proof cost about a dollar. We suspect the scarce
-resource in context engineering is not compression power but verified
-knowledge of when compression is safe.
+its admitted regime a near-trivial selector beat the full context at the
+semantic layer and matched a trained pruner at the retention layer, and
+the metered spend was about a dollar. We suspect the scarce resource in
+context engineering is not compression power but verified knowledge of
+when compression is safe.
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 
@@ -590,6 +607,21 @@ Language Models.” *Proceedings of ACL*.
 Kang, Mintong, Nezihe Merve Gürel, Ning Yu, Dawn Song, and Bo Li. 2024.
 “C-RAG: Certified Generation Risks for Retrieval-Augmented Language
 Models.” *Proceedings of ICML*.
+
+</div>
+
+<div id="ref-karpukhin2020dpr" class="csl-entry">
+
+Karpukhin, Vladimir, Barlas Oğuz, Sewon Min, et al. 2020. “Dense Passage
+Retrieval for Open-Domain Question Answering.” *Proceedings of EMNLP*.
+
+</div>
+
+<div id="ref-lewis2020rag" class="csl-entry">
+
+Lewis, Patrick, Ethan Perez, Aleksandra Piktus, et al. 2020.
+“Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.”
+*Proceedings of NeurIPS*.
 
 </div>
 
@@ -699,9 +731,10 @@ Retrieval-Augmented Language Models Robust to Irrelevant Context.”
 
 <div id="ref-zhang2024adacomp" class="csl-entry">
 
-Zhang, Qianchi, Hainan Chen, Lei Cai, et al. 2024. “AdaComp: Extractive
-Context Compression with Adaptive Predictor for Retrieval-Augmented
-Large Language Models.” *arXiv Preprint arXiv:2409.01579*.
+Zhang, Qianchi, Hainan Zhang, Liang Pang, Hongwei Zheng, and Zhiming
+Zheng. 2024. “AdaComp: Extractive Context Compression with Adaptive
+Predictor for Retrieval-Augmented Large Language Models.” *arXiv
+Preprint arXiv:2409.01579*.
 
 </div>
 

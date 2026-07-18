@@ -8,7 +8,7 @@ This repo is two things:
    context gates + the evidence ladder that decides whether to enable them.
 2. **The reproduction package** for the preprint behind it:
    *Verified Context Gating: Training-Free Structural Admission for Context
-   Selection, with Pre-Registered Quality Evidence* — Yongsun Lee, 2026
+   Selection, with Pre-Specified Quality Evidence* — Yongsun Lee, 2026
    (arXiv link forthcoming).
 
 ## The idea
@@ -177,7 +177,7 @@ Code: MIT. Datasets and third-party models keep their own licenses.
 ```bibtex
 @misc{lee2026verifiedcontextgating,
   title  = {Verified Context Gating: Training-Free Structural Admission for
-            Context Selection, with Pre-Registered Quality Evidence},
+            Context Selection, with Pre-Specified Quality Evidence},
   author = {Lee, Yongsun},
   year   = {2026},
   note   = {arXiv preprint (forthcoming); https://github.com/risky-dice/verified-context-gating}

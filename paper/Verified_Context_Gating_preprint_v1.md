@@ -441,6 +441,22 @@ subscription agent compute (Claude); replaying all $`{\sim}3{,}500`$
 panel judgments through a metered API at gpt-4.1-mini prices would add
 $`{\approx}\$0.60`$.
 
+#### Use of AI assistance.
+
+This work was carried out by the author, an independent researcher, with
+an AI coding assistant (Claude) used to implement and orchestrate the
+experiments. All admission predicates, selectors, gate thresholds,
+statistical tests, and evaluation protocols are fully specified in the
+released harness sources and were fixed before the corresponding runs;
+the AI assistant wrote and executed code under the author’s direction
+and did not originate the claims. The complete development history,
+including AI co-authorship of commits, is public in the released
+repository. The blinded semantic judging panel used a Claude model
+(§<a href="#sec:limits" data-reference-type="ref"
+data-reference="sec:limits">7</a> discusses the resulting
+judge-provenance caveat and the independent external-judge
+confirmation).
+
 # Limitations
 
 Two regimes, both multi-hop QA benchmarks. 2WikiMultihopQA questions are

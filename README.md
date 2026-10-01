@@ -9,7 +9,7 @@ This repo is two things:
 2. **The reproduction package** for the preprint behind it:
    *Verified Context Gating: Training-Free Structural Admission for Context
    Selection, with Pre-Specified Quality Evidence* — Yongsun Lee, 2026
-   (arXiv link forthcoming).
+   (self-published preprint; sources in `paper/`).
 
 ## The idea
 
@@ -180,6 +180,6 @@ Code: MIT. Datasets and third-party models keep their own licenses.
             Context Selection, with Pre-Specified Quality Evidence},
   author = {Lee, Yongsun},
   year   = {2026},
-  note   = {arXiv preprint (forthcoming); https://github.com/risky-dice/verified-context-gating}
+  note   = {Preprint; \url{https://github.com/risky-dice/verified-context-gating}}
 }
 ```
